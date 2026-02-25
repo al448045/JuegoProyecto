@@ -1,0 +1,58 @@
+{
+    "version": 1,
+    "name": "DebugStateActions",
+    "maps": [
+        {
+            "name": "DebugStates",
+            "id": "255039e7-e780-4089-8192-efd5118c277b",
+            "actions": [
+                {
+                    "name": "NextState",
+                    "type": "PassThrough",
+                    "id": "93de5a91-8b3b-45eb-aea2-debb241cb0a9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8cbe0219-e53e-4d71-8fcc-1fa14e8b9f31",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "264d34b4-6de6-4082-89de-4e377fa2a9a0",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "New Control Scheme",
+            "bindingGroup": "New Control Scheme",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
