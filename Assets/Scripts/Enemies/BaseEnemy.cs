@@ -55,7 +55,7 @@ public class BaseEnemy : MonoBehaviour
         animator.SetFloat("DirectionY", facingDirection.y);
     }
 
-    public virtual Hole FindNextHole() 
+    public virtual Hole FindNextHole()
     {
         return null;
     }

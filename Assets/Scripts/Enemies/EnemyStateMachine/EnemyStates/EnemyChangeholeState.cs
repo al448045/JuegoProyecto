@@ -24,9 +24,12 @@ public class EnemyChangeholeState : EnemyState
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
 
-        if (enemyStateManager.currentEnemy.transform.position != enemyStateManager.currentEnemy.currentHole.transform.position)
+        if (enemyStateManager.currentEnemy.transform.position != enemyStateManager.currentEnemy.currentHole.transform.position && enemyStateManager.currentEnemy.nextHole != null)
         {
             enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.nextHole.transform.position);
+            enemyStateManager.currentEnemy.currentHole = enemyStateManager.currentEnemy.nextHole;
+            enemyStateManager.currentEnemy.gameManager.ChangeHoleState(enemyStateManager.currentEnemy.currentHole, enemyStateManager.currentEnemy.nextHole);
+            enemyStateManager.currentEnemy.nextHole = null;
         }
 
         enemyStateManager.currentEnemy.changingTimer.UpdateTimer();

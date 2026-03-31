@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
         }
         return AvaliableHoles;
     }
-
     public void ChangeHoleState(Hole actualHole, Hole upcomingHole)
     {
         actualHole.is_hole_occupied = false;
