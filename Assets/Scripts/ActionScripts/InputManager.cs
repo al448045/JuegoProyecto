@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InputManager: MonoBehaviour
+public class InputManagerDebug: MonoBehaviour
 {
     public static DebugStateActions debugStateActions = new DebugStateActions();
 
