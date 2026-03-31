@@ -7,10 +7,14 @@ public class BruteEnemy : BaseEnemy
 {
     private void Start()
     {
+        currentHole = FindNextHole();
 
+        idleTime = Random.Range(1f, 2f);
+        actionTime = Random.Range(0.5f, 1f);
+        changingTime = Random.Range(0.5f, 1.5f);
     }
 
-    public override Vector2 FindNextHole()
+    public override Hole FindNextHole()
     {
         List<Hole> AvaliableHoles = gameManager.SearchAvaliableHoles();
         Vector2 playerPosition = gameManager.player.transform.position;
@@ -26,6 +30,6 @@ public class BruteEnemy : BaseEnemy
                 closestHole = hole;
             }
         }
-        return closestHole.transform.position;
+        return closestHole;
     }
 }

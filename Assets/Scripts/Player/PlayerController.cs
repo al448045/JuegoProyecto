@@ -68,9 +68,7 @@ public class PlayerController: MonoBehaviour
             {
                 player_was_killed = true;
             }
-
             Debug.Log("Player health = " + playerInfo.playerHealth);
-            Debug.Log("Muerto? " + player_was_killed);
         }
     }
 

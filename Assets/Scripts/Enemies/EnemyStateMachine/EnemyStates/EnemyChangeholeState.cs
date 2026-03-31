@@ -9,10 +9,11 @@ public class EnemyChangeholeState : EnemyState
         Debug.Log("Entrando al estado de " + enemyStateManager.currentState);
         enemyStateManager.currentEnemy.isActionFinished = false;
         enemyStateManager.currentEnemy.changingTimer.timerAmount = enemyStateManager.currentEnemy.changingTime;
+
         enemyStateManager.currentEnemy.spriteRenderer.color = Color.red;
 
-
-        enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.FindNextHole());
+        enemyStateManager.currentEnemy.nextHole = enemyStateManager.currentEnemy.FindNextHole();
+        enemyStateManager.currentEnemy.gameManager.ChangeHoleState(enemyStateManager.currentEnemy.currentHole, enemyStateManager.currentEnemy.nextHole);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -22,6 +23,12 @@ public class EnemyChangeholeState : EnemyState
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
+
+        if (enemyStateManager.currentEnemy.transform.position != enemyStateManager.currentEnemy.currentHole.transform.position)
+        {
+            enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.nextHole.transform.position);
+        }
+
         enemyStateManager.currentEnemy.changingTimer.UpdateTimer();
 
         if (enemyStateManager.currentEnemy.changingTimer.timerAmount <= 0)

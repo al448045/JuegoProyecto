@@ -4,15 +4,13 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
 
-    [SerializeField] public BruteEnemy testEnemy;
+    [SerializeField] public BruteEnemy[] enemiesInPlay;
     [SerializeField] public MonoBehaviour player;
 
     [SerializeField] private Hole[] Holes;
 
-
     public List<Hole> SearchAvaliableHoles()
     {
-
         Hole[] CurrentHoles = Holes;
         List<Hole> AvaliableHoles = new List<Hole>();
 
@@ -26,4 +24,9 @@ public class GameManager : MonoBehaviour
         return AvaliableHoles;
     }
 
+    public void ChangeHoleState(Hole actualHole, Hole upcomingHole)
+    {
+        actualHole.is_hole_occupied = false;
+        upcomingHole.is_hole_occupied = true;
+    }
 }

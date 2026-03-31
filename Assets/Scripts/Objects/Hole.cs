@@ -5,12 +5,16 @@ public class Hole : MonoBehaviour
 
     public bool is_hole_active;
     public bool is_hole_occupied;
+
+    public Vector3 HoleSize;
+
     [SerializeField] SpriteRenderer holeSpriteRenderer;
 
     void Start()
     {
         is_hole_active = true;
         is_hole_occupied = false;
+        HoleSize = holeSpriteRenderer.bounds.size;
     }
 
     private void ChangeColor()
