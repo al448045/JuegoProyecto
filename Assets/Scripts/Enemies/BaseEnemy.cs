@@ -8,10 +8,17 @@ public class BaseEnemy : MonoBehaviour
     public Vector2 facingDirection;
     public bool isActionFinished;
 
-    [SerializeField] public float enemyHealth;
-    [SerializeField] public float actionTime;
-    [SerializeField] public float idleTime;
-    [SerializeField] public float changingTime;
+    [HideInInspector]
+    public float enemyHealth;
+
+    [HideInInspector]
+    public float actionTime;
+
+    [HideInInspector]
+    public float idleTime;
+
+    [HideInInspector]
+    public float changingTime;
 
 
     [SerializeField] public Animator animator;
@@ -21,6 +28,10 @@ public class BaseEnemy : MonoBehaviour
 
     [SerializeField] public GameManager gameManager;
     [SerializeField] public EnemyStateManager enemyStateManager;
+
+
+    public Hole currentHole;
+    public Hole nextHole;
 
     public CustomTimer idleTimer;
     public CustomTimer actionTimer;
@@ -44,13 +55,14 @@ public class BaseEnemy : MonoBehaviour
         animator.SetFloat("DirectionY", facingDirection.y);
     }
 
-    public virtual Vector2 FindNextHole() 
+    public virtual Hole FindNextHole()
     {
-        return Vector2.zero;
+        return null;
     }
 
     public void ChangePosition(Vector2 newPosition)
     {
-        transform.position = newPosition;
+        float verticalOffset = nextHole.HoleSize.y;
+        transform.position = new Vector2(newPosition.x, newPosition.y + verticalOffset);
     }
 }
