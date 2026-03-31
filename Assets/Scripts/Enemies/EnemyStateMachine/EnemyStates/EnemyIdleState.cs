@@ -7,9 +7,11 @@ public class EnemyIdleState : EnemyState
 
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        Debug.Log("Entrando al estado de " + enemyStateManager.currentState);
         enemyStateManager.currentEnemy.idleTimer.timerAmount = enemyStateManager.currentEnemy.idleTime;
         enemyStateManager.currentEnemy.spriteRenderer.color = Color.yellow;
+
+        enemyStateManager.currentEnemy.hasGoneUp = false;
+        enemyStateManager.currentEnemy.hasGoneDown = false;
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
