@@ -1,35 +1,38 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAttackState : PlayerState
 {
-    private float AttackTimer = 3.0f;
-
     public override void EnterState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
-        Debug.Log("Estado de Attack");
+        playerManager.playerController.playerSpriteRenderer.color = Color.purple;
+    }
+
+    public override void ExitState(PlayerStateManager playerManager, PlayerInfo playerInfo)
+    {
+        playerManager.playerController.playerRB2D.linearVelocity = Vector2.zero;
     }
 
     public override void UpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
-        if (playerInfo.IsSpacePressed == true)
-        {
-            playerInfo.IsSpacePressed = false;
-            playerManager.SwitchState(playerManager.IdleState);
-        }
-
-        AttackTimer -= Time.deltaTime;
-
-        if (AttackTimer <= 0.0)
+        if (!(playerManager.playerController.playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack")))
         {
             playerManager.SwitchState(playerManager.IdleState);
         }
-
     }
 
-    public override void OnCollisionEnter(PlayerStateManager playerManager, PlayerInfo playerInfo, Collision collision)
+    public override void FixedUpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)
+    {
+        playerManager.playerController.DeceleratePlayer();
+    }
+
+    public override void OnTriggerEnter2D(PlayerStateManager playerManager, PlayerInfo playerInfo, Collider2D collider)
     {
 
     }
 
+    public override void OnCollisionEnter2D(PlayerStateManager playerManager, PlayerInfo playerInfo, Collision2D collision)
+    {
 
+    }
 }

@@ -1,29 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInfo 
+public class PlayerInfo : MonoBehaviour
 {
-    public Color _idleColor;
-    public Color _moveColor;
-    public Color _attackColor;
+    [SerializeField] public PlayerController playerController;
 
-    public SpriteRenderer _playerRenderer;
-    public InputAction next;
-    public bool IsSpacePressed = false;
+    public float playerSpeed;
+    public float playerFriction;
 
-    public PlayerInfo(Color idleColor, Color moveColor, Color attackColor, SpriteRenderer playerRenderer)
-    {
-        _idleColor = idleColor;
-        _moveColor = moveColor;
-        _attackColor = attackColor;
-        _playerRenderer = playerRenderer;
-        next = InputManager.debugStateActions.DebugStates.NextState;
-        next.performed += NextState;
-    }
+    public float playerHealth;
 
-    public void NextState(InputAction.CallbackContext callbackContext)
-    {
-        IsSpacePressed = true;
-        Debug.Log("Espacio Presionado");
-    }
+    public Vector2 playerMoveDirection;
+
 }
+
+

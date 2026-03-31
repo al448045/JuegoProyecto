@@ -1,33 +1,54 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMoveState : PlayerState
 {
-    public float moveSpeed;
-    private Vector2 _moveDirection;
-    private float MoveTimer = 3.0f;
-
     public override void EnterState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
-        Debug.Log("Estado de Move");
+        playerInfo.playerController.playerSpriteRenderer.color = Color.blue;
+    }
+
+    public override void ExitState(PlayerStateManager playerManager, PlayerInfo playerInfo)
+    {
+
     }
 
     public override void UpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
-        if (playerInfo.IsSpacePressed == true)
+
+        if (playerInfo.playerMoveDirection.sqrMagnitude <= 0.01)
         {
-            playerInfo.IsSpacePressed = false;
+            playerManager.SwitchState(playerManager.IdleState);
+        }
+
+        if (playerManager.playerController.player_wants_attack)
+        {
             playerManager.SwitchState(playerManager.AttackState);
         }
 
-        MoveTimer -= Time.deltaTime;
-
-        if (MoveTimer <= 0.0)
+        if (playerManager.playerController.player_was_hurt)
         {
-            playerManager.SwitchState(playerManager.AttackState);
+            playerManager.SwitchState(playerManager.HurtState);
+        }
+
+        if (playerManager.playerController.player_wants_object)
+        {
+            playerManager.SwitchState(playerManager.ObjectState);
         }
     }
 
-    public override void OnCollisionEnter(PlayerStateManager playerManager, PlayerInfo playerInfo, Collision collision)
+    public override void FixedUpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)
+    {
+        playerInfo.playerMoveDirection = playerManager.playerController.inputManager.moveAction.ReadValue<Vector2>();
+        playerManager.playerController.playerRB2D.linearVelocity = (playerInfo.playerMoveDirection.normalized * playerInfo.playerSpeed);
+    }
+
+    public override void OnTriggerEnter2D(PlayerStateManager playerManager, PlayerInfo playerInfo, Collider2D collider)
+    {
+
+    }
+
+    public override void OnCollisionEnter2D(PlayerStateManager playerManager, PlayerInfo playerInfo, Collision2D collision)
     {
 
     }

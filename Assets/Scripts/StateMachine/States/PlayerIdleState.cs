@@ -1,32 +1,47 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerIdleState : PlayerState
 {
-
-    private float IdleTimer = 3f;
-
     public override void EnterState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
-        Debug.Log("Estado de Idle");
+        playerManager.playerController.playerSpriteRenderer.color = Color.green;
+    }
+
+    public override void ExitState(PlayerStateManager playerManager, PlayerInfo playerInfo)
+    {
+
     }
 
     public override void UpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
-        if (playerInfo.IsSpacePressed == true)
+        if (playerManager.playerController.player_wants_move)
         {
-            playerInfo.IsSpacePressed = false;
             playerManager.SwitchState(playerManager.MoveState);
         }
 
-        IdleTimer -= Time.deltaTime;
-
-        if (IdleTimer <= 0.0)
+        if (playerManager.playerController.player_wants_attack)
         {
-            playerManager.SwitchState(playerManager.MoveState);
+            playerManager.SwitchState(playerManager.AttackState);
+        }
+
+        if (playerManager.playerController.player_wants_object)
+        {
+            playerManager.SwitchState(playerManager.ObjectState);
         }
     }
 
-    public override void OnCollisionEnter(PlayerStateManager playerManager, PlayerInfo playerInfo, Collision collision)
+    public override void FixedUpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)
+    {
+
+    }
+
+    public override void OnTriggerEnter2D(PlayerStateManager playerManager, PlayerInfo playerInfo, Collider2D collider)
+    {
+
+    }
+
+    public override void OnCollisionEnter2D(PlayerStateManager playerManager, PlayerInfo playerInfo, Collision2D collision)
     {
 
     }
