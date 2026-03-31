@@ -11,6 +11,8 @@ public class EnemyMeleeState : EnemyState
         Debug.Log("Entrando al estado de " + enemyStateManager.currentState);
         enemyStateManager.currentEnemy.SetAnimatorBool("IsAction", true);
         enemyStateManager.currentEnemy.actionTimer.timerAmount = enemyStateManager.currentEnemy.actionTime;
+        enemyStateManager.currentEnemy.spriteRenderer.color = Color.blue;
+
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)

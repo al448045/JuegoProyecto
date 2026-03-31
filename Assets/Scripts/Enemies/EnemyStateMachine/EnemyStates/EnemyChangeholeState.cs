@@ -9,6 +9,8 @@ public class EnemyChangeholeState : EnemyState
         Debug.Log("Entrando al estado de " + enemyStateManager.currentState);
         enemyStateManager.currentEnemy.isActionFinished = false;
         enemyStateManager.currentEnemy.changingTimer.timerAmount = enemyStateManager.currentEnemy.changingTime;
+        enemyStateManager.currentEnemy.spriteRenderer.color = Color.red;
+
 
         enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.FindNextHole());
     }
