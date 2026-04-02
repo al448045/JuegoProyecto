@@ -72,7 +72,7 @@ public class BaseEnemy : MonoBehaviour
     {
         for (float i = 1f; i >= 0; i -= 0.1f)
         {
-            spriteRenderer.color = new Vector4(1, 1, 1, i);
+            //spriteRenderer.color = new Vector4(1, 1, 1, i);
             yield return new WaitForSeconds(0.1f);
         }
         hasGoneDown = true;
@@ -82,7 +82,7 @@ public class BaseEnemy : MonoBehaviour
     {
         for (float i = 0f; i <= 1; i += 0.1f)
         {
-            spriteRenderer.color = new Vector4(1, 1, 1, i);
+            //spriteRenderer.color = new Vector4(1, 1, 1, i);
             yield return new WaitForSeconds(0.1f);
         }
         hasGoneUp = true;

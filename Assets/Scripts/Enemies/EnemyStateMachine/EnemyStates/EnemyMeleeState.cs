@@ -10,7 +10,7 @@ public class EnemyMeleeState : EnemyState
     {
         enemyStateManager.currentEnemy.SetAnimatorBool("IsAction", true);
         enemyStateManager.currentEnemy.actionTimer.timerAmount = enemyStateManager.currentEnemy.actionTime;
-        enemyStateManager.currentEnemy.spriteRenderer.color = Color.blue;
+        enemyStateManager.currentEnemy.spriteRenderer.color = Color.cyan;
 
     }
 
