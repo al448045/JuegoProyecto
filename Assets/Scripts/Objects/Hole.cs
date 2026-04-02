@@ -16,18 +16,4 @@ public class Hole : MonoBehaviour
         is_hole_occupied = false;
         HoleSize = holeSpriteRenderer.bounds.size;
     }
-
-    private void ChangeColor()
-    {
-        if (!is_hole_active)
-        {
-            holeSpriteRenderer.color = Color.black;
-        }
-
-        else
-        {
-            holeSpriteRenderer.color = Color.white;
-        }
-    }
-
 }

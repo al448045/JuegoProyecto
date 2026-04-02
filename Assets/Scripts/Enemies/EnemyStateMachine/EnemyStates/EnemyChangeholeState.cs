@@ -6,10 +6,7 @@ public class EnemyChangeholeState : EnemyState
 {
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        Debug.Log("Entrando al estado de " + enemyStateManager.currentState);
         enemyStateManager.currentEnemy.isActionFinished = false;
-        enemyStateManager.currentEnemy.changingTimer.timerAmount = enemyStateManager.currentEnemy.changingTime;
-
         enemyStateManager.currentEnemy.spriteRenderer.color = Color.red;
 
         enemyStateManager.currentEnemy.nextHole = enemyStateManager.currentEnemy.FindNextHole();
@@ -23,7 +20,6 @@ public class EnemyChangeholeState : EnemyState
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-
         if (enemyStateManager.currentEnemy.transform.position != enemyStateManager.currentEnemy.currentHole.transform.position && enemyStateManager.currentEnemy.nextHole != null)
         {
             enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.nextHole.transform.position);
@@ -32,9 +28,9 @@ public class EnemyChangeholeState : EnemyState
             enemyStateManager.currentEnemy.nextHole = null;
         }
 
-        enemyStateManager.currentEnemy.changingTimer.UpdateTimer();
+        enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.GoUp());
 
-        if (enemyStateManager.currentEnemy.changingTimer.timerAmount <= 0)
+        if (enemyStateManager.currentEnemy.hasGoneUp)
         {
             enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
         }

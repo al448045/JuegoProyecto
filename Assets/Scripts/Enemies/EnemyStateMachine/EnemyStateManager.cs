@@ -9,12 +9,13 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyIdleState enemyIdleState                = new EnemyIdleState();
     public EnemyMeleeState enemyMeleeState              = new EnemyMeleeState();
     public EnemyChangeholeState enemyChangeholeState    = new EnemyChangeholeState();
+    public EnemySpawningState enemySpawningState        = new EnemySpawningState();
 
     [SerializeField] public BaseEnemy currentEnemy;
 
     private void Start()
     {
-        currentState = enemyChangeholeState;
+        currentState = enemySpawningState;
         currentState.EnterState(this, currentEnemy);
     }
 

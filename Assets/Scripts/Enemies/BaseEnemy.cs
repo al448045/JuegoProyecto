@@ -7,6 +7,8 @@ public class BaseEnemy : MonoBehaviour
 {
     public Vector2 facingDirection;
     public bool isActionFinished;
+    public bool hasGoneDown;
+    public bool hasGoneUp;
 
     [HideInInspector]
     public float enemyHealth;
@@ -64,5 +66,25 @@ public class BaseEnemy : MonoBehaviour
     {
         float verticalOffset = nextHole.HoleSize.y;
         transform.position = new Vector2(newPosition.x, newPosition.y + verticalOffset);
+    }
+
+    public IEnumerator GoDown()
+    {
+        for (float i = 1f; i >= 0; i -= 0.1f)
+        {
+            //spriteRenderer.color = new Vector4(1, 1, 1, i);
+            yield return new WaitForSeconds(0.1f);
+        }
+        hasGoneDown = true;
+    }
+
+    public IEnumerator GoUp()
+    {
+        for (float i = 0f; i <= 1; i += 0.1f)
+        {
+            //spriteRenderer.color = new Vector4(1, 1, 1, i);
+            yield return new WaitForSeconds(0.1f);
+        }
+        hasGoneUp = true;
     }
 }

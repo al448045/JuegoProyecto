@@ -1,33 +1,24 @@
 using UnityEngine;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 
-public class EnemyMeleeState : EnemyState
+public class EnemySpawningState : EnemyState
 {
-    private CustomTimer actionTimer = new CustomTimer();
-
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.SetAnimatorBool("IsAction", true);
-        enemyStateManager.currentEnemy.actionTimer.timerAmount = enemyStateManager.currentEnemy.actionTime;
-        enemyStateManager.currentEnemy.spriteRenderer.color = Color.cyan;
-
+        enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.GoDown());
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.SetAnimatorBool("IsAction", false);
-        enemyStateManager.currentEnemy.isActionFinished = true;
+
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-
-        enemyStateManager.currentEnemy.actionTimer.UpdateTimer();
-
-        if (enemyStateManager.currentEnemy.actionTimer.timerAmount <= 0f)
+        if (enemyStateManager.currentEnemy.hasGoneDown)
         {
-            enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
+            enemyStateManager.SwitchState(enemyStateManager.enemyChangeholeState);
         }
     }
 
@@ -35,6 +26,7 @@ public class EnemyMeleeState : EnemyState
     {
 
     }
+       
 
     public override void OnCollisionEnter2D(EnemyStateManager enemyStateManager, BaseEnemy Enemy, Collision2D collision)
     {
