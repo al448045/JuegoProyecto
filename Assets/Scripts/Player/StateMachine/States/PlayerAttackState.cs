@@ -1,15 +1,17 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerAttackState : PlayerState
 {
     public override void EnterState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
         playerManager.playerController.playerSpriteRenderer.color = Color.purple;
+        playerManager.playerController.playerAttack.SetActive(true);
     }
 
     public override void ExitState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
+        
+        playerManager.playerController.playerAttack.SetActive(false);
         playerManager.playerController.playerRB2D.linearVelocity = Vector2.zero;
     }
 
