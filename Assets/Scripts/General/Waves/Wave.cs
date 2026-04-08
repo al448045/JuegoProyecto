@@ -1,18 +1,8 @@
 using UnityEngine;
 
-public class Wave : MonoBehaviour
+
+[CreateAssetMenu(fileName = "Wave", menuName = "Scriptable Objects/Wave")]
+public class Wave : ScriptableObject
 {
-    public bool has_wave_finished;
-    //public Enemy[] enemies;
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
+    [field: SerializeField] public GameObject[] EnemiesInWave { get; private set; }
 }

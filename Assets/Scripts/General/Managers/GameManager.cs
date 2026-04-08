@@ -3,11 +3,10 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-
-    [SerializeField] public BruteEnemy[] enemiesInPlay;
+    [SerializeField] private WaveManager waveManager;
     [SerializeField] public MonoBehaviour player;
 
-    [SerializeField] private Hole[] Holes;
+    [SerializeField] public Hole[] Holes;
 
     public List<Hole> SearchAvaliableHoles()
     {
@@ -27,5 +26,10 @@ public class GameManager : MonoBehaviour
     {
         actualHole.is_hole_occupied = false;
         upcomingHole.is_hole_occupied = true;
+    }
+
+    public void Start()
+    {
+        waveManager.SpawnWave();
     }
 }
