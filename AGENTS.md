@@ -2,7 +2,7 @@
 - Project name: JuegoProyecto
 - Unity version: Unity 6000.3.6f1
 - Active game object:
-  - Name: Objects
+  - Name: PlayerAttack
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
