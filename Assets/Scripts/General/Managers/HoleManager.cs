@@ -8,11 +8,6 @@ public class HoleManager : MonoBehaviour
     private void Awake()
     {
         Holes = GameObject.FindObjectsByType<Hole>(FindObjectsSortMode.None);
-
-        foreach(Hole hole in Holes)
-        {
-            Debug.Log("Hole: " + hole.name);
-        }
     }
 
     public List<Hole> SearchAvaliableHoles()

@@ -17,7 +17,7 @@ public class BruteEnemy : BaseEnemy
     public override Hole FindNextHole()
     {
         List<Hole> AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
-        Vector2 playerPosition = gameManager.player.transform.position;
+        Vector2 playerPosition = GameManager.Instance.player.transform.position;
         float closestDistance = float.PositiveInfinity;
         Hole closestHole = null;
 
