@@ -22,7 +22,6 @@ public class BaseEnemy : MonoBehaviour
     [HideInInspector]
     public float changingTime;
 
-
     [SerializeField] public Animator animator;
     [SerializeField] public Rigidbody2D enemyRB2D;
     [SerializeField] public SpriteRenderer spriteRenderer;
@@ -87,5 +86,19 @@ public class BaseEnemy : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         hasGoneUp = true;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        enemyHealth -= damage;
+        if (enemyHealth <= 0)
+        {
+            KillEnemy();
+        }
+    }
+
+    public void KillEnemy()
+    {
+        Destroy(gameObject);
     }
 }

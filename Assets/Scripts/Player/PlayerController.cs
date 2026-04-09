@@ -14,6 +14,7 @@ public class PlayerController: MonoBehaviour
     [SerializeField] public Rigidbody2D playerRB2D;
     [SerializeField] public Animator playerAnimator;
     [SerializeField] public SpriteRenderer playerSpriteRenderer;
+    [SerializeField] public GameObject playerAttack;
 
     // BOOLEANOS
 

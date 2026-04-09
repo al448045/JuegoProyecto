@@ -12,6 +12,8 @@ public class BruteEnemy : BaseEnemy
         idleTime = Random.Range(1f, 2f);
         actionTime = Random.Range(0.5f, 1f);
         changingTime = Random.Range(0.5f, 1.5f);
+
+        enemyHealth = 100.0f;
     }
 
     public override Hole FindNextHole()
