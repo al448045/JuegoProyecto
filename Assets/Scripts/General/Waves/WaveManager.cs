@@ -20,22 +20,16 @@ public class WaveManager : MonoBehaviour
     {
         currentWave = waves[waveIndex];
     }
-    public void SpawnWave()
-    {
-        for (int i = 0; i < currentWave.EnemiesInWave.Length; i++)
-        {
-            List<Hole> AvaliableHoles = gameManager.SearchAvaliableHoles();
-            int index = Random.Range(0, AvaliableHoles.Count);
-            Vector2 position = AvaliableHoles[index].transform.position;
-            Instantiate(currentWave.EnemiesInWave[i], position, Quaternion.identity);
-        }
-    }
 
+    private void Start()
+    {
+        SpawnWave(currentWave);
+    }
     public void Update()
     {
         if (currentWave.EnemiesInWave.Length <= 0)
         {
-            FinishWave();
+            //FinishWave();
             if (waveIndex + 1 < waves.Length)
             {
                 waveIndex++;
@@ -47,8 +41,17 @@ public class WaveManager : MonoBehaviour
             }
         }
     }
-
-    private void FinishWave()
+    public void SpawnWave(Wave waveToSpawn)
+    {
+        for (int i = 0; i < waveToSpawn.EnemiesInWave.Length; i++)
+        {
+            List<Hole> AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
+            int index = Random.Range(0, AvaliableHoles.Count);
+            Vector2 position = AvaliableHoles[index].transform.position;
+            Instantiate(waveToSpawn.EnemiesInWave[i], position, Quaternion.identity);
+        }
+    }
+    private void FinishWave(Wave waveToFinish)
     {
 
     }

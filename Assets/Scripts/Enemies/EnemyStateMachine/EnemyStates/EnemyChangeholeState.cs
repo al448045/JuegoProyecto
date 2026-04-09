@@ -10,7 +10,7 @@ public class EnemyChangeholeState : EnemyState
         enemyStateManager.currentEnemy.spriteRenderer.color = Color.red;
 
         enemyStateManager.currentEnemy.nextHole = enemyStateManager.currentEnemy.FindNextHole();
-        enemyStateManager.currentEnemy.gameManager.ChangeHoleState(enemyStateManager.currentEnemy.currentHole, enemyStateManager.currentEnemy.nextHole);
+        GameManager.Instance.holeManager.ChangeHoleState(enemyStateManager.currentEnemy.currentHole, enemyStateManager.currentEnemy.nextHole);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -24,7 +24,7 @@ public class EnemyChangeholeState : EnemyState
         {
             enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.nextHole.transform.position);
             enemyStateManager.currentEnemy.currentHole = enemyStateManager.currentEnemy.nextHole;
-            enemyStateManager.currentEnemy.gameManager.ChangeHoleState(enemyStateManager.currentEnemy.currentHole, enemyStateManager.currentEnemy.nextHole);
+            GameManager.Instance.holeManager.ChangeHoleState(enemyStateManager.currentEnemy.currentHole, enemyStateManager.currentEnemy.nextHole);
             enemyStateManager.currentEnemy.nextHole = null;
         }
 
