@@ -5,32 +5,25 @@ using System.Collections.Generic;
 
 public class WaveManager : MonoBehaviour
 {
-    public GameManager gameManager;
     [SerializeField] public Wave[] waves;
 
     private float timeBetweenSpawns;
     private int waveIndex = 0;
+    public Wave currentWave;
 
     [HideInInspector]
     public bool finishedWaves = false;
-    public Wave currentWave;
+
 
 
     private void Awake()
     {
         currentWave = waves[waveIndex];
     }
-    public void SpawnWave()
+    private void Start()
     {
-        for (int i = 0; i < currentWave.EnemiesInWave.Length; i++)
-        {
-            List<Hole> AvaliableHoles = gameManager.SearchAvaliableHoles();
-            int index = Random.Range(0, AvaliableHoles.Count);
-            Vector2 position = AvaliableHoles[index].transform.position;
-            Instantiate(currentWave.EnemiesInWave[i], position, Quaternion.identity);
-        }
+        SpawnWave(currentWave);
     }
-
     public void Update()
     {
         if (currentWave.EnemiesInWave.Length <= 0)
@@ -47,7 +40,16 @@ public class WaveManager : MonoBehaviour
             }
         }
     }
-
+    public void SpawnWave(Wave waveToSpawn)
+    {
+        for (int i = 0; i < waveToSpawn.EnemiesInWave.Length; i++)
+        {
+            List<Hole> AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
+            int index = Random.Range(0, AvaliableHoles.Count);
+            Vector2 position = AvaliableHoles[index].transform.position;
+            Instantiate(waveToSpawn.EnemiesInWave[i], position, Quaternion.identity);
+        }
+    }
     private void FinishWave()
     {
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using System.Xml.Serialization;
 
 
 public class BruteEnemy : BaseEnemy
@@ -16,8 +17,8 @@ public class BruteEnemy : BaseEnemy
 
     public override Hole FindNextHole()
     {
-        List<Hole> AvaliableHoles = gameManager.SearchAvaliableHoles();
-        Vector2 playerPosition = gameManager.player.transform.position;
+        List<Hole> AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
+        Vector2 playerPosition = GameManager.Instance.player.transform.position;
         float closestDistance = float.PositiveInfinity;
         Hole closestHole = null;
 

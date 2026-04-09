@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using JetBrains.Annotations;
 
 
 public class BaseEnemy : MonoBehaviour
@@ -9,6 +10,11 @@ public class BaseEnemy : MonoBehaviour
     public bool isActionFinished;
     public bool hasGoneDown;
     public bool hasGoneUp;
+
+    [SerializeField] public Animator animator;
+    [SerializeField] public Rigidbody2D enemyRB2D;
+    [SerializeField] public SpriteRenderer spriteRenderer;
+    [SerializeField] public EnemyStateManager enemyStateManager;
 
     [HideInInspector]
     public float enemyHealth;
@@ -22,14 +28,6 @@ public class BaseEnemy : MonoBehaviour
     [HideInInspector]
     public float changingTime;
 
-
-    [SerializeField] public Animator animator;
-    [SerializeField] public Rigidbody2D enemyRB2D;
-    [SerializeField] public SpriteRenderer spriteRenderer;
-    [SerializeField] public EnemyStateManager enemyStateManager;
-    public GameManager gameManager;
-
-
     [HideInInspector]
     public Hole currentHole;
 
@@ -40,6 +38,8 @@ public class BaseEnemy : MonoBehaviour
     public CustomTimer actionTimer;
     public CustomTimer changingTimer;
 
+    private void Awake()
+    { }
     public BaseEnemy()
     {
         idleTimer = new CustomTimer(idleTime);

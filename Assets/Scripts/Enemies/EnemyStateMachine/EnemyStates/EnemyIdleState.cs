@@ -44,7 +44,7 @@ public class EnemyIdleState : EnemyState
 
     public override void FixedUpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.facingDirection = (enemyStateManager.currentEnemy.gameManager.player.transform.position - enemyStateManager.currentEnemy.transform.position).normalized;
+        enemyStateManager.currentEnemy.facingDirection = (GameManager.Instance.player.transform.position - enemyStateManager.currentEnemy.transform.position).normalized;
         enemyStateManager.currentEnemy.UpdateAnimatorFacingVector();
     }
 
