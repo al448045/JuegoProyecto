@@ -5,4 +5,6 @@ using UnityEngine;
 public class Wave : ScriptableObject
 {
     [field: SerializeField] public GameObject[] EnemiesInWave { get; private set; }
+    [field: SerializeField] public WaveManager waveManager;
+
 }
