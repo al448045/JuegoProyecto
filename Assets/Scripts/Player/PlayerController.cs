@@ -24,9 +24,10 @@ public class PlayerController: MonoBehaviour
     public bool player_was_hurt;
     public bool player_was_killed;
 
-    private void Start()
+    private void Awake()
     {
-
+        playerAttack.SetActive(false);
+        playerInfo.playerAttackOffset = new Vector3(0, -1, 0);
     }
 
     private void Update()
