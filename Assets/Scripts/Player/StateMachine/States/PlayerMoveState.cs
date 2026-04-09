@@ -41,10 +41,6 @@ public class PlayerMoveState : PlayerState
     {
         playerInfo.playerMoveDirection = playerManager.playerController.inputManager.moveAction.ReadValue<Vector2>();
         playerManager.playerController.playerRB2D.linearVelocity = (playerInfo.playerMoveDirection.normalized * playerInfo.playerSpeed);
-
-        Vector3 playerAttackVector3 = Vector3.left * playerInfo.playerMoveDirection.x + Vector3.down * playerInfo.playerMoveDirection.y;
-        playerManager.playerController.playerAttack.transform.rotation = Quaternion.LookRotation(Vector3.forward, playerAttackVector3);
-        playerManager.playerController.playerAttack.transform.localPosition = playerInfo.playerMoveDirection;
     }
 
     public override void OnTriggerEnter2D(PlayerStateManager playerManager, PlayerInfo playerInfo, Collider2D collider)

@@ -12,6 +12,8 @@ public class PlayerInfo : MonoBehaviour
 
     public Vector2 playerMoveDirection;
 
+    public Vector3 playerAttackOffset;
+
 }
 
 
