@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cb657d7b43dd64f8777a7eae094116, type: 3}
+  m_Name: InitialWave
+  m_EditorClassIdentifier: Assembly-CSharp::Wave
+  <EnemiesInWave>k__BackingField:
+  - {fileID: 2402405345692686913, guid: fe06b1c8a7b56d849bb57ff7989eb4c7, type: 3}
+  - {fileID: 2402405345692686913, guid: fe06b1c8a7b56d849bb57ff7989eb4c7, type: 3}

@@ -25,13 +25,14 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField] public Animator animator;
     [SerializeField] public Rigidbody2D enemyRB2D;
     [SerializeField] public SpriteRenderer spriteRenderer;
-
-
-    [SerializeField] public GameManager gameManager;
     [SerializeField] public EnemyStateManager enemyStateManager;
+    public GameManager gameManager;
 
 
+    [HideInInspector]
     public Hole currentHole;
+
+    [HideInInspector]
     public Hole nextHole;
 
     public CustomTimer idleTimer;

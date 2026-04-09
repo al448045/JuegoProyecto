@@ -3,29 +3,26 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
+     public WaveManager waveManager;
+     public MonoBehaviour player;
+    public HoleManager holeManager;
 
-    [SerializeField] public BruteEnemy[] enemiesInPlay;
-    [SerializeField] public MonoBehaviour player;
+    public static GameManager Instance;
 
-    [SerializeField] private Hole[] Holes;
-
-    public List<Hole> SearchAvaliableHoles()
+    private void Awake()
     {
-        Hole[] CurrentHoles = Holes;
-        List<Hole> AvaliableHoles = new List<Hole>();
-
-        foreach (Hole hole in CurrentHoles)
+        if (Instance != null && Instance != this)
         {
-            if ((!hole.is_hole_occupied) && (hole.is_hole_active))
-            {
-                AvaliableHoles.Add(hole);
-            }
+            Destroy(this);
         }
-        return AvaliableHoles;
+        else
+        {
+            Instance = this;
+            waveManager = GetComponentInChildren<WaveManager>();
+            holeManager = GetComponentInChildren<HoleManager>();
+        }
     }
-    public void ChangeHoleState(Hole actualHole, Hole upcomingHole)
+    public void Start()
     {
-        actualHole.is_hole_occupied = false;
-        upcomingHole.is_hole_occupied = true;
     }
 }
