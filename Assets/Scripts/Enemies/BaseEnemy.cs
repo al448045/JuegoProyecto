@@ -32,10 +32,7 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField] public EnemyStateManager enemyStateManager;
 
 
-    [HideInInspector]
     public Hole currentHole;
-
-    [HideInInspector]
     public Hole nextHole;
 
     public CustomTimer idleTimer;
