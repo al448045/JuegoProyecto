@@ -9,6 +9,7 @@ public class BaseEnemy : MonoBehaviour
     public bool isActionFinished;
     public bool hasGoneDown;
     public bool hasGoneUp;
+    public bool isEnemyDead;
 
     [HideInInspector]
     public float enemyHealth;
@@ -26,7 +27,6 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField] public Rigidbody2D enemyRB2D;
     [SerializeField] public SpriteRenderer spriteRenderer;
     [SerializeField] public EnemyStateManager enemyStateManager;
-    public GameManager gameManager;
 
 
     [HideInInspector]
@@ -44,6 +44,7 @@ public class BaseEnemy : MonoBehaviour
         idleTimer = new CustomTimer(idleTime);
         actionTimer = new CustomTimer(actionTime);
         changingTimer = new CustomTimer(changingTime);
+        isEnemyDead = false;
     }
 
     public void SetAnimatorBool(string Animation, bool value)
@@ -93,12 +94,12 @@ public class BaseEnemy : MonoBehaviour
         enemyHealth -= damage;
         if (enemyHealth <= 0)
         {
-            KillEnemy();
+            isEnemyDead = true;
         }
     }
 
     public void KillEnemy()
     {
-        Destroy(gameObject);
+        Destroy(this);
     }
 }

@@ -8,7 +8,6 @@ public class EnemyIdleState : EnemyState
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.idleTimer.timerAmount = enemyStateManager.currentEnemy.idleTime;
-        enemyStateManager.currentEnemy.spriteRenderer.color = Color.pink;
 
         enemyStateManager.currentEnemy.hasGoneUp = false;
         enemyStateManager.currentEnemy.hasGoneDown = false;

@@ -1235,6 +1235,7 @@ MonoBehaviour:
   gameManager: {fileID: 1482938455}
   waves:
   - {fileID: 11400000, guid: 4f9d4b56acd8a504eaddec2bc405cc5c, type: 2}
+  - {fileID: 11400000, guid: ae27fe7cb9edf7942bdcc3cc2463f2e4, type: 2}
   finishedWaves: 0
   currentWave: {fileID: 11400000, guid: 4f9d4b56acd8a504eaddec2bc405cc5c, type: 2}
 --- !u!1001 &1823847575
