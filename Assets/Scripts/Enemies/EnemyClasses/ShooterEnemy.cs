@@ -1,9 +1,7 @@
-using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
+using UnityEngine;
 
-
-public class BruteEnemy : BaseEnemy
+public class ShooterEnemy : BaseEnemy
 {
     private void Start()
     {
@@ -14,25 +12,26 @@ public class BruteEnemy : BaseEnemy
         changingTime = Random.Range(0.5f, 1.5f);
         spawningTime = Random.Range(0.5f, 1.5f);
 
-        enemyHealth = 100.0f;
+        enemyHealth = 75.0f;
+        spriteRenderer.color = Color.cyan;
     }
 
     public override Hole FindNextHole()
     {
         List<Hole> AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
         Vector2 playerPosition = GameManager.Instance.player.transform.position;
-        float closestDistance = float.PositiveInfinity;
-        Hole closestHole = null;
+        float closestDistance = 0f;
+        Hole furthestHole = null;
 
         foreach (Hole hole in AvaliableHoles)
         {
             float distance = Vector2.Distance(playerPosition, hole.transform.position);
-            if (distance < closestDistance)
+            if (distance > closestDistance)
             {
                 closestDistance = distance;
-                closestHole = hole;
+                furthestHole = hole;
             }
         }
-        return closestHole;
+        return furthestHole;
     }
 }

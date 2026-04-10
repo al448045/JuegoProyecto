@@ -23,6 +23,9 @@ public class BaseEnemy : MonoBehaviour
     [HideInInspector]
     public float changingTime;
 
+    [HideInInspector]
+    public float spawningTime;
+
     [SerializeField] public Animator animator;
     [SerializeField] public Rigidbody2D enemyRB2D;
     [SerializeField] public SpriteRenderer spriteRenderer;
@@ -38,12 +41,14 @@ public class BaseEnemy : MonoBehaviour
     public CustomTimer idleTimer;
     public CustomTimer actionTimer;
     public CustomTimer changingTimer;
-
+    public CustomTimer spawningTimer;
     public BaseEnemy()
     {
         idleTimer = new CustomTimer(idleTime);
         actionTimer = new CustomTimer(actionTime);
         changingTimer = new CustomTimer(changingTime);
+        spawningTimer = new CustomTimer(spawningTime);
+
         isEnemyDead = false;
     }
 
