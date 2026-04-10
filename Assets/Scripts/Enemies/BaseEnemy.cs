@@ -27,7 +27,6 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField] public Rigidbody2D enemyRB2D;
     [SerializeField] public SpriteRenderer spriteRenderer;
     [SerializeField] public EnemyStateManager enemyStateManager;
-    public GameManager gameManager;
 
 
     [HideInInspector]

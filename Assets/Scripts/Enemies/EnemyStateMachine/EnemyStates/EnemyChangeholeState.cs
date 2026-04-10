@@ -7,7 +7,6 @@ public class EnemyChangeholeState : EnemyState
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.isActionFinished = false;
-        enemyStateManager.currentEnemy.spriteRenderer.color = Color.red;
 
         enemyStateManager.currentEnemy.nextHole = enemyStateManager.currentEnemy.FindNextHole();
         GameManager.Instance.holeManager.ChangeHoleState(enemyStateManager.currentEnemy.currentHole, enemyStateManager.currentEnemy.nextHole);

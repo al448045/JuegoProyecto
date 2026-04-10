@@ -5,16 +5,15 @@ using System.Collections.Generic;
 
 public class WaveManager : MonoBehaviour
 {
-    public GameManager gameManager;
     [SerializeField] public Wave[] waves;
 
-    private float timeBetweenSpawns;
+    List<Hole> AvaliableHoles;
+
     private int waveIndex = 0;
 
     [HideInInspector]
     public bool finishedWaves = false;
     public Wave currentWave;
-
 
     private void Awake()
     {
@@ -27,50 +26,30 @@ public class WaveManager : MonoBehaviour
     }
     public void Update()
     {
-        Debug.Log("CurrentWave: " + currentWave.name);
-        Debug.Log("Number of enemies: " + currentWave.EnemiesInWave.Count);
-
-        CheckForDeadEnemies();
-
-        if (currentWave.EnemiesInWave.Count <= 0)
-        {
-            //FinishWave();
-            if (waveIndex + 1 < waves.Length)
-            {
-                waveIndex++;
-                currentWave = waves[waveIndex];
-            }
-            else
-            {
-                finishedWaves = true;
-            }
-        }
+       
     }
-    public void SpawnWave(Wave waveToSpawn)
+    private void SpawnWave(Wave waveToSpawn)
     {
         for (int i = 0; i < waveToSpawn.EnemiesInWave.Count; i++)
         {
-            List<Hole> AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
+            AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
             int index = Random.Range(0, AvaliableHoles.Count);
             Vector2 position = AvaliableHoles[index].transform.position;
             Instantiate(waveToSpawn.EnemiesInWave[i], position, Quaternion.identity);
         }
     }
-    private void FinishWave(Wave waveToFinish)
-    {
 
-    }
-
-    private void CheckForDeadEnemies()
+    private void IncreaseWave()
     {
-        foreach (GameObject enemy in currentWave.EnemiesInWave)
+        if (waveIndex + 1 < waves.Length)
         {
-            BaseEnemy baseEnemy = enemy.GetComponentInChildren<BaseEnemy>();
+            waveIndex++;
+            currentWave = waves[waveIndex];
+        }
 
-            if (baseEnemy.isEnemyDead)
-            {
-                enemy.SetActive(false);
-            }
+        else
+        {
+            finishedWaves = true;
         }
     }
 }
