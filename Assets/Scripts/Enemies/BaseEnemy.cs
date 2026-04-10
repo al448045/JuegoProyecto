@@ -94,12 +94,23 @@ public class BaseEnemy : MonoBehaviour
         enemyHealth -= damage;
         if (enemyHealth <= 0)
         {
-            isEnemyDead = true;
+            EnemyWaveController.counter++;
+            KillEnemy();
         }
     }
 
     public void KillEnemy()
     {
-        Destroy(this);
+        Destroy(gameObject);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        PlayerAttack playerAttack = collision.GetComponent<PlayerAttack>();
+
+        if (playerAttack != null)
+        {
+            TakeDamage(playerAttack.damage);
+        }
     }
 }

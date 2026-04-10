@@ -32,13 +32,4 @@ public class PlayerAttack : MonoBehaviour
             playerController.playerAttack.transform.localPosition = playerController.playerInfo.playerMoveDirection;
         }
     }
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        BaseEnemy enemy = collision.GetComponent<BaseEnemy>();
-
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-        }
-    }
 }
