@@ -16,9 +16,11 @@ public class EnemySpawningState : EnemyState
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        if (enemyStateManager.currentEnemy.hasGoneDown)
+        enemyStateManager.currentEnemy.spawningTimer.UpdateTimer();
+
+        if (enemyStateManager.currentEnemy.spawningTimer.timerAmount <= 0f)
         {
-            enemyStateManager.SwitchState(enemyStateManager.enemyChangeholeState);
+            enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
         }
     }
 
