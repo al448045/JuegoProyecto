@@ -1030,7 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38184704ddb06a48810589c03bda159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  damage: 40
+  damage: 200
 --- !u!4 &1362065516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2636683275122857689, guid: 41514e870bfddc14f8815c8228f93b64, type: 3}
@@ -1232,7 +1232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb3c190403872754fb74b93cb55a02e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
-  gameManager: {fileID: 1482938455}
   waves:
   - {fileID: 11400000, guid: 4f9d4b56acd8a504eaddec2bc405cc5c, type: 2}
   - {fileID: 11400000, guid: ae27fe7cb9edf7942bdcc3cc2463f2e4, type: 2}

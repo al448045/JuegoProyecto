@@ -8,6 +8,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] public Wave[] waves;
 
     List<Hole> AvaliableHoles;
+    List<GameObject> CurrentEnemies;
 
     private int waveIndex = 0;
 
@@ -26,16 +27,29 @@ public class WaveManager : MonoBehaviour
     }
     public void Update()
     {
-       
+       if (EnemyWaveController.counter == currentWave.EnemiesInWave.Count)
+        {
+            if (!finishedWaves)
+            {
+                IncreaseWave();
+                SpawnWave(currentWave);
+            }
+
+            else
+            {
+                Debug.Log("End of waves");
+            }
+        }
     }
-    private void SpawnWave(Wave waveToSpawn)
+    private void SpawnWave(Wave wave)
     {
-        for (int i = 0; i < waveToSpawn.EnemiesInWave.Count; i++)
+        EnemyWaveController.counter = 0;
+        for (int i = 0; i < wave.EnemiesInWave.Count; i++)
         {
             AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
             int index = Random.Range(0, AvaliableHoles.Count);
             Vector2 position = AvaliableHoles[index].transform.position;
-            Instantiate(waveToSpawn.EnemiesInWave[i], position, Quaternion.identity);
+            Instantiate(wave.EnemiesInWave[i], position, Quaternion.identity);
         }
     }
 
@@ -45,6 +59,7 @@ public class WaveManager : MonoBehaviour
         {
             waveIndex++;
             currentWave = waves[waveIndex];
+            Debug.Log("Current Wave: " + currentWave.name);
         }
 
         else
