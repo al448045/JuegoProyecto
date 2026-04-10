@@ -27,7 +27,12 @@ public class WaveManager : MonoBehaviour
     }
     public void Update()
     {
-        if (currentWave.EnemiesInWave.Length <= 0)
+        Debug.Log("CurrentWave: " + currentWave.name);
+        Debug.Log("Number of enemies: " + currentWave.EnemiesInWave.Count);
+
+        CheckForDeadEnemies();
+
+        if (currentWave.EnemiesInWave.Count <= 0)
         {
             //FinishWave();
             if (waveIndex + 1 < waves.Length)
@@ -43,7 +48,7 @@ public class WaveManager : MonoBehaviour
     }
     public void SpawnWave(Wave waveToSpawn)
     {
-        for (int i = 0; i < waveToSpawn.EnemiesInWave.Length; i++)
+        for (int i = 0; i < waveToSpawn.EnemiesInWave.Count; i++)
         {
             List<Hole> AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
             int index = Random.Range(0, AvaliableHoles.Count);
@@ -54,5 +59,18 @@ public class WaveManager : MonoBehaviour
     private void FinishWave(Wave waveToFinish)
     {
 
+    }
+
+    private void CheckForDeadEnemies()
+    {
+        foreach (GameObject enemy in currentWave.EnemiesInWave)
+        {
+            BaseEnemy baseEnemy = enemy.GetComponentInChildren<BaseEnemy>();
+
+            if (baseEnemy.isEnemyDead)
+            {
+                enemy.SetActive(false);
+            }
+        }
     }
 }
