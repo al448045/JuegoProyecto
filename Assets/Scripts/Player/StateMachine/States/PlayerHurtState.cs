@@ -26,6 +26,11 @@ public class PlayerHurtState: PlayerState
         {
             playerManager.SwitchState(playerManager.IdleState);
         }
+
+        if (playerManager.playerController.player_was_killed)
+        {
+            playerManager.SwitchState(playerManager.DeathState);
+        }
     }
 
     public override void FixedUpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)

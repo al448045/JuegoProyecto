@@ -30,6 +30,11 @@ public class PlayerIdleState : PlayerState
         {
             playerManager.SwitchState(playerManager.ObjectState);
         }
+
+        if (playerManager.playerController.player_was_hurt)
+        {
+            playerManager.SwitchState(playerManager.HurtState);
+        }
     }
 
     public override void FixedUpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)
