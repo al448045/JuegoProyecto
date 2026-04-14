@@ -36,7 +36,7 @@ public class EnemyIdleState : EnemyState
 
             else
             {
-                enemyStateManager.SwitchState(enemyStateManager.enemyMeleeState);
+                enemyStateManager.SwitchState(enemyStateManager.currentEnemy.actionState);
             }
         }
     }

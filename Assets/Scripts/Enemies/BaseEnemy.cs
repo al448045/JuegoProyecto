@@ -10,6 +10,11 @@ public class BaseEnemy : MonoBehaviour
     public bool hasGoneDown;
     public bool hasGoneUp;
     public bool isEnemyDead;
+    public bool hasEnemyShooted;
+
+    public EnemyState actionState;
+    public GameObject enemyProjectile;
+    public GameObject projectilePosition;
 
     [HideInInspector]
     public float enemyHealth;
@@ -39,6 +44,7 @@ public class BaseEnemy : MonoBehaviour
     public CustomTimer actionTimer;
     public CustomTimer changingTimer;
     public CustomTimer spawningTimer;
+
     public BaseEnemy()
     {
         idleTimer = new CustomTimer(idleTime);

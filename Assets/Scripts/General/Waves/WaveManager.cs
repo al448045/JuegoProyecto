@@ -27,7 +27,7 @@ public class WaveManager : MonoBehaviour
     }
     public void Update()
     {
-       if (EnemyWaveController.counter == currentWave.EnemiesInWave.Count)
+       if (EnemyWaveController.counter >= currentWave.EnemiesInWave.Count)
         {
             if (!finishedWaves)
             {
@@ -43,6 +43,7 @@ public class WaveManager : MonoBehaviour
     }
     private void SpawnWave(Wave wave)
     {
+        Debug.Log("Current Wave: " + wave.name);
         EnemyWaveController.counter = 0;
         for (int i = 0; i < wave.EnemiesInWave.Count; i++)
         {
@@ -59,7 +60,6 @@ public class WaveManager : MonoBehaviour
         {
             waveIndex++;
             currentWave = waves[waveIndex];
-            Debug.Log("Current Wave: " + currentWave.name);
         }
 
         else
