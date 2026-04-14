@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   waveManager: {fileID: 1779957056}
   player: {fileID: 1853281760}
-  holeManager: {fileID: 0}
+  holeManager: {fileID: 287905858}
 --- !u!1 &1638341497
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,9 @@ public class ShooterEnemy : BaseEnemy
 {
     private void Start()
     {
+
+        actionState = new EnemyShootState();
+
         currentHole = FindNextHole();
 
         idleTime = Random.Range(1f, 2f);

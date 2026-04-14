@@ -7,6 +7,8 @@ public class BruteEnemy : BaseEnemy
 {
     private void Start()
     {
+        actionState = new EnemyMeleeState();
+
         currentHole = FindNextHole();
 
         idleTime = Random.Range(1f, 2f);
