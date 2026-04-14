@@ -14,6 +14,8 @@ public class WaveManager : MonoBehaviour
 
     [HideInInspector]
     public bool finishedWaves = false;
+
+    [HideInInspector]
     public Wave currentWave;
 
     private void Awake()
@@ -29,15 +31,15 @@ public class WaveManager : MonoBehaviour
     {
        if (EnemyWaveController.counter >= currentWave.EnemiesInWave.Count)
         {
-            if (!finishedWaves)
+            if (finishedWaves)
             {
-                IncreaseWave();
-                SpawnWave(currentWave);
+                Debug.Log("End of waves");
             }
 
             else
             {
-                Debug.Log("End of waves");
+                IncreaseWave();
+                SpawnWave(currentWave);
             }
         }
     }

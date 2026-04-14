@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Hurt
+  - Wall
   layers:
   - Default
   - TransparentFX
