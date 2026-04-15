@@ -7,10 +7,7 @@ public class EnemyIdleState : EnemyState
 
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.idleTimer.timerAmount = enemyStateManager.currentEnemy.idleTime;
 
-        enemyStateManager.currentEnemy.hasGoneUp = false;
-        enemyStateManager.currentEnemy.hasGoneDown = false;
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -20,19 +17,12 @@ public class EnemyIdleState : EnemyState
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.idleTimer.UpdateTimer();
-
-        if (enemyStateManager.currentEnemy.idleTimer.timerAmount <= 0f)
+        if (enemyStateManager.currentEnemy.animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
-            
-            // Has made the action --> Change Hole
-
             if (enemyStateManager.currentEnemy.isActionFinished)
             {
                 enemyStateManager.SwitchState(enemyStateManager.enemyChangeholeState);
             }
-
-            // Has not made the action --> Action
 
             else
             {
@@ -43,7 +33,6 @@ public class EnemyIdleState : EnemyState
 
     public override void FixedUpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.facingDirection = (GameManager.Instance.player.transform.position - enemyStateManager.currentEnemy.transform.position).normalized;
         enemyStateManager.currentEnemy.UpdateAnimatorFacingVector();
     }
 

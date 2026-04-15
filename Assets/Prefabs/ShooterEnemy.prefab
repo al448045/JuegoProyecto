@@ -52,17 +52,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShooterEnemy
   facingDirection: {x: 0, y: 0}
   isActionFinished: 0
-  hasGoneDown: 0
-  hasGoneUp: 0
   isEnemyDead: 0
   hasEnemyShooted: 0
+  showTime: 0.5
+  enemyHealth: 75
   enemyProjectile: {fileID: 4878365985401954851, guid: 0e42d540356702b4cbd73028724b378b, type: 3}
   projectilePosition: {fileID: 3980301802020371660}
-  enemyHealth: 0
-  actionTime: 0
-  idleTime: 0
-  changingTime: 0
-  spawningTime: 0
   animator: {fileID: 6090136341304844391}
   enemyRB2D: {fileID: -1872950280458208442}
   spriteRenderer: {fileID: 1793573559431123869}

@@ -26,9 +26,4 @@ public class GameManager : MonoBehaviour
     {
 
     }
-    public void ChangePosition(Hole nextHole, Vector2 newPosition)
-    {
-        float verticalOffset = nextHole.HoleSize.y;
-        transform.position = new Vector2(newPosition.x, newPosition.y + verticalOffset);
-    }
 }

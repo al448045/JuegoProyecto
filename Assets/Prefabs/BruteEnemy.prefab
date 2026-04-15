@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1262033915032563272}
   - component: {fileID: 2087620451979179886}
   m_Layer: 0
-  m_Name: TestEnemy
+  m_Name: BruteEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,17 +124,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BruteEnemy
   facingDirection: {x: 0, y: 0}
   isActionFinished: 0
-  hasGoneDown: 0
-  hasGoneUp: 0
   isEnemyDead: 0
   hasEnemyShooted: 0
+  showTime: 0.5
+  enemyHealth: 100
   enemyProjectile: {fileID: 0}
   projectilePosition: {fileID: 0}
-  enemyHealth: 0
-  actionTime: 0
-  idleTime: 0
-  changingTime: 0
-  spawningTime: 0
   animator: {fileID: 5023074445105471123}
   enemyRB2D: {fileID: 2115247231704993502}
   spriteRenderer: {fileID: 2841264803985757633}
