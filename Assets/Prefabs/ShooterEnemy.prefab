@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4837472912290062386}
   - component: {fileID: -1872950280458208442}
   - component: {fileID: 4551660074490968088}
+  - component: {fileID: -4395745261774328064}
   m_Layer: 0
   m_Name: ShooterEnemy
   m_TagString: Untagged
@@ -145,6 +146,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
+--- !u!114 &-4395745261774328064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634875535297106551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31c56f4746df2a47b9d8d838f5c1bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationsRandomizer
 --- !u!1 &3980301802020371660
 GameObject:
   m_ObjectHideFlags: 0
