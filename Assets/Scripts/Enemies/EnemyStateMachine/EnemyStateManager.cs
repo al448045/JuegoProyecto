@@ -8,6 +8,7 @@ public class EnemyStateManager : MonoBehaviour
 
     public EnemyIdleState enemyIdleState                = new EnemyIdleState();
     public EnemyMeleeState enemyMeleeState              = new EnemyMeleeState();
+    public EnemyShootState enemyShootState              = new EnemyShootState();
     public EnemyChangeholeState enemyChangeholeState    = new EnemyChangeholeState();
     public EnemySpawningState enemySpawningState        = new EnemySpawningState();
 

@@ -109,6 +109,7 @@ public class BaseEnemy : MonoBehaviour
 
     public void KillEnemy()
     {
+        currentHole.is_hole_occupied = false;
         Destroy(gameObject);
     }
 

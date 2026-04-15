@@ -10,10 +10,28 @@ public class Hole : MonoBehaviour
 
     [SerializeField] SpriteRenderer holeSpriteRenderer;
 
-    void Start()
+    private void Start()
     {
         is_hole_active = true;
         is_hole_occupied = false;
         HoleSize = holeSpriteRenderer.bounds.size;
+    }
+
+    private void Update()
+    {
+        if (!is_hole_active)
+        {
+            holeSpriteRenderer.color = Color.white;
+        }
+
+        if (is_hole_occupied)
+        {
+            holeSpriteRenderer.color = Color.red;
+        }
+
+        else
+        {
+            holeSpriteRenderer.color = Color.blue;
+        }
     }
 }

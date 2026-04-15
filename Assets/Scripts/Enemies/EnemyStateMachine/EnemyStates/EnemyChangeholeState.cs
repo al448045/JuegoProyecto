@@ -9,7 +9,7 @@ public class EnemyChangeholeState : EnemyState
         enemyStateManager.currentEnemy.isActionFinished = false;
 
         enemyStateManager.currentEnemy.nextHole = enemyStateManager.currentEnemy.FindNextHole();
-        GameManager.Instance.holeManager.ChangeHoleState(enemyStateManager.currentEnemy.currentHole, enemyStateManager.currentEnemy.nextHole);
+        GameManager.Instance.holeManager.Change2HoleStates(enemyStateManager.currentEnemy.currentHole, false, enemyStateManager.currentEnemy.nextHole, true);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -23,7 +23,7 @@ public class EnemyChangeholeState : EnemyState
         {
             enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.nextHole.transform.position);
             enemyStateManager.currentEnemy.currentHole = enemyStateManager.currentEnemy.nextHole;
-            GameManager.Instance.holeManager.ChangeHoleState(enemyStateManager.currentEnemy.currentHole, enemyStateManager.currentEnemy.nextHole);
+            GameManager.Instance.holeManager.Change2HoleStates(enemyStateManager.currentEnemy.currentHole, false, enemyStateManager.currentEnemy.nextHole, true);
             enemyStateManager.currentEnemy.nextHole = null;
         }
 
