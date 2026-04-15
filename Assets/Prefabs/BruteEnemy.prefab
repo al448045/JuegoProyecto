@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2115247231704993502}
   - component: {fileID: 4589339035888593408}
   - component: {fileID: -1262033915032563272}
+  - component: {fileID: 2087620451979179886}
   m_Layer: 0
-  m_Name: TestEnemy
+  m_Name: BruteEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,17 +124,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BruteEnemy
   facingDirection: {x: 0, y: 0}
   isActionFinished: 0
-  hasGoneDown: 0
-  hasGoneUp: 0
   isEnemyDead: 0
   hasEnemyShooted: 0
+  showTime: 0.5
+  enemyHealth: 100
   enemyProjectile: {fileID: 0}
   projectilePosition: {fileID: 0}
-  enemyHealth: 0
-  actionTime: 0
-  idleTime: 0
-  changingTime: 0
-  spawningTime: 0
   animator: {fileID: 5023074445105471123}
   enemyRB2D: {fileID: 2115247231704993502}
   spriteRenderer: {fileID: 2841264803985757633}
@@ -153,6 +149,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStateManager
   currentEnemy: {fileID: 4589339035888593408}
+--- !u!114 &2087620451979179886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2402405345692686913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31c56f4746df2a47b9d8d838f5c1bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationsRandomizer
 --- !u!1 &3766254796677875168
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,8 +24,6 @@ public class HoleManager : MonoBehaviour
         }
         return AvaliableHoles;
     }
-
-
     public void Change2HoleStates(Hole actualHole, bool actualState, Hole upcomingHole, bool nextState)
     {
         actualHole.is_hole_occupied = actualState;

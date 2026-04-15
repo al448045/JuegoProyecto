@@ -7,6 +7,7 @@ public class EnemyProjectile : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb2d;
     public float bulletVelocity;
+    public float bulletDamage;
     private Vector2 direction;
     void Start()
     {

@@ -6,10 +6,8 @@ public class EnemyChangeholeState : EnemyState
 {
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.isActionFinished = false;
-
+        enemyStateManager.currentEnemy.hasChangedHole = false;
         enemyStateManager.currentEnemy.nextHole = enemyStateManager.currentEnemy.FindNextHole();
-        GameManager.Instance.holeManager.Change2HoleStates(enemyStateManager.currentEnemy.currentHole, false, enemyStateManager.currentEnemy.nextHole, true);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -19,25 +17,22 @@ public class EnemyChangeholeState : EnemyState
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        if (enemyStateManager.currentEnemy.transform.position != enemyStateManager.currentEnemy.currentHole.transform.position && enemyStateManager.currentEnemy.nextHole != null)
-        {
-            enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.nextHole.transform.position);
-            enemyStateManager.currentEnemy.currentHole = enemyStateManager.currentEnemy.nextHole;
-            GameManager.Instance.holeManager.Change2HoleStates(enemyStateManager.currentEnemy.currentHole, false, enemyStateManager.currentEnemy.nextHole, true);
-            enemyStateManager.currentEnemy.nextHole = null;
-        }
-
-        enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.GoUp());
-
-        if (enemyStateManager.currentEnemy.hasGoneUp)
+        if (enemyStateManager.currentEnemy.hasChangedHole)
         {
             enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
+        }
+
+        else
+        {
+            GameManager.Instance.holeManager.Change2HoleStates(enemyStateManager.currentEnemy.currentHole, false, enemyStateManager.currentEnemy.nextHole, true);
+            enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.nextHole);
+            enemyStateManager.currentEnemy.currentHole = enemyStateManager.currentEnemy.nextHole;
+            enemyStateManager.currentEnemy.nextHole = null;
         }
     }
 
     public override void FixedUpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.facingDirection = (GameManager.Instance.player.transform.position - enemyStateManager.currentEnemy.transform.position).normalized;
         enemyStateManager.currentEnemy.UpdateAnimatorFacingVector();
     }
 

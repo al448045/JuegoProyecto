@@ -12,26 +12,25 @@ public class EnemyShootState : EnemyState
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.SetAnimatorBool("IsAction", false);
+
         enemyStateManager.currentEnemy.isActionFinished = true;
         enemyStateManager.currentEnemy.hasEnemyShooted = false;
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.actionTimer.UpdateTimer();
-
-        if (!enemyStateManager.currentEnemy.hasEnemyShooted)
+        if (!enemyStateManager.currentEnemy.animator.GetCurrentAnimatorStateInfo(0).IsName("Action"))
         {
-            GameObject.Instantiate(enemyStateManager.currentEnemy.enemyProjectile, enemyStateManager.currentEnemy.projectilePosition.transform.position, Quaternion.identity);
-            enemyStateManager.currentEnemy.hasEnemyShooted = true;
+            if (!enemyStateManager.currentEnemy.hasEnemyShooted)
+            {
+                GameObject.Instantiate(enemyStateManager.currentEnemy.enemyProjectile, enemyStateManager.currentEnemy.projectilePosition.transform.position, Quaternion.identity);
+                enemyStateManager.currentEnemy.hasEnemyShooted = true;
+            }
         }
 
         else
         {
-            if (enemyStateManager.currentEnemy.actionTimer.timerAmount <= 0f)
-            {
-                enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
-            }
+            enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
         }
     }
 

@@ -6,53 +6,34 @@ using System.Collections;
 public class BaseEnemy : MonoBehaviour
 {
     public Vector2 facingDirection;
+
     public bool isActionFinished;
-    public bool hasGoneDown;
-    public bool hasGoneUp;
     public bool isEnemyDead;
     public bool hasEnemyShooted;
+    public bool hasChangedHole;
+
+    public float showTime;
+    public float enemyHealth;
+    public float verticalOffset;
+
 
     public EnemyState actionState;
     public GameObject enemyProjectile;
     public GameObject projectilePosition;
+    
+    [HideInInspector] public Animator animator;
+    [HideInInspector] public Rigidbody2D enemyRB2D;
+    [HideInInspector] public SpriteRenderer spriteRenderer;
 
-    [HideInInspector]
-    public float enemyHealth;
-
-    [HideInInspector]
-    public float actionTime;
-
-    [HideInInspector]
-    public float idleTime;
-
-    [HideInInspector]
-    public float changingTime;
-
-    [HideInInspector]
-    public float spawningTime;
-
-    [SerializeField] public Animator animator;
-    [SerializeField] public Rigidbody2D enemyRB2D;
-    [SerializeField] public SpriteRenderer spriteRenderer;
     [SerializeField] public EnemyStateManager enemyStateManager;
-
 
     public Hole currentHole;
     public Hole nextHole;
 
-    public CustomTimer idleTimer;
-    public CustomTimer actionTimer;
-    public CustomTimer changingTimer;
-    public CustomTimer spawningTimer;
-
     public BaseEnemy()
     {
-        idleTimer = new CustomTimer(idleTime);
-        actionTimer = new CustomTimer(actionTime);
-        changingTimer = new CustomTimer(changingTime);
-        spawningTimer = new CustomTimer(spawningTime);
-
         isEnemyDead = false;
+        showTime = 0.5f;
     }
 
     public void SetAnimatorBool(string Animation, bool value)
@@ -62,6 +43,8 @@ public class BaseEnemy : MonoBehaviour
 
     public void UpdateAnimatorFacingVector()
     {
+
+        facingDirection = (GameManager.Instance.player.transform.position - transform.position).normalized;
         animator.SetFloat("DirectionX", facingDirection.x);
         animator.SetFloat("DirectionY", facingDirection.y);
     }
@@ -70,33 +53,6 @@ public class BaseEnemy : MonoBehaviour
     {
         return null;
     }
-
-    public void ChangePosition(Vector2 newPosition)
-    {
-        float verticalOffset = nextHole.HoleSize.y;
-        transform.position = new Vector2(newPosition.x, newPosition.y + verticalOffset);
-    }
-
-    public IEnumerator GoDown()
-    {
-        for (float i = 1f; i >= 0; i -= 0.1f)
-        {
-            //spriteRenderer.color = new Vector4(1, 1, 1, i);
-            yield return new WaitForSeconds(0.1f);
-        }
-        hasGoneDown = true;
-    }
-
-    public IEnumerator GoUp()
-    {
-        for (float i = 0f; i <= 1; i += 0.1f)
-        {
-            //spriteRenderer.color = new Vector4(1, 1, 1, i);
-            yield return new WaitForSeconds(0.1f);
-        }
-        hasGoneUp = true;
-    }
-
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
@@ -113,7 +69,33 @@ public class BaseEnemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public IEnumerator MoveUpOrDown(Vector2 start, Vector2 end, float duration, float time)
+    {
+        transform.localPosition = start;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < time)
+        {
+            transform.localPosition = Vector2.Lerp(start,end, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localPosition = end;
+    }
+    public void ChangePosition(Hole nextHole)
+    {
+        transform.position = new Vector2(nextHole.transform.position.x, nextHole.transform.position.y + verticalOffset);
+    }
+
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        enemyRB2D = GetComponent<Rigidbody2D>();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerAttack playerAttack = collision.GetComponent<PlayerAttack>();
 

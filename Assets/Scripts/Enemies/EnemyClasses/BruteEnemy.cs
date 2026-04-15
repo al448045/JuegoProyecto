@@ -8,14 +8,6 @@ public class BruteEnemy : BaseEnemy
     private void Start()
     {
         actionState = new EnemyMeleeState();
-
-        currentHole = FindNextHole();
-
-        idleTime = Random.Range(1f, 2f);
-        actionTime = Random.Range(0.5f, 1f);
-        changingTime = Random.Range(0.5f, 1.5f);
-        spawningTime = Random.Range(0.5f, 1.5f);
-
         enemyHealth = 100.0f;
     }
 
