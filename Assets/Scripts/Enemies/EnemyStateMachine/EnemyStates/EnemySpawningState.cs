@@ -7,6 +7,7 @@ public class EnemySpawningState : EnemyState
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.GoDown());
+        enemyStateManager.currentEnemy.FindNextHole();
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -20,7 +21,7 @@ public class EnemySpawningState : EnemyState
 
         if (enemyStateManager.currentEnemy.spawningTimer.timerAmount <= 0f)
         {
-            enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
+            enemyStateManager.SwitchState(enemyStateManager.enemyChangeholeState);
         }
     }
 

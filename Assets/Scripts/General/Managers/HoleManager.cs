@@ -24,9 +24,25 @@ public class HoleManager : MonoBehaviour
         }
         return AvaliableHoles;
     }
-    public void ChangeHoleState(Hole actualHole, Hole upcomingHole)
+
+
+    public void Change2HoleStates(Hole actualHole, bool actualState, Hole upcomingHole, bool nextState)
     {
-        actualHole.is_hole_occupied = false;
-        upcomingHole.is_hole_occupied = true;
+        actualHole.is_hole_occupied = actualState;
+        upcomingHole.is_hole_occupied = nextState;
+    }
+
+    public void Change1HoleState(bool state, Hole currentHole)
+    {
+        currentHole.is_hole_occupied = state;
+    }
+
+    public void ResetHoles()
+    {
+        foreach(Hole hole in Holes)
+        {
+            hole.is_hole_active = true;
+            hole.is_hole_occupied = false;
+        }
     }
 }

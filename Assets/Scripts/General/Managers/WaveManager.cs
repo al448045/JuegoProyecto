@@ -47,11 +47,11 @@ public class WaveManager : MonoBehaviour
     {
         Debug.Log("Current Wave: " + wave.name);
         EnemyWaveController.counter = 0;
+        GameManager.Instance.holeManager.ResetHoles();
+        Vector2 position = new Vector2(100,100);
+
         for (int i = 0; i < wave.EnemiesInWave.Count; i++)
         {
-            AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
-            int index = Random.Range(0, AvaliableHoles.Count);
-            Vector2 position = AvaliableHoles[index].transform.position;
             Instantiate(wave.EnemiesInWave[i], position, Quaternion.identity);
         }
     }
