@@ -7,18 +7,17 @@ public class EnemyMeleeState : EnemyState
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.SetAnimatorBool("IsAction", true);
+        enemyStateManager.currentEnemy.ChangeActionState(false);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.SetAnimatorBool("IsAction", false);
-
-        enemyStateManager.currentEnemy.isActionFinished = true;
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        if (enemyStateManager.currentEnemy.animator.GetCurrentAnimatorStateInfo(0).IsName("Action"))
+        if (enemyStateManager.currentEnemy.isActionFinished)
         {
             enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
         }

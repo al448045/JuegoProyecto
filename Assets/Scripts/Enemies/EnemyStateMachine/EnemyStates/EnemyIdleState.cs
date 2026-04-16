@@ -4,10 +4,9 @@ using System.Collections;
 
 public class EnemyIdleState : EnemyState
 {
-
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-
+        enemyStateManager.currentEnemy.idleTimer.timerAmount = 3f;
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -17,7 +16,10 @@ public class EnemyIdleState : EnemyState
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        if (enemyStateManager.currentEnemy.animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+
+        enemyStateManager.currentEnemy.idleTimer.UpdateTimer();
+
+        if (enemyStateManager.currentEnemy.idleTimer.timerAmount <= 0f)
         {
             if (enemyStateManager.currentEnemy.isActionFinished)
             {
