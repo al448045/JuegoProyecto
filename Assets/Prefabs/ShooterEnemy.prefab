@@ -54,8 +54,10 @@ MonoBehaviour:
   isActionFinished: 0
   isEnemyDead: 0
   hasEnemyShooted: 0
+  hasChangedHole: 0
   showTime: 0.5
   enemyHealth: 75
+  verticalOffset: 0
   enemyProjectile: {fileID: 4878365985401954851, guid: 0e42d540356702b4cbd73028724b378b, type: 3}
   projectilePosition: {fileID: 3980301802020371660}
   animator: {fileID: 6090136341304844391}
@@ -195,6 +197,7 @@ GameObject:
   - component: {fileID: 4452331782957969136}
   - component: {fileID: 6090136341304844391}
   - component: {fileID: 1793573559431123869}
+  - component: {fileID: 7681909658176300140}
   m_Layer: 0
   m_Name: ShooterVisuals
   m_TagString: Untagged
@@ -298,3 +301,16 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &7681909658176300140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892601377230051014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fee351d50ffeb64788a0dfbfcc19392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimatorWrapper
+  currentEnemy: {fileID: -7174957401571633885}

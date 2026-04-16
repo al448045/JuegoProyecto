@@ -6,7 +6,8 @@ public class EnemyChangeholeState : EnemyState
 {
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.hasChangedHole = false;
+        enemyStateManager.currentEnemy.ChangeHoleState(false);
+        enemyStateManager.currentEnemy.ChangeActionState(false);
         enemyStateManager.currentEnemy.nextHole = enemyStateManager.currentEnemy.FindNextHole();
     }
 
@@ -36,7 +37,7 @@ public class EnemyChangeholeState : EnemyState
             enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.nextHole); //ChangePosition Between current and next hole
             enemyStateManager.currentEnemy.currentHole = enemyStateManager.currentEnemy.nextHole; //Reset currentHole and nextHole
             enemyStateManager.currentEnemy.nextHole = null;
-            enemyStateManager.currentEnemy.hasChangedHole = true; // hasChangedHole = true to exit the state
+            enemyStateManager.currentEnemy.ChangeHoleState(true); // hasChangedHole = true to exit the state
         }
     }
 
