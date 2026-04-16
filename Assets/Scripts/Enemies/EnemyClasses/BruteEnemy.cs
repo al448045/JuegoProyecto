@@ -10,7 +10,6 @@ public class BruteEnemy : BaseEnemy
         actionState = new EnemyMeleeState();
         enemyHealth = 100.0f;
     }
-
     public override Hole FindNextHole()
     {
         List<Hole> AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();

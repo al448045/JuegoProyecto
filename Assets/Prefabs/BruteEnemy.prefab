@@ -74,10 +74,10 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9, y: 1.05}
+    newSize: {x: 0.9, y: 1.1}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -126,8 +126,10 @@ MonoBehaviour:
   isActionFinished: 0
   isEnemyDead: 0
   hasEnemyShooted: 0
+  hasChangedHole: 0
   showTime: 0.5
   enemyHealth: 100
+  verticalOffset: 0
   enemyProjectile: {fileID: 0}
   projectilePosition: {fileID: 0}
   animator: {fileID: 5023074445105471123}
@@ -172,6 +174,7 @@ GameObject:
   - component: {fileID: 7968595102314212262}
   - component: {fileID: 2841264803985757633}
   - component: {fileID: 5023074445105471123}
+  - component: {fileID: 6473265176664103440}
   m_Layer: 0
   m_Name: EnemyVisuals
   m_TagString: Untagged
@@ -242,7 +245,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 3785784146384260830, guid: 06317f1446d100743bf12740fed35dda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -275,3 +278,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6473265176664103440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766254796677875168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fee351d50ffeb64788a0dfbfcc19392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimatorWrapper
+  currentEnemy: {fileID: 4589339035888593408}

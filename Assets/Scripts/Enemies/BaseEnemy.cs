@@ -16,6 +16,7 @@ public class BaseEnemy : MonoBehaviour
     public float enemyHealth;
     public float verticalOffset;
 
+    public CustomTimer idleTimer;
 
     public EnemyState actionState;
     public GameObject enemyProjectile;
@@ -25,7 +26,7 @@ public class BaseEnemy : MonoBehaviour
     [HideInInspector] public Rigidbody2D enemyRB2D;
     [HideInInspector] public SpriteRenderer spriteRenderer;
 
-    [SerializeField] public EnemyStateManager enemyStateManager;
+    public EnemyStateManager enemyStateManager;
 
     public Hole currentHole;
     public Hole nextHole;
@@ -33,7 +34,13 @@ public class BaseEnemy : MonoBehaviour
     public BaseEnemy()
     {
         isEnemyDead = false;
+        isActionFinished = false;
+        hasChangedHole = false;
+        hasEnemyShooted = false;
+
         showTime = 0.5f;
+
+        idleTimer = new CustomTimer();
     }
 
     public void SetAnimatorBool(string Animation, bool value)
@@ -86,6 +93,21 @@ public class BaseEnemy : MonoBehaviour
     public void ChangePosition(Hole nextHole)
     {
         transform.position = new Vector2(nextHole.transform.position.x, nextHole.transform.position.y + verticalOffset);
+    }
+
+    public void ChangeActionState(bool newActionState)
+    {
+        isActionFinished = newActionState;
+    }
+
+    public void ChangeShootingState(bool newShootState)
+    {
+        hasEnemyShooted = newShootState;
+    }
+
+    public void ChangeHoleState(bool newHoleState)
+    {
+        hasChangedHole = newHoleState;
     }
 
 

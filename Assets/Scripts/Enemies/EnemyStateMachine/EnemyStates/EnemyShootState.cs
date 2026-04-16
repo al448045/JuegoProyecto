@@ -7,24 +7,23 @@ public class EnemyShootState : EnemyState
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.SetAnimatorBool("IsAction", true);
+        enemyStateManager.currentEnemy.ChangeActionState(false);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.SetAnimatorBool("IsAction", false);
-
-        enemyStateManager.currentEnemy.isActionFinished = true;
-        enemyStateManager.currentEnemy.hasEnemyShooted = false;
+        enemyStateManager.currentEnemy.ChangeShootingState(false);
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        if (!enemyStateManager.currentEnemy.animator.GetCurrentAnimatorStateInfo(0).IsName("Action"))
+        if (!enemyStateManager.currentEnemy.isActionFinished)
         {
             if (!enemyStateManager.currentEnemy.hasEnemyShooted)
             {
                 GameObject.Instantiate(enemyStateManager.currentEnemy.enemyProjectile, enemyStateManager.currentEnemy.projectilePosition.transform.position, Quaternion.identity);
-                enemyStateManager.currentEnemy.hasEnemyShooted = true;
+                enemyStateManager.currentEnemy.ChangeShootingState(true);
             }
         }
 

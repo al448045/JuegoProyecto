@@ -17,17 +17,26 @@ public class EnemyChangeholeState : EnemyState
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        if (enemyStateManager.currentEnemy.hasChangedHole)
+        if (enemyStateManager.currentEnemy.hasChangedHole) //Has changed the Hole
         {
             enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
         }
 
         else
         {
-            GameManager.Instance.holeManager.Change2HoleStates(enemyStateManager.currentEnemy.currentHole, false, enemyStateManager.currentEnemy.nextHole, true);
-            enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.nextHole);
-            enemyStateManager.currentEnemy.currentHole = enemyStateManager.currentEnemy.nextHole;
+            if (enemyStateManager.currentEnemy.currentHole != null) // Check if its the first time (currentHole == null)
+            {
+                GameManager.Instance.holeManager.Change2HoleStates(enemyStateManager.currentEnemy.currentHole, false, enemyStateManager.currentEnemy.nextHole, true);
+            }
+            else
+            {
+                GameManager.Instance.holeManager.Change1HoleState(enemyStateManager.currentEnemy.nextHole, true);
+            }
+
+            enemyStateManager.currentEnemy.ChangePosition(enemyStateManager.currentEnemy.nextHole); //ChangePosition Between current and next hole
+            enemyStateManager.currentEnemy.currentHole = enemyStateManager.currentEnemy.nextHole; //Reset currentHole and nextHole
             enemyStateManager.currentEnemy.nextHole = null;
+            enemyStateManager.currentEnemy.hasChangedHole = true; // hasChangedHole = true to exit the state
         }
     }
 

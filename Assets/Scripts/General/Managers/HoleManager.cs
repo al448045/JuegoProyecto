@@ -30,7 +30,7 @@ public class HoleManager : MonoBehaviour
         upcomingHole.is_hole_occupied = nextState;
     }
 
-    public void Change1HoleState(bool state, Hole currentHole)
+    public void Change1HoleState(Hole currentHole, bool state)
     {
         currentHole.is_hole_occupied = state;
     }
