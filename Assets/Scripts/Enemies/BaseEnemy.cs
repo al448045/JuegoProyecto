@@ -6,11 +6,16 @@ using System.Collections;
 public class BaseEnemy : MonoBehaviour
 {
     public Vector2 facingDirection;
+    public Vector2 verticalOffset;
 
     public bool isActionFinished;
     public bool isEnemyDead;
     public bool hasEnemyShooted;
     public bool hasChangedHole;
+    public bool hasGoneDown;
+    public bool hasGoneUp;
+    public bool hasGoneUpAndDown;
+
 
     public float showTime;
     public float enemyHealth;
@@ -43,6 +48,66 @@ public class BaseEnemy : MonoBehaviour
         idleTimer = new CustomTimer();
     }
 
+    #region Coroutines
+
+    public IEnumerator MoveUpOrDown(Vector2 start, Vector2 end, float duration)
+    {
+        hasGoneDown = false;
+        hasGoneUp = false;
+        
+        float elapsedTime = 0f;
+
+        transform.localPosition = start;
+
+        while (elapsedTime < duration)
+        {
+            transform.localPosition = Vector2.Lerp(start, end, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localPosition = end;
+
+        hasGoneDown = true;
+        hasGoneUp = true;
+    }
+
+    public IEnumerator MoveUpAndDown(Vector2 start, Vector2 end, float duration)
+    {
+        hasGoneUpAndDown = false;
+
+        float elapsedTime = 0f;
+
+        transform.localPosition = start;
+
+        while (elapsedTime < duration)
+        {
+            spriteRenderer.transform.localPosition = Vector2.Lerp(start, end, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localPosition = end;
+
+        yield return new WaitForSeconds(showTime);
+
+        elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            transform.localPosition = Vector2.Lerp(end, start, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localPosition = start;
+
+        hasGoneUpAndDown = true;
+    }
+
+    #endregion
+
+    #region Animator Functions
     public void SetAnimatorBool(string Animation, bool value)
     {
         animator.SetBool(Animation, value);
@@ -56,10 +121,9 @@ public class BaseEnemy : MonoBehaviour
         animator.SetFloat("DirectionY", facingDirection.y);
     }
 
-    public virtual Hole FindNextHole()
-    {
-        return null;
-    }
+    #endregion 
+
+    #region Damage and Death
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
@@ -75,25 +139,22 @@ public class BaseEnemy : MonoBehaviour
         currentHole.is_hole_occupied = false;
         Destroy(gameObject);
     }
+    #endregion
 
-    public IEnumerator MoveUpOrDown(Vector2 start, Vector2 end)
+    #region Position and Holes
+
+    public virtual Hole FindNextHole()
     {
-        transform.localPosition = start;
-
-        while (Mathf.Abs(start.y - end.y) <= 0.01f)
-        {
-            Debug.Log("Moving");
-            transform.localPosition = Vector2.Lerp(start,end,0.5f);
-            yield return null;
-        }
-
-        transform.localPosition = end;
+        return null;
     }
     public void ChangePosition(Hole nextHole)
     {
-        transform.position = new Vector2(nextHole.transform.position.x, nextHole.transform.position.y + nextHole.HoleSize.y);
+        gameObject.transform.parent.position = new Vector2(nextHole.holeSpriteRenderer.bounds.center.x, nextHole.transform.position.y);
     }
 
+    #endregion 
+
+    #region ChangeBools Functions
     public void ChangeActionState(bool newActionState)
     {
         isActionFinished = newActionState;
@@ -109,6 +170,9 @@ public class BaseEnemy : MonoBehaviour
         hasChangedHole = newHoleState;
     }
 
+    #endregion
+
+    #region UnityFuncions
 
     private void Awake()
     {
@@ -116,6 +180,11 @@ public class BaseEnemy : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         enemyRB2D = GetComponent<Rigidbody2D>();
         enemyCapsuleCollider = GetComponent<CapsuleCollider2D>();
+    }
+
+    private void Start()
+    {
+        verticalOffset = new Vector2(0f, -spriteRenderer.bounds.size.y);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -126,4 +195,6 @@ public class BaseEnemy : MonoBehaviour
             TakeDamage(playerAttack.damage);
         }
     }
+
+    #endregion
 }

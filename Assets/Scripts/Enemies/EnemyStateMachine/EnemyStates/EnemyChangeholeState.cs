@@ -20,7 +20,7 @@ public class EnemyChangeholeState : EnemyState
     {
         if (enemyStateManager.currentEnemy.hasChangedHole) //Has changed the Hole
         {
-            enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
+            enemyStateManager.SwitchState(enemyStateManager.enemyGoUpState);
         }
 
         else

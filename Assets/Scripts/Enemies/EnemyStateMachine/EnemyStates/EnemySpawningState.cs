@@ -11,18 +11,12 @@ public class EnemySpawningState : EnemyState
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-
+        enemyStateManager.currentEnemy.enemyCapsuleCollider.enabled = true;
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        // Down --> Up
-
-        enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.MoveUpOrDown(enemyStateManager.currentEnemy.transform.position, enemyStateManager.currentEnemy.currentHole.transform.position));
-
-        //Up --> Down
-
-        enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.MoveUpOrDown(enemyStateManager.currentEnemy.currentHole.transform.position, enemyStateManager.currentEnemy.transform.position));
+        enemyStateManager.SwitchState(enemyStateManager.enemyGoUpAndDownState);
     }
 
     public override void FixedUpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)

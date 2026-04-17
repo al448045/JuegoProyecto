@@ -11,6 +11,9 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyShootState enemyShootState              = new EnemyShootState();
     public EnemyChangeholeState enemyChangeholeState    = new EnemyChangeholeState();
     public EnemySpawningState enemySpawningState        = new EnemySpawningState();
+    public EnemyGoDownState enemyGoDownState            = new EnemyGoDownState();
+    public EnemyGoUpAndDownState enemyGoUpAndDownState  = new EnemyGoUpAndDownState();
+    public EnemyGoUpState enemyGoUpState                = new EnemyGoUpState();
 
     [SerializeField] public BaseEnemy currentEnemy;
 
@@ -24,6 +27,7 @@ public class EnemyStateManager : MonoBehaviour
     {
         currentState.ExitState(this, currentEnemy);
         currentState = newState;
+        Debug.Log("Entering State: " + currentState);
         currentState.EnterState(this, currentEnemy);
     }
 
