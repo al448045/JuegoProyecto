@@ -16,7 +16,7 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Start()
     {
-        currentState = enemyChangeholeState;
+        currentState = enemySpawningState;
         currentState.EnterState(this, currentEnemy);
     }
 

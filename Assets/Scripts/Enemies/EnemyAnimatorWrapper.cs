@@ -10,7 +10,6 @@ public class EnemyAnimatorWrapper : MonoBehaviour
 
     public void ActionAnimationComplete()
     {
-        Debug.Log("CACA");
         currentEnemy.ChangeActionState(true);
     }
 }

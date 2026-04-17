@@ -6,7 +6,7 @@ public class EnemyIdleState : EnemyState
 {
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.idleTimer.timerAmount = 3f;
+        enemyStateManager.currentEnemy.idleTimer.timerAmount = Random.Range(0.5f,2f);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)

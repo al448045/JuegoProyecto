@@ -48,11 +48,32 @@ public class WaveManager : MonoBehaviour
         Debug.Log("Current Wave: " + wave.name);
         EnemyWaveController.counter = 0;
         GameManager.Instance.holeManager.ResetHoles();
-        Vector2 position = new Vector2(100,100);
+        AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
 
         for (int i = 0; i < wave.EnemiesInWave.Count; i++)
         {
-            Instantiate(wave.EnemiesInWave[i], position, Quaternion.identity);
+            // We get a random hole
+
+            int indexer = Random.Range(0, AvaliableHoles.Count - 1);
+            Hole currentHole = AvaliableHoles[indexer];
+
+            // We get a reference to the enemy component of the Game Object
+
+            BaseEnemy currentEnemy = wave.EnemiesInWave[i].GetComponent<BaseEnemy>();
+
+            // We calculate the spawning position from the currentHole and the enemy position, then we instantiate it
+
+            Vector3 spawningPosition = new Vector3(currentHole.holeSpriteRenderer.bounds.center.x, currentHole.transform.position.y - currentEnemy.spriteRenderer.bounds.size.y, currentHole.transform.position.z);
+            Instantiate(wave.EnemiesInWave[i], spawningPosition, Quaternion.identity);
+
+            // We set the references and the state of the hole
+
+            currentEnemy.currentHole = currentHole;
+            GameManager.Instance.holeManager.Change1HoleState(currentHole, true);
+
+            // We remove the hole from the acalivable ones
+
+            AvaliableHoles.RemoveAt(indexer);
         }
     }
 
