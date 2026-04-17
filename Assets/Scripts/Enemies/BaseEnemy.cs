@@ -14,7 +14,6 @@ public class BaseEnemy : MonoBehaviour
 
     public float showTime;
     public float enemyHealth;
-    public float verticalOffset;
 
     public CustomTimer idleTimer;
 
@@ -25,6 +24,7 @@ public class BaseEnemy : MonoBehaviour
     [HideInInspector] public Animator animator;
     [HideInInspector] public Rigidbody2D enemyRB2D;
     [HideInInspector] public SpriteRenderer spriteRenderer;
+    [HideInInspector] public CapsuleCollider2D enemyCapsuleCollider;
 
     public EnemyStateManager enemyStateManager;
 
@@ -76,15 +76,14 @@ public class BaseEnemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public IEnumerator MoveUpOrDown(Vector2 start, Vector2 end, float duration, float time)
+    public IEnumerator MoveUpOrDown(Vector2 start, Vector2 end)
     {
         transform.localPosition = start;
 
-        float elapsedTime = 0f;
-        while (elapsedTime < time)
+        while (Mathf.Abs(start.y - end.y) <= 0.01f)
         {
-            transform.localPosition = Vector2.Lerp(start,end, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
+            Debug.Log("Moving");
+            transform.localPosition = Vector2.Lerp(start,end,0.5f);
             yield return null;
         }
 
@@ -92,7 +91,7 @@ public class BaseEnemy : MonoBehaviour
     }
     public void ChangePosition(Hole nextHole)
     {
-        transform.position = new Vector2(nextHole.transform.position.x, nextHole.transform.position.y + verticalOffset);
+        transform.position = new Vector2(nextHole.transform.position.x, nextHole.transform.position.y + nextHole.HoleSize.y);
     }
 
     public void ChangeActionState(bool newActionState)
@@ -111,11 +110,12 @@ public class BaseEnemy : MonoBehaviour
     }
 
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         enemyRB2D = GetComponent<Rigidbody2D>();
+        enemyCapsuleCollider = GetComponent<CapsuleCollider2D>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

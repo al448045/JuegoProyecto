@@ -8,7 +8,7 @@ public class Hole : MonoBehaviour
 
     public Vector3 HoleSize;
 
-    [SerializeField] SpriteRenderer holeSpriteRenderer;
+    [SerializeField] public SpriteRenderer holeSpriteRenderer;
 
     private void Start()
     {

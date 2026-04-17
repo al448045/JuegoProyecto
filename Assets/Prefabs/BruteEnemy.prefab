@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2528409657683443754}
-  - component: {fileID: 7448418207685420788}
   - component: {fileID: 2115247231704993502}
   - component: {fileID: 4589339035888593408}
   - component: {fileID: -1262033915032563272}
   - component: {fileID: 2087620451979179886}
+  - component: {fileID: 7636326201785626969}
   m_Layer: 0
   m_Name: BruteEnemy
   m_TagString: Untagged
@@ -37,52 +37,6 @@ Transform:
   - {fileID: 7968595102314212262}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7448418207685420788
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402405345692686913}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9, y: 1.05}
-    newSize: {x: 0.9, y: 1.1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &2115247231704993502
 Rigidbody2D:
   serializedVersion: 5
@@ -129,12 +83,12 @@ MonoBehaviour:
   hasChangedHole: 0
   showTime: 0.5
   enemyHealth: 100
-  verticalOffset: 0
   enemyProjectile: {fileID: 0}
   projectilePosition: {fileID: 0}
   animator: {fileID: 5023074445105471123}
   enemyRB2D: {fileID: 2115247231704993502}
   spriteRenderer: {fileID: 2841264803985757633}
+  enemyCapsuleCollider: {fileID: 0}
   enemyStateManager: {fileID: -1262033915032563272}
   currentHole: {fileID: 0}
   nextHole: {fileID: 0}
@@ -163,6 +117,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31c56f4746df2a47b9d8d838f5c1bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimationsRandomizer
+--- !u!70 &7636326201785626969
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2402405345692686913}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0030173361, y: -0.06336564}
+  m_Size: {x: 0.747428, y: 0.8732687}
+  m_Direction: 0
 --- !u!1 &3766254796677875168
 GameObject:
   m_ObjectHideFlags: 0

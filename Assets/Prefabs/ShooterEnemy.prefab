@@ -57,12 +57,12 @@ MonoBehaviour:
   hasChangedHole: 0
   showTime: 0.5
   enemyHealth: 75
-  verticalOffset: 0
   enemyProjectile: {fileID: 4878365985401954851, guid: 0e42d540356702b4cbd73028724b378b, type: 3}
   projectilePosition: {fileID: 3980301802020371660}
   animator: {fileID: 6090136341304844391}
   enemyRB2D: {fileID: -1872950280458208442}
   spriteRenderer: {fileID: 1793573559431123869}
+  enemyCapsuleCollider: {fileID: 0}
   enemyStateManager: {fileID: -4837472912290062386}
   currentHole: {fileID: 0}
   nextHole: {fileID: 0}
@@ -290,7 +290,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 3785784146384260830, guid: 06317f1446d100743bf12740fed35dda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
