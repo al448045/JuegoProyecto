@@ -5,7 +5,7 @@ public class EnemyGoUpAndDownState : EnemyState
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.enemyCapsuleCollider.enabled = false;
-        enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.MoveUpAndDown(enemyStateManager.currentEnemy.verticalOffset, Vector2.zero, 1f));
+        enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.MoveUpAndDown(enemyStateManager.currentEnemy.negativeVerticalOffset, enemyStateManager.currentEnemy.positiveVerticalOffset, 1f));
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -23,7 +23,7 @@ public class EnemyGoUpAndDownState : EnemyState
 
     public override void FixedUpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-
+        enemyStateManager.currentEnemy.UpdateAnimatorFacingVector();
     }
 
 

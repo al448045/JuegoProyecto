@@ -4,7 +4,7 @@ public class EnemyGoDownState : EnemyState
 {
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.MoveUpOrDown(Vector2.zero, enemyStateManager.currentEnemy.verticalOffset, 1f));
+        enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.MoveUpOrDown(enemyStateManager.currentEnemy.positiveVerticalOffset, enemyStateManager.currentEnemy.negativeVerticalOffset, 1f));
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -24,7 +24,7 @@ public class EnemyGoDownState : EnemyState
 
     public override void FixedUpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-
+        enemyStateManager.currentEnemy.UpdateAnimatorFacingVector();
     }
 
 

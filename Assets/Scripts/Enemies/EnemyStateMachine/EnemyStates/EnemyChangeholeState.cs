@@ -4,11 +4,13 @@ using System.Collections;
 
 public class EnemyChangeholeState : EnemyState
 {
+    private CustomTimer changeHoleTimer = new CustomTimer();
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.ChangeHoleState(false);
         enemyStateManager.currentEnemy.ChangeActionState(false);
         enemyStateManager.currentEnemy.nextHole = enemyStateManager.currentEnemy.FindNextHole();
+        changeHoleTimer.timerAmount = Random.Range(0.5f,1.5f);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -20,7 +22,13 @@ public class EnemyChangeholeState : EnemyState
     {
         if (enemyStateManager.currentEnemy.hasChangedHole) //Has changed the Hole
         {
-            enemyStateManager.SwitchState(enemyStateManager.enemyGoUpState);
+
+            changeHoleTimer.UpdateTimer();
+
+            if (changeHoleTimer.timerAmount <= 0)
+            {
+                enemyStateManager.SwitchState(enemyStateManager.enemyGoUpState);
+            }
         }
 
         else

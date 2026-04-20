@@ -1,12 +1,12 @@
-using UnityEngine;
-using System.Collections.Generic;
 using System.Collections;
+using UnityEngine;
 
 
 public class BaseEnemy : MonoBehaviour
 {
     public Vector2 facingDirection;
-    public Vector2 verticalOffset;
+    public Vector2 negativeVerticalOffset;
+    public Vector2 positiveVerticalOffset;
 
     public bool isActionFinished;
     public bool isEnemyDead;
@@ -25,7 +25,7 @@ public class BaseEnemy : MonoBehaviour
     public EnemyState actionState;
     public GameObject enemyProjectile;
     public GameObject projectilePosition;
-    
+
     [HideInInspector] public Animator animator;
     [HideInInspector] public Rigidbody2D enemyRB2D;
     [HideInInspector] public SpriteRenderer spriteRenderer;
@@ -54,7 +54,7 @@ public class BaseEnemy : MonoBehaviour
     {
         hasGoneDown = false;
         hasGoneUp = false;
-        
+
         float elapsedTime = 0f;
 
         transform.localPosition = start;
@@ -137,7 +137,7 @@ public class BaseEnemy : MonoBehaviour
     public void KillEnemy()
     {
         currentHole.is_hole_occupied = false;
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
     #endregion
 
@@ -181,11 +181,6 @@ public class BaseEnemy : MonoBehaviour
         enemyRB2D = GetComponent<Rigidbody2D>();
         enemyCapsuleCollider = GetComponent<CapsuleCollider2D>();
     }
-
-    private void Start()
-    {
-        verticalOffset = new Vector2(0f, -spriteRenderer.bounds.size.y);
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerAttack playerAttack = collision.GetComponent<PlayerAttack>();
@@ -195,6 +190,13 @@ public class BaseEnemy : MonoBehaviour
             TakeDamage(playerAttack.damage);
         }
     }
+
+    public void InitEnemy()
+    {
+        negativeVerticalOffset = new Vector2(0f, -spriteRenderer.bounds.size.y);
+        positiveVerticalOffset = new Vector2(0f, spriteRenderer.bounds.size.y / 4);
+    }
+
 
     #endregion
 }
