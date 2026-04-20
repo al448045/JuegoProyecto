@@ -197,6 +197,5 @@ public class BaseEnemy : MonoBehaviour
         positiveVerticalOffset = new Vector2(0f, spriteRenderer.bounds.size.y / 4);
     }
 
-
     #endregion
 }

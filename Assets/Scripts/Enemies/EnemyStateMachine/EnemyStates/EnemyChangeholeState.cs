@@ -11,8 +11,6 @@ public class EnemyChangeholeState : EnemyState
         enemyStateManager.currentEnemy.ChangeActionState(false);
         enemyStateManager.currentEnemy.nextHole = enemyStateManager.currentEnemy.FindNextHole();
         changeHoleTimer.timerAmount = Random.Range(0.5f,2f);
-
-        Debug.Log("Current Enemy: " + enemyStateManager.currentEnemy.name + " | Current ChangeHole Timer: " +  changeHoleTimer.timerAmount);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
