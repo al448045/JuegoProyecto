@@ -6,12 +6,12 @@ public class EnemySpawningState : EnemyState
 {
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.enemyCapsuleCollider.enabled = false;
+
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        enemyStateManager.currentEnemy.enemyCapsuleCollider.enabled = true;
+
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)

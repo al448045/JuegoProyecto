@@ -46,13 +46,42 @@ public class WaveManager : MonoBehaviour
     }
     private void SpawnWave(Wave wave)
     {
+
+        // Reset Holes and EnemyCounter 
+
         EnemyWaveController.counter = 0;
         GameManager.Instance.holeManager.ResetHoles();
-        Vector3 spawningPosition = new Vector3(50, 50, 0);
+
+        //Search AvaliableHoles
+
+        AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
 
         for (int i = 0; i < wave.EnemiesInWave.Count; i++)
         {
-            Instantiate(wave.EnemiesInWave[i], spawningPosition, Quaternion.identity);
+
+            // Get references to the hole
+            Hole actualHole = AvaliableHoles[0];
+
+            // Set spawningPosition
+            Vector3 spawningPosition = new Vector3(100, 100, 0);
+            GameObject myEnemy = Instantiate(wave.EnemiesInWave[i], spawningPosition, Quaternion.identity);
+
+            //Get Enemy Component and initialize it
+            BaseEnemy currentEnemy = myEnemy.GetComponentInChildren<BaseEnemy>();
+            currentEnemy.InitEnemy();
+
+
+            //Change Name
+            myEnemy.name = (myEnemy.name + " - " + i);
+
+            // Set references to currentHole and is_hole_occupied
+            currentEnemy.currentHole = actualHole;
+            currentEnemy.ChangePosition(currentEnemy.currentHole);
+            GameManager.Instance.holeManager.Change1HoleState(currentEnemy.currentHole, true);
+
+
+            //Pop Hole from the list
+            AvaliableHoles.RemoveAt(0);
         }
     }
 

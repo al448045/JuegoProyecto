@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2402405345692686913}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: -3.5676699, y: -0.21066004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -114,7 +114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: 3785784146384260830, guid: 06317f1446d100743bf12740fed35dda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 7667949207132647312}
   - component: {fileID: 1617546975614154206}
   m_Layer: 0
-  m_Name: BruteEnemy
+  m_Name: BruteScripts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BruteEnemy
   facingDirection: {x: 0, y: 0}
-  verticalOffset: {x: 0, y: 0}
+  negativeVerticalOffset: {x: 0, y: 0}
+  positiveVerticalOffset: {x: 0, y: 0}
   isActionFinished: 0
   isEnemyDead: 0
   hasEnemyShooted: 0
