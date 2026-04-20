@@ -27,7 +27,6 @@ public class EnemyStateManager : MonoBehaviour
     {
         currentState.ExitState(this, currentEnemy);
         currentState = newState;
-        Debug.Log("Entering State: " + currentState);
         currentState.EnterState(this, currentEnemy);
     }
 
