@@ -70,6 +70,10 @@ public class WaveManager : MonoBehaviour
             BaseEnemy currentEnemy = myEnemy.GetComponentInChildren<BaseEnemy>();
             currentEnemy.InitEnemy();
 
+
+            //Change Name
+            myEnemy.name = (myEnemy.name + " - " + i);
+
             // Set references to currentHole and is_hole_occupied
             currentEnemy.currentHole = actualHole;
             currentEnemy.ChangePosition(currentEnemy.currentHole);

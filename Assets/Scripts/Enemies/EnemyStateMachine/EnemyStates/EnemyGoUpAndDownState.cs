@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class EnemyGoUpAndDownState : EnemyState
 {
+
+    private CustomTimer initialTimer = new CustomTimer();
     public override void EnterState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
         enemyStateManager.currentEnemy.enemyCapsuleCollider.enabled = false;
         enemyStateManager.currentEnemy.StartCoroutine(enemyStateManager.currentEnemy.MoveUpAndDown(enemyStateManager.currentEnemy.negativeVerticalOffset, enemyStateManager.currentEnemy.positiveVerticalOffset, 1f));
+
+        initialTimer.timerAmount = Random.Range(0.5f, 1.5f);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
@@ -17,7 +21,12 @@ public class EnemyGoUpAndDownState : EnemyState
     {
         if (enemyStateManager.currentEnemy.hasGoneUpAndDown)
         {
-            enemyStateManager.SwitchState(enemyStateManager.enemyChangeholeState);
+            initialTimer.UpdateTimer();
+
+            if (initialTimer.timerAmount <= 0f)
+            {
+                enemyStateManager.SwitchState(enemyStateManager.enemyChangeholeState);
+            }
         }
     }
 
