@@ -1,7 +1,7 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="HealthBarBackground" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Sprites/Placeholder/UI/Health%20Bar%20Fondo.png?fileID=-7954843821768597501&amp;guid=3089cf7058114674eb7360f4a9d10dba&amp;type=3#Health Bar Fondo_0&quot;); width: 551px; height: 145px; -unity-background-scale-mode: scale-to-fit; background-position-y: center; background-position-x: center; justify-content: flex-start; align-self: auto; align-content: flex-start; top: 10px; left: 10px;">
         <ui:VisualElement name="HealthBarContainer" style="flex-grow: 1; position: absolute; top: 30px; left: 0; height: 84px; width: 551px;">
-            <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Placeholder/UI/Health%20Bar.png?fileID=-5576685416563272651&amp;guid=fae51340627a4294e844db1f9f9c3712&amp;type=3#Health Bar_0&quot;);"/>
+            <ui:VisualElement name="HealthBar" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Placeholder/UI/Health%20Bar.png?fileID=-5576685416563272651&amp;guid=fae51340627a4294e844db1f9f9c3712&amp;type=3#Health Bar_0&quot;); -unity-background-image-tint-color: rgb(255, 218, 0);"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

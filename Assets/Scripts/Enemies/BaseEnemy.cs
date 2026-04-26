@@ -19,6 +19,7 @@ public class BaseEnemy : MonoBehaviour
 
     public float showTime;
     public float enemyHealth;
+    public float enemyMaxHealth;
 
     public CustomTimer idleTimer;
 
@@ -30,6 +31,7 @@ public class BaseEnemy : MonoBehaviour
     [HideInInspector] public Rigidbody2D enemyRB2D;
     [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public CapsuleCollider2D enemyCapsuleCollider;
+    public EnemyUI enemyUI;
 
     public EnemyStateManager enemyStateManager;
 
@@ -44,6 +46,7 @@ public class BaseEnemy : MonoBehaviour
         hasEnemyShooted = false;
 
         showTime = 0.5f;
+        enemyHealth = enemyMaxHealth;
 
         idleTimer = new CustomTimer();
     }
@@ -127,6 +130,9 @@ public class BaseEnemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
+        Debug.Log(enemyHealth / enemyMaxHealth);
+        enemyUI.SetHealth(enemyHealth / enemyMaxHealth);
+
         if (enemyHealth <= 0)
         {
             EnemyWaveController.counter++;

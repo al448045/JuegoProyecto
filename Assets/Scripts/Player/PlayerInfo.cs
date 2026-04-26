@@ -9,6 +9,7 @@ public class PlayerInfo : MonoBehaviour
     public float playerFriction;
 
     public float playerHealth;
+    public float playerMaxHealth;
 
     public Vector2 playerMoveDirection;
 
