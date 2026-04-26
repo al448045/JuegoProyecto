@@ -16,3 +16,4 @@ MonoBehaviour:
   - {fileID: 1634875535297106551, guid: 2d1fa76e4abe4fb4a9ffe794e916a195, type: 3}
   - {fileID: 1634875535297106551, guid: 2d1fa76e4abe4fb4a9ffe794e916a195, type: 3}
   - {fileID: 1634875535297106551, guid: 2d1fa76e4abe4fb4a9ffe794e916a195, type: 3}
+  <WaveTimeToBeat>k__BackingField: 10
