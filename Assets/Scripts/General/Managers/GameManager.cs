@@ -3,9 +3,10 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-     public WaveManager waveManager;
-     public MonoBehaviour player;
+    public WaveManager waveManager;
+    public MonoBehaviour player;
     public HoleManager holeManager;
+    public ScoreManager scoreManager;
 
     public static GameManager Instance;
 
