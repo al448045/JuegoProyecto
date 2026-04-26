@@ -16,6 +16,7 @@ public class BaseEnemy : MonoBehaviour
     public bool hasGoneUp;
     public bool hasGoneUpAndDown;
 
+    public int scoreAmount;
 
     public float showTime;
     public float enemyHealth;
@@ -46,6 +47,7 @@ public class BaseEnemy : MonoBehaviour
         hasEnemyShooted = false;
 
         showTime = 0.5f;
+        scoreAmount = 100;
         enemyHealth = enemyMaxHealth;
 
         idleTimer = new CustomTimer();
@@ -143,6 +145,7 @@ public class BaseEnemy : MonoBehaviour
     public void KillEnemy()
     {
         currentHole.is_hole_occupied = false;
+        GameManager.Instance.scoreManager.UpdateScore(scoreAmount);
         Destroy(transform.parent.gameObject);
     }
     #endregion

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public MonoBehaviour player;
     public HoleManager holeManager;
     public ScoreManager scoreManager;
+    public TimeManager timeManager;
 
     public static GameManager Instance;
 
