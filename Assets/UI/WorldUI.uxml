@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="EnemyHealthBarBackground" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Placeholder/UI/Health%20Bar%20Fondo.png?fileID=2800000&amp;guid=3089cf7058114674eb7360f4a9d10dba&amp;type=3#Health Bar Fondo&quot;);">
+        <ui:VisualElement name="EnemyHealthBarContainer" style="flex-grow: 1;">
+            <ui:VisualElement name="EnemyHealthBar" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Placeholder/UI/Health%20Bar.png?fileID=2800000&amp;guid=fae51340627a4294e844db1f9f9c3712&amp;type=3#Health Bar&quot;);"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

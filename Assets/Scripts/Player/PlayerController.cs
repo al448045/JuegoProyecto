@@ -30,6 +30,11 @@ public class PlayerController: MonoBehaviour
         playerInfo.playerAttackOffset = new Vector3(0, -1, 0);
     }
 
+    private void Start()
+    {
+        SetPlayerHealth(playerInfo.playerHealth);
+    }
+
     private void Update()
     {
         // Boolean setting
@@ -51,18 +56,14 @@ public class PlayerController: MonoBehaviour
         playerAnimator.SetBool("Dead", player_was_killed); 
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
-    public void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Hurt"))
         {
             if (playerInfo.playerHealth > 0.0)
             {
                 playerInfo.playerHealth -= 10.0f;
+                SetPlayerHealth(playerInfo.playerHealth);
                 player_was_hurt = true;
             }
 
@@ -71,6 +72,11 @@ public class PlayerController: MonoBehaviour
                 player_was_killed = true;
             }
         }
+    }
+
+    private void SetPlayerHealth(float currentHealth)
+    {
+        UIHandler.Instance.SetHealth(currentHealth / playerInfo.playerMaxHealth);
     }
 
     public void DeceleratePlayer()
