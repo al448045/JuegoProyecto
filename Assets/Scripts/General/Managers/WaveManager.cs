@@ -47,6 +47,10 @@ public class WaveManager : MonoBehaviour
     private void SpawnWave(Wave wave)
     {
 
+        // Set the timer
+        GameManager.Instance.timeManager.SetTimer(currentWave.WaveTimeToBeat);
+
+
         // Reset Holes and EnemyCounter 
 
         EnemyWaveController.counter = 0;

@@ -33,8 +33,8 @@ public class UIHandler : MonoBehaviour
         m_ScoreText.text = score.ToString();
     }
 
-    public void ChangeTimer(float time)
+    public void ChangeTimer(int minutes, int seconds)
     {
-        m_TimerText.text = time.ToString();
+        m_TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

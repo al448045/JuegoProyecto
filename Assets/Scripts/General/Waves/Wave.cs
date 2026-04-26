@@ -8,4 +8,5 @@ using System.Collections.Generic;
 public class Wave : ScriptableObject
 {
     [field: SerializeField] public List<GameObject> EnemiesInWave { get; private set; }
+    [field: SerializeField] public float WaveTimeToBeat { get; private set; }
 }

@@ -132,7 +132,6 @@ public class BaseEnemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
-        Debug.Log(enemyHealth / enemyMaxHealth);
         enemyUI.SetHealth(enemyHealth / enemyMaxHealth);
 
         if (enemyHealth <= 0)
