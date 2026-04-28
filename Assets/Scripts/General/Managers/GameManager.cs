@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            waveManager = GetComponentInChildren<WaveManager>();
-            holeManager = GetComponentInChildren<HoleManager>();
         }
     }
     public void Start()

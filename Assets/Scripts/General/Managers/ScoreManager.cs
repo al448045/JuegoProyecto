@@ -17,5 +17,7 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScoreAtEndOfWave()
     {
+        int remainingTimeToScore = Mathf.FloorToInt(GameManager.Instance.timeManager.remainingTime);
+        Score += remainingTimeToScore;
     }
 }
