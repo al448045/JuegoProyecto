@@ -50,7 +50,6 @@ public class WaveManager : MonoBehaviour
         // Set the timer
         GameManager.Instance.timeManager.SetTimer(currentWave.WaveTimeToBeat);
 
-
         // Reset Holes and EnemyCounter 
 
         EnemyWaveController.counter = 0;
@@ -87,6 +86,8 @@ public class WaveManager : MonoBehaviour
 
     private void IncreaseWave()
     {
+        GameManager.Instance.scoreManager.UpdateScoreAtEndOfWave();
+
         if (waveIndex + 1 < waves.Length)
         {
             waveIndex++;

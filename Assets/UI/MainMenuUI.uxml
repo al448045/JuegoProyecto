@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button text="Play" name="Play" style="width: 550px; position: absolute; top: 55%; left: 35.67%; height: 135px; font-size: 50px;"/>
+    <ui:Button text="Quit" name="Quit" style="width: 550px; -unity-text-align: middle-center; position: absolute; top: 70%; left: 35.67%; height: 135px; bottom: auto; align-self: auto; font-size: 50px;"/>
+</ui:UXML>

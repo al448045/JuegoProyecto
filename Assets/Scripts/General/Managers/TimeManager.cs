@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    private float remainingTime;
+    public float remainingTime { get; private set; }
 
     private void Start()
     {
