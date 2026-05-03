@@ -5,7 +5,6 @@ public class PlayerIdleState : PlayerState
 {
     public override void EnterState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
-        playerManager.playerController.playerSpriteRenderer.color = Color.green;
         playerManager.playerController.playerAttack.transform.position = playerManager.playerController.transform.position + playerManager.playerController.playerInfo.playerAttackOffset;
     }
 

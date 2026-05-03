@@ -5,7 +5,7 @@ public class PlayerMoveState : PlayerState
 {
     public override void EnterState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
-        playerInfo.playerController.playerSpriteRenderer.color = Color.blue;
+
     }
 
     public override void ExitState(PlayerStateManager playerManager, PlayerInfo playerInfo)
