@@ -10,7 +10,6 @@ public class PlayerHurtState: PlayerState
             playerManager.SwitchState(playerManager.DeathState);
         }
 
-        playerInfo.playerController.playerSpriteRenderer.color = Color.red;
     }
 
     public override void ExitState(PlayerStateManager playerManager, PlayerInfo playerInfo)
