@@ -4,7 +4,6 @@ public class PlayerAttackState : PlayerState
 {
     public override void EnterState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
-        playerManager.playerController.playerSpriteRenderer.color = Color.purple;
         playerManager.playerController.playerAttack.SetActive(true);
     }
 

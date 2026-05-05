@@ -2004,11 +2004,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1391988525328511558, guid: 06590fa133ec3da42ae361a2d9e71252, type: 3}
       propertyPath: m_Size.x
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1391988525328511558, guid: 06590fa133ec3da42ae361a2d9e71252, type: 3}
       propertyPath: m_Size.y
-      value: 0.4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1391988525328511558, guid: 06590fa133ec3da42ae361a2d9e71252, type: 3}
       propertyPath: m_Sprite
