@@ -120,10 +120,15 @@ public class BaseEnemy : MonoBehaviour
 
     public void UpdateAnimatorFacingVector()
     {
-
         facingDirection = (GameManager.Instance.player.transform.position - transform.position).normalized;
-        animator.SetFloat("DirectionX", facingDirection.x);
-        animator.SetFloat("DirectionY", facingDirection.y);
+        if (facingDirection.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
     #endregion 

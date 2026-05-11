@@ -114,8 +114,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 1
-  m_Sprite: {fileID: 3785784146384260830, guid: 06317f1446d100743bf12740fed35dda, type: 3}
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 8382967119566247425, guid: 47cebe69f397a0e4798a851257356ef1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -247,6 +247,7 @@ MonoBehaviour:
   hasGoneDown: 0
   hasGoneUp: 0
   hasGoneUpAndDown: 0
+  scoreAmount: 100
   showTime: 0.5
   enemyHealth: 100
   enemyMaxHealth: 100
