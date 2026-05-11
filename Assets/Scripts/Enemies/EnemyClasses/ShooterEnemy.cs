@@ -8,7 +8,7 @@ public class ShooterEnemy : BaseEnemy
 
         actionState = new EnemyShootState();
         enemyHealth = 75.0f;
-        spriteRenderer.color = Color.cyan;
+        spriteRenderer.color = Color.lightBlue;
     }
 
     public override Hole FindNextHole()
