@@ -121,6 +121,7 @@ public class BaseEnemy : MonoBehaviour
     public void UpdateAnimatorFacingVector()
     {
         facingDirection = (GameManager.Instance.player.transform.position - transform.position).normalized;
+
         if (facingDirection.x < 0)
         {
             spriteRenderer.flipX = true;
@@ -203,7 +204,6 @@ public class BaseEnemy : MonoBehaviour
             TakeDamage(playerAttack.damage);
         }
     }
-
     public void InitEnemy()
     {
         negativeVerticalOffset = new Vector2(0f, -spriteRenderer.bounds.size.y);

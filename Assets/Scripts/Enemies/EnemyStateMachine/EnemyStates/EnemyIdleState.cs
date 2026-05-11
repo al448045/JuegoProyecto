@@ -16,6 +16,7 @@ public class EnemyIdleState : EnemyState
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
+        Debug.Log("Animator IsAction: " + enemyStateManager.currentEnemy.animator.GetBool("IsAction"));
 
         enemyStateManager.currentEnemy.idleTimer.UpdateTimer();
 
