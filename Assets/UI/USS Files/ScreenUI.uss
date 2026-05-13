@@ -1,0 +1,11 @@
+:root {
+}
+
+.healthbar-filler-numbered {
+    background-image: url("project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&guid=96d2ae60455175444965a9f780f1aeff&type=3#IndividualBarSliced");
+    width: 59px;
+    height: 89%;
+    top: 5px;
+    left: 5px;
+    scale: 1.05 1.02;
+}

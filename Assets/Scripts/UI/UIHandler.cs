@@ -1,12 +1,18 @@
+using System.Linq;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.UIElements;
 public class UIHandler : MonoBehaviour
 {
     public static UIHandler Instance { get; private set; }
 
-    private VisualElement m_Healthbar;
+    private List<VisualElement> playerHealthbarFillers;
+
     private Label m_ScoreText;
     private Label m_TimerText;
+
+    private UIDocument uiDocument;
 
     private void Awake()
     {
@@ -14,18 +20,21 @@ public class UIHandler : MonoBehaviour
     }
     void Start()
     {
-        UIDocument uiDocument = GetComponent<UIDocument>();
+        uiDocument = GetComponent<UIDocument>();
 
-        m_Healthbar = uiDocument.rootVisualElement.Q<VisualElement>("HealthBar");
         m_ScoreText = uiDocument.rootVisualElement.Q<Label>("ScoreText");
         m_TimerText = uiDocument.rootVisualElement.Q<Label>("TimerText");
+        playerHealthbarFillers = uiDocument.rootVisualElement.Query(className: "healthbar-filler-numbered").ToList();
 
-        SetHealth(1.0f);
+        GetHealthbarFillers();
     }
 
-    public void SetHealth(float percentage)
+    private void GetHealthbarFillers()
     {
-        m_Healthbar.style.width = Length.Percent(100 * percentage);
+        foreach(VisualElement element in playerHealthbarFillers)
+        {
+            Debug.Log(element.name);
+        }
     }
 
     public void ChangeScore(int score)
