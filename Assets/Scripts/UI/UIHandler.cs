@@ -25,18 +25,12 @@ public class UIHandler : MonoBehaviour
         m_ScoreText = uiDocument.rootVisualElement.Q<Label>("ScoreText");
         m_TimerText = uiDocument.rootVisualElement.Q<Label>("TimerText");
         playerHealthbarFillers = uiDocument.rootVisualElement.Query(className: "healthbar-filler-numbered").ToList();
-
-        GetHealthbarFillers();
     }
 
-    private void GetHealthbarFillers()
+    public void ChangePlayerHealth(int health)
     {
-        foreach(VisualElement element in playerHealthbarFillers)
-        {
-            Debug.Log(element.name);
-        }
+        playerHealthbarFillers[health].style.opacity = 0;
     }
-
     public void ChangeScore(int score)
     {
         m_ScoreText.text = score.ToString();

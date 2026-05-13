@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerInfo : MonoBehaviour
 {
@@ -8,7 +7,7 @@ public class PlayerInfo : MonoBehaviour
     public float playerSpeed;
     public float playerFriction;
 
-    public float playerHealth;
+    public int playerHealth;
     public float playerMaxHealth;
 
     public Vector2 playerMoveDirection;

@@ -1941,8 +1941,12 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 93324897336883031, guid: 06590fa133ec3da42ae361a2d9e71252, type: 3}
+      propertyPath: playerHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 93324897336883031, guid: 06590fa133ec3da42ae361a2d9e71252, type: 3}
       propertyPath: playerMaxHealth
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1391988525328511558, guid: 06590fa133ec3da42ae361a2d9e71252, type: 3}
       propertyPath: m_Size.x

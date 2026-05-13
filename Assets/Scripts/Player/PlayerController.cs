@@ -30,11 +30,6 @@ public class PlayerController: MonoBehaviour
         playerInfo.playerAttackOffset = new Vector3(0, -1, 0);
     }
 
-    private void Start()
-    {
-        SetPlayerHealth(playerInfo.playerHealth);
-    }
-
     private void Update()
     {
         // Boolean setting
@@ -62,7 +57,7 @@ public class PlayerController: MonoBehaviour
         {
             if (playerInfo.playerHealth > 0.0)
             {
-                playerInfo.playerHealth -= 10.0f;
+                playerInfo.playerHealth -= 1;
                 SetPlayerHealth(playerInfo.playerHealth);
                 player_was_hurt = true;
             }
@@ -74,9 +69,9 @@ public class PlayerController: MonoBehaviour
         }
     }
 
-    private void SetPlayerHealth(float currentHealth)
+    private void SetPlayerHealth(int currentHealth)
     {
-        //UIHandler.Instance.SetHealth(currentHealth / playerInfo.playerMaxHealth);
+        UIHandler.Instance.ChangePlayerHealth(currentHealth);
     }
 
     public void DeceleratePlayer()

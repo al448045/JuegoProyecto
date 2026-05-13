@@ -9,3 +9,7 @@
     left: 5px;
     scale: 1.05 1.02;
 }
+
+.healthbar-filler-numbered-off {
+    opacity: 0;
+}
