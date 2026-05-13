@@ -9,3 +9,73 @@
     left: 5px;
     scale: 1.05 1.02;
 }
+
+.healthbar-filler-numbered-off {
+    opacity: 0;
+}
+
+.score-text-front {
+    font-size: 75px;
+    top: 15%;
+    left: 0;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    -unity-font-definition: url("project://database/Assets/Fonts/BoldPixels.asset?fileID=11400000&guid=87c9e7b2b6e09f04bb8f4791fc5fcd01&type=2#BoldPixels");
+    -unity-font-style: normal;
+    -unity-text-outline-width: 0;
+    -unity-text-outline-color: rgb(255, 255, 255);
+    text-shadow: 0 0 0 rgb(255, 255, 255);
+    letter-spacing: 0;
+    color: rgb(255, 255, 255);
+}
+
+.score-text-shadow {
+    color: rgb(0, 12, 0);
+    top: 0%;
+    -unity-font-style: normal;
+}
+
+.timer-text-shadow {
+    font-size: 70px;
+    top: 0%;
+    left: 0%;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    -unity-font-definition: url("project://database/Assets/Fonts/BoldPixels.asset?fileID=11400000&guid=87c9e7b2b6e09f04bb8f4791fc5fcd01&type=2#BoldPixels");
+    -unity-font-style: normal;
+    -unity-text-outline-width: 0;
+    position: relative;
+    color: rgb(0, 0, 0);
+}
+
+.timer-text-front {
+    font-size: 70px;
+    top: -7px;
+    left: 0%;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    -unity-font-definition: url("project://database/Assets/Fonts/BoldPixels.asset?fileID=11400000&guid=87c9e7b2b6e09f04bb8f4791fc5fcd01&type=2#BoldPixels");
+    -unity-font-style: normal;
+    -unity-text-outline-width: 0;
+    position: relative;
+}
+
+.up-screen-bar {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/Sprites/UI/ScreenBars/ScreenBars.png?fileID=2800000&guid=130131bd0e8e7ea4e82c4af146dbad99&type=3#ScreenBars");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 120px;
+}
+
+.down-screen-bar {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/Sprites/UI/ScreenBars/ScreenBars.png?fileID=2800000&guid=130131bd0e8e7ea4e82c4af146dbad99&type=3#ScreenBars");
+    position: absolute;
+    top: 960px;
+    left: 0;
+    width: 1920px;
+    height: 120px;
+}
