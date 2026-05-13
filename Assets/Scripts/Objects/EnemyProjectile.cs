@@ -6,12 +6,18 @@ public class EnemyProjectile : MonoBehaviour
 
     private GameObject player;
     private Rigidbody2D rb2d;
+    private SpriteRenderer spriteRenderer;
+
     public float bulletVelocity;
     public float bulletDamage;
+    public int spriteSpeedMultiplier;
     private Vector2 direction;
+    public Sprite[] projectileSprites;
+    private int spriteIndex = 0;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
 
         direction = (player.transform.position - transform.position);
@@ -21,7 +27,12 @@ public class EnemyProjectile : MonoBehaviour
     }
     void Update()
     {
-        
+        spriteRenderer.sprite = projectileSprites[spriteIndex / spriteSpeedMultiplier];
+        spriteIndex++;
+        if (spriteIndex >= projectileSprites.Length * spriteSpeedMultiplier)
+        {
+            spriteIndex = 0;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

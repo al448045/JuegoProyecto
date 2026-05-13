@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 6719368468349442471}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -107,7 +107,7 @@ Animator:
   m_GameObject: {fileID: 7280568900059896006}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2836f835825ffc14bb118dd22d7a3b27, type: 2}
+  m_Controller: {fileID: 9100000, guid: 01ac785bccf89cd4aa6aa05a0118c676, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -167,8 +167,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 1
-  m_Sprite: {fileID: 3785784146384260830, guid: 06317f1446d100743bf12740fed35dda, type: 3}
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -1919121431002057286, guid: 99597718f879a5e4f8b1b4b5fd91bb53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -252,6 +252,7 @@ MonoBehaviour:
   hasGoneDown: 0
   hasGoneUp: 0
   hasGoneUpAndDown: 0
+  scoreAmount: 100
   showTime: 0.5
   enemyHealth: 75
   enemyMaxHealth: 75

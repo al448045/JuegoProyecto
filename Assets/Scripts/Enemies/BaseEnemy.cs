@@ -132,9 +132,14 @@ public class BaseEnemy : MonoBehaviour
         }
     }
 
-    #endregion 
+    #endregion
 
     #region Damage and Death
+
+    public virtual void Action()
+    {
+
+    }
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;

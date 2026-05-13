@@ -18,16 +18,7 @@ public class EnemyShootState : EnemyState
 
     public override void UpdateState(EnemyStateManager enemyStateManager, BaseEnemy Enemy)
     {
-        if (!enemyStateManager.currentEnemy.isActionFinished)
-        {
-            if (!enemyStateManager.currentEnemy.hasEnemyShooted)
-            {
-                GameObject.Instantiate(enemyStateManager.currentEnemy.enemyProjectile, enemyStateManager.currentEnemy.projectilePosition.transform.position, Quaternion.identity);
-                enemyStateManager.currentEnemy.ChangeShootingState(true);
-            }
-        }
-
-        else
+        if (enemyStateManager.currentEnemy.isActionFinished)
         {
             enemyStateManager.SwitchState(enemyStateManager.enemyIdleState);
         }
