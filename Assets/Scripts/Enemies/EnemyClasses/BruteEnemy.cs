@@ -5,10 +5,27 @@ using System.Collections;
 
 public class BruteEnemy : BaseEnemy
 {
+    private bool hasAttacked;
     private void Start()
     {
         actionState = new EnemyMeleeState();
         enemyHealth = 100.0f;
+        hasAttacked = false;
+        bruteAttack.SetActive(false);
+    }
+
+    public override void Action()
+    {
+        if (!hasAttacked)
+        {
+            bruteAttack.SetActive(true);
+            hasAttacked = true;
+        }
+        else
+        {
+            bruteAttack.SetActive(false);
+            hasAttacked = false;
+        }
     }
     public override Hole FindNextHole()
     {

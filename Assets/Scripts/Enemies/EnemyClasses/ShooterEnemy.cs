@@ -8,9 +8,16 @@ public class ShooterEnemy : BaseEnemy
 
         actionState = new EnemyShootState();
         enemyHealth = 75.0f;
-        spriteRenderer.color = Color.lightBlue;
     }
 
+    public override void Action()
+    {
+        if (!enemyStateManager.currentEnemy.hasEnemyShooted)
+        {
+            GameObject.Instantiate(enemyStateManager.currentEnemy.enemyProjectile, enemyStateManager.currentEnemy.projectilePosition.transform.position, Quaternion.identity);
+            enemyStateManager.currentEnemy.ChangeShootingState(true);
+        }
+    }
     public override Hole FindNextHole()
     {
         List<Hole> AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
