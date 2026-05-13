@@ -1,9 +1,12 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/USS%20Files/ScreenUI.uss?fileID=7433441132597879392&amp;guid=b3cf03a402517934d98aa5be205e07dd&amp;type=3#ScreenUI"/>
-    <ui:VisualElement name="Score" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Placeholder/UI/Health%20Bar%20Level%20Up.png?fileID=2800000&amp;guid=54b1d85be6a4b4e4c89fd93557e1a0db&amp;type=3#Health Bar Level Up&quot;); background-color: rgb(255, 0, 0); -unity-background-image-tint-color: rgb(255, 255, 255); background-position-y: center; width: 200px; height: 100px; position: absolute; top: 154px; left: 192px;">
-        <ui:Label text="Score" name="ScoreText" style="font-size: 70px; top: 15%; left: 0; -unity-text-align: middle-center; white-space: nowrap; -unity-font-definition: url(&quot;project://database/Assets/Fonts/BoldPixels.asset?fileID=11400000&amp;guid=87c9e7b2b6e09f04bb8f4791fc5fcd01&amp;type=2#BoldPixels&quot;); -unity-font-style: normal; -unity-text-outline-width: 0;"/>
+    <ui:VisualElement name="UpScreenBar" class="up-screen-bar"/>
+    <ui:VisualElement name="DownScreenBar" class="down-screen-bar"/>
+    <ui:VisualElement name="Score" style="flex-grow: 1; background-image: none; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255); background-position-y: center; width: 200px; height: 100px; position: absolute; top: 154px; left: 192px;">
+        <ui:Label text="Score" name="ScoreTextShadow" class="score-text-front score-text-shadow">
+            <ui:Label text="Score" name="ScoreText" class="score-text-front" style="top: -7px;"/>
+        </ui:Label>
     </ui:VisualElement>
-    <ui:Label text="Time" name="TimerText" style="font-size: 70px; top: 5%; left: 47%; -unity-text-align: middle-center; white-space: nowrap; -unity-font-definition: url(&quot;project://database/Assets/Fonts/BoldPixels.asset?fileID=11400000&amp;guid=87c9e7b2b6e09f04bb8f4791fc5fcd01&amp;type=2#BoldPixels&quot;); -unity-font-style: normal; -unity-text-outline-width: 0; position: absolute;"/>
     <ui:VisualElement name="HealthbarContainer" style="flex-grow: 1; width: 465px; height: 90px; position: absolute; top: 20px; left: 20px; overflow: hidden; flex-wrap: nowrap; flex-direction: column; align-items: stretch; justify-content: flex-start; align-self: auto; align-content: flex-start;">
         <ui:VisualElement name="HealthbarBackground" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Background.png?fileID=2800000&amp;guid=abca15b9d9a48a7499c6c5f954a9b79f&amp;type=3#Background&quot;); overflow: hidden; width: 465px; height: 100%; -unity-background-image-tint-color: rgb(255, 0, 0);">
             <ui:VisualElement name="HealthBarMask" style="flex-grow: 1; position: absolute; top: 0; left: 0; width: 445px; height: 100%; overflow: hidden; transform-origin: left top; display: flex;">
@@ -33,5 +36,10 @@
         <ui:VisualElement name="HealthbarBorder" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Border.png?fileID=2800000&amp;guid=bf899b9b885eccc4bb76d754bc634559&amp;type=3#Border&quot;); width: 465px; height: 9px;">
             <ui:VisualElement name="HealthbarInlines" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Inlines.png?fileID=2800000&amp;guid=ea59ca4458c5265478e505c85aede503&amp;type=3#Inlines&quot;); overflow: hidden; width: 465px; height: 90px;"/>
         </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="TimerFrame" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Imports/DEVNIK%202D/2D%20UI%20PIXEL%20BUTTONS/UI%20SIMPLE%20PIXEL%20UNSPLIT.png?fileID=482729247&amp;guid=a37e8466236089c45b610370218b5353&amp;type=3#BAR2&quot;); width: 200px; height: 100px; position: absolute; left: 45%; top: 50px; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255);">
+        <ui:Label text="Time" name="TimerTextShadow" class="score-text-front timer-text-shadow">
+            <ui:Label text="Time" name="TimerText" class="score-text-front timer-text-front"/>
+        </ui:Label>
     </ui:VisualElement>
 </ui:UXML>
