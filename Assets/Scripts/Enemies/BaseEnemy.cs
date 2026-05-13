@@ -26,6 +26,7 @@ public class BaseEnemy : MonoBehaviour
 
     public EnemyState actionState;
     public GameObject enemyProjectile;
+    public GameObject bruteAttack;
     public GameObject projectilePosition;
 
     [HideInInspector] public Animator animator;
