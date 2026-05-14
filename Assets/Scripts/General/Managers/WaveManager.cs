@@ -104,7 +104,6 @@ public class WaveManager : MonoBehaviour
     private void IncreaseWave()
     {
         GameManager.Instance.scoreManager.UpdateScoreAtEndOfWave();
-        Debug.Log("Wave index: " + waveIndex);
         if (waveIndex + 1  < waves.Length)
         {
             waveIndex++;
