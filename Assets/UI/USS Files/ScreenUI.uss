@@ -79,3 +79,13 @@
     width: 1920px;
     height: 120px;
 }
+
+.character-portrait {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/Sprites/UI/CharacterPortrait/Character_Portrait.png?fileID=4463095559245805313&guid=ee7eecb4c800c6249955495ddea85dd6&type=3#Character_Portrait_0");
+    width: 98px;
+    height: 100px;
+    position: absolute;
+    top: 150px;
+    left: 20px;
+}

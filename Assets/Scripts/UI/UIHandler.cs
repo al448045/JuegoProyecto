@@ -39,8 +39,8 @@ public class UIHandler : MonoBehaviour
     }
     public void ChangeScore(int score)
     {
-        m_ScoreText.text = score.ToString();
-        m_ScoreTextShadow.text = score.ToString();
+        m_ScoreText.text = "Score: " + score.ToString();
+        m_ScoreTextShadow.text = "Score: " + score.ToString();
     }
 
     public void ChangeTimer(int minutes, int seconds)
