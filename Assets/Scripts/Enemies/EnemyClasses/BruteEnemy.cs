@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.Assertions.Must;
 
 
 public class BruteEnemy : BaseEnemy
@@ -14,6 +15,13 @@ public class BruteEnemy : BaseEnemy
         bruteAttack.SetActive(false);
     }
 
+    public override void KillEnemy()
+    {
+        currentHole.is_hole_occupied = false;
+        GameManager.Instance.scoreManager.UpdateScore(scoreAmount);
+        GameManager.Instance.waveManager.UpdateBruteText(GameManager.Instance.waveManager.bruteCounter - 1);
+        Destroy(transform.parent.gameObject);
+    }
     public override void Action()
     {
         if (!hasAttacked)

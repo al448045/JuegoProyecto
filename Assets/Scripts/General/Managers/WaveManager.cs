@@ -1,8 +1,10 @@
-using NUnit.Framework;
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using NUnit.Framework;
+using UnityEditor;
+using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class WaveManager : MonoBehaviour
 {
@@ -13,20 +15,20 @@ public class WaveManager : MonoBehaviour
 
     private int waveIndex = 0;
 
+    public int bruteCounter;
+    public int shooterCounter;
+
     [HideInInspector]
     public bool finishedWaves = false;
 
     [HideInInspector]
     public Wave currentWave;
 
-    private void Awake()
+    public void StartWaveManager()
     {
         currentWave = waves[waveIndex];
-    }
-
-    private void Start()
-    {
         SpawnWave(currentWave);
+        UIHandler.Instance.ChangeWaveText(waveIndex + 1);
     }
     public void Update()
     {
@@ -46,6 +48,8 @@ public class WaveManager : MonoBehaviour
     }
     private void SpawnWave(Wave wave)
     {
+        //Reset Counters
+        ResetEnemyCounters();
 
         // Set the timer
         GameManager.Instance.timeManager.SetTimer(currentWave.WaveTimeToBeat);
@@ -72,6 +76,17 @@ public class WaveManager : MonoBehaviour
             BaseEnemy currentEnemy = myEnemy.GetComponentInChildren<BaseEnemy>();
             currentEnemy.InitEnemy();
 
+            //Set Counters
+            if (currentEnemy is ShooterEnemy)
+            {
+                shooterCounter++;
+            }
+
+            if (currentEnemy is BruteEnemy)
+            {
+                bruteCounter++;
+            }
+
             //Change Name
             myEnemy.name = (myEnemy.name + " - " + i);
 
@@ -82,21 +97,40 @@ public class WaveManager : MonoBehaviour
             //Pop Hole from the list
             AvaliableHoles.RemoveAt(0);
         }
-    }
 
+        UpdateBruteText(bruteCounter);
+        UpdateShooterText(shooterCounter);
+    }
     private void IncreaseWave()
     {
         GameManager.Instance.scoreManager.UpdateScoreAtEndOfWave();
-
-        if (waveIndex + 1 < waves.Length)
+        Debug.Log("Wave index: " + waveIndex);
+        if (waveIndex + 1  < waves.Length)
         {
             waveIndex++;
             currentWave = waves[waveIndex];
+            UIHandler.Instance.ChangeWaveText(waveIndex + 1);
         }
 
         else
         {
             finishedWaves = true;
         }
+    }
+
+    public void UpdateBruteText(int counter)
+    {
+        UIHandler.Instance.ChangeBruteCounter(counter);
+    }
+
+    public void UpdateShooterText(int counter)
+    {
+        UIHandler.Instance.ChangeShooterCounter(counter);
+    }
+
+    private void ResetEnemyCounters()
+    {
+        bruteCounter = 0;
+        shooterCounter = 0;
     }
 }

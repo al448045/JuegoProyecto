@@ -18,6 +18,14 @@ public class ShooterEnemy : BaseEnemy
             enemyStateManager.currentEnemy.ChangeShootingState(true);
         }
     }
+
+    public override void KillEnemy()
+    {
+        currentHole.is_hole_occupied = false;
+        GameManager.Instance.scoreManager.UpdateScore(scoreAmount);
+        GameManager.Instance.waveManager.UpdateShooterText(GameManager.Instance.waveManager.shooterCounter - 1);
+        Destroy(transform.parent.gameObject);
+    }
     public override Hole FindNextHole()
     {
         List<Hole> AvaliableHoles = GameManager.Instance.holeManager.SearchAvaliableHoles();
