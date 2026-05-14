@@ -71,7 +71,7 @@ public class PlayerController: MonoBehaviour
 
     private void SetPlayerHealth(int currentHealth)
     {
-        UIHandler.Instance.ChangePlayerHealth(currentHealth);
+        UIHandler.Instance.ChangePlayerHealthbar(currentHealth);
     }
 
     public void DeceleratePlayer()

@@ -153,11 +153,9 @@ public class BaseEnemy : MonoBehaviour
         }
     }
 
-    public void KillEnemy()
+    public virtual void KillEnemy()
     {
-        currentHole.is_hole_occupied = false;
-        GameManager.Instance.scoreManager.UpdateScore(scoreAmount);
-        Destroy(transform.parent.gameObject);
+
     }
     #endregion
 

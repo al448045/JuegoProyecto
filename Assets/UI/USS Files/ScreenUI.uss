@@ -89,3 +89,28 @@
     top: 150px;
     left: 20px;
 }
+
+.enemy-portrait {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/Sprites/Enemies/Brute/Brute_Attack.png?fileID=-4487083071787773322&guid=b0db4fb708b50a0469a795a644481458&type=3#Brute_Attack_0");
+    width: 150px;
+    height: 150px;
+}
+
+.enemy-counter-text {
+    width: 100px;
+    height: 50px;
+    align-self: center;
+    -unity-text-align: upper-center;
+    font-size: 75px;
+    -unity-font-definition: url("project://database/Assets/Imports/BoldPixels/Assets/font/BoldPixels.ttf?fileID=12800000&guid=71a55b0538d48354b87afab937af74d2&type=3#BoldPixels");
+}
+
+.ui-text-generic {
+    flex-grow: 1;
+    -unity-font-definition: url("project://database/Assets/Imports/BoldPixels/Assets/font/BoldPixels.ttf?fileID=12800000&guid=71a55b0538d48354b87afab937af74d2&type=3#BoldPixels");
+    font-size: 65px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    -unity-text-align: middle-center;
+}

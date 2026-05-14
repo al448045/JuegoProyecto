@@ -2,9 +2,9 @@
     <Style src="project://database/Assets/UI/USS%20Files/ScreenUI.uss?fileID=7433441132597879392&amp;guid=b3cf03a402517934d98aa5be205e07dd&amp;type=3#ScreenUI"/>
     <ui:VisualElement name="UpScreenBar" class="up-screen-bar"/>
     <ui:VisualElement name="DownScreenBar" class="down-screen-bar"/>
-    <ui:VisualElement name="Score" style="flex-grow: 1; background-image: none; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255); background-position-y: center; width: 400px; height: 100px; position: absolute; top: 160px; left: 190px; align-items: flex-start; flex-direction: column; align-self: flex-start; align-content: flex-start; justify-content: flex-start;">
-        <ui:Label text="Score: 0" name="ScoreTextShadow" class="score-text-front score-text-shadow" style="width: 300px; align-items: flex-start; height: 100px; -unity-text-align: middle-left;">
-            <ui:Label text="Score: 0" name="ScoreText" class="score-text-front" style="top: -7px; width: 300px; align-items: flex-start; height: 100px; -unity-text-align: middle-left;"/>
+    <ui:VisualElement name="ScoreContainer" style="flex-grow: 1; background-image: none; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255); background-position-y: center; width: 400px; height: 100px; position: absolute; top: 150px; left: 150px; align-items: flex-start; flex-direction: column; align-self: flex-start; align-content: flex-start; justify-content: flex-start;">
+        <ui:Label text="Score: 0" name="ScoreTextShadow" class="score-text-front score-text-shadow" style="width: 300px; align-items: flex-start; height: 100px; -unity-text-align: middle-left; font-size: 65px;">
+            <ui:Label text="Score: 0" name="ScoreText" class="score-text-front" style="top: -7px; width: 300px; align-items: flex-start; height: 100px; -unity-text-align: middle-left; font-size: 65px;"/>
         </ui:Label>
     </ui:VisualElement>
     <ui:VisualElement name="HealthbarContainer" style="flex-grow: 1; width: 465px; height: 90px; position: absolute; top: 20px; left: 20px; overflow: hidden; flex-wrap: nowrap; flex-direction: column; align-items: stretch; justify-content: flex-start; align-self: auto; align-content: flex-start;">
@@ -37,19 +37,25 @@
             <ui:VisualElement name="HealthbarInlines" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Inlines.png?fileID=2800000&amp;guid=ea59ca4458c5265478e505c85aede503&amp;type=3#Inlines&quot;); overflow: hidden; width: 465px; height: 90px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="TimerFrame" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/TimerFrame/TimerFrame.png?fileID=-4041904047743625455&amp;guid=fef635bf4ce737342a1d40b6e1d8a3df&amp;type=3#TimerFrame_0&quot;); width: 400px; height: 100px; position: absolute; left: 760px; top: 65px; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255);">
-        <ui:Label text="Time" name="TimerTextShadow" class="score-text-front timer-text-shadow">
-            <ui:Label text="Time" name="TimerText" class="score-text-front timer-text-front"/>
+    <ui:VisualElement name="TimerContainer" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/TimerFrame/TimerFrame.png?fileID=-4041904047743625455&amp;guid=fef635bf4ce737342a1d40b6e1d8a3df&amp;type=3#TimerFrame_0&quot;); width: 400px; height: 100px; position: absolute; left: 760px; top: 65px; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255);">
+        <ui:Label text="Time" name="TimerTextShadow" class="score-text-front timer-text-shadow" style="font-size: 65px;">
+            <ui:Label text="Time" name="TimerText" class="score-text-front timer-text-front" style="font-size: 65px;"/>
         </ui:Label>
     </ui:VisualElement>
-    <ui:VisualElement name="PlayerPortrait" class="character-portrait" style="width: 148px; height: 150px;"/>
-    <ui:VisualElement name="WaveText" style="flex-grow: 1; left: 1630px; top: 15px; position: absolute;">
-        <ui:Label text="Wave 1" name="WaveText" style="position: relative; font-size: 70px; -unity-font-definition: url(&quot;project://database/Assets/Imports/BoldPixels/Assets/font/BoldPixels.ttf?fileID=12800000&amp;guid=71a55b0538d48354b87afab937af74d2&amp;type=3#BoldPixels&quot;); color: rgb(255, 255, 255); top: 0; left: 0;"/>
+    <ui:VisualElement name="PlayerPortrait" class="character-portrait" style="width: 120px; height: 120px;"/>
+    <ui:VisualElement name="WaveTextContainer" style="flex-grow: 1; left: 1480px; top: 25px; position: absolute; width: 200px; height: 80px;">
+        <ui:Label text="Wave 1" name="WaveTextLabel" style="position: relative; font-size: 65px; -unity-font-definition: url(&quot;project://database/Assets/Imports/BoldPixels/Assets/font/BoldPixels.ttf?fileID=12800000&amp;guid=71a55b0538d48354b87afab937af74d2&amp;type=3#BoldPixels&quot;); color: rgb(255, 255, 255); top: 0; left: 0;"/>
     </ui:VisualElement>
-    <ui:VisualElement name="EnemyCounterContainer" style="flex-grow: 1; flex-direction: row; position: absolute; top: 200px; left: 1500px;">
-        <ui:VisualElement name="BruteCounterPortrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/EnemyCounters/Brute_Counter.png?fileID=877731017176501857&amp;guid=a164775bf83ca46438309288b53e38ff&amp;type=3#Brute_Counter_0&quot;); width: 150px; height: 150px;"/>
-        <ui:Label text="Label" name="BruteCounterText"/>
-        <ui:VisualElement name="ShooterCounterPortrait" style="flex-grow: 1;"/>
-        <ui:Label text="Label" name="ShooterCounterText"/>
+    <ui:VisualElement name="EnemyCounterContainer" style="flex-grow: 1; flex-direction: row; position: absolute; top: 953px; left: 1023px; width: 700px; height: 120px; flex-wrap: nowrap; align-self: center; justify-content: space-between; align-items: center; align-content: flex-start; opacity: 1;">
+        <ui:VisualElement name="BruteCounterPortrait" class="enemy-portrait" style="width: 130px; height: 130px; top: 0; left: 25px; flex-direction: column; align-items: stretch; justify-content: flex-start; align-self: center; position: absolute; opacity: 1;"/>
+        <ui:Label text="x0" name="BruteCounterText" class="enemy-counter-text" style="font-size: 55px; position: absolute; left: 190px; color: rgb(255, 255, 255);"/>
+        <ui:VisualElement name="ShooterCounterPortrait" class="enemy-portrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Enemies/Shooter/Shooter_Idle.png?fileID=-1919121431002057286&amp;guid=99597718f879a5e4f8b1b4b5fd91bb53&amp;type=3#Shooter_Idle_0&quot;); height: 130px; width: 130px; align-self: center; position: absolute; left: 400px; top: -5px; opacity: 1;"/>
+        <ui:Label text="x0" name="ShooterCounterText" class="enemy-counter-text" style="font-size: 55px; position: absolute; left: 590px; color: rgb(255, 255, 255);"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="EnemiesRemainingContainer" style="flex-grow: 1; position: absolute; width: 550px; height: 80px; top: 980px; left: 265px;">
+        <ui:Label text="Enemies Remaining" name="EnemiesRemainingText" style="-unity-font-definition: url(&quot;project://database/Assets/Imports/BoldPixels/Assets/font/BoldPixels.ttf?fileID=12800000&amp;guid=71a55b0538d48354b87afab937af74d2&amp;type=3#BoldPixels&quot;); font-size: 60px; color: rgb(255, 255, 255); -unity-text-align: middle-center; opacity: 1; display: flex;"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="HealthbarTextContainer" class="ui-text-generic" style="height: 80px; width: 160px; top: 25px; left: 490px;">
+        <ui:Label text="10 HP" name="HealthbarTextLabel"/>
     </ui:VisualElement>
 </ui:UXML>
