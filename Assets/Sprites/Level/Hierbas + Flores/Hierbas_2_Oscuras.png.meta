@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 7d5c55f0157bbd244bb6bc5ea10f828e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8733823763229500771
+    second: Hierbas_2_Oscuras_0
+  - first:
+      213: -8729393781007960762
+    second: Hierbas_2_Oscuras_1
+  - first:
+      213: -1043859146277261830
+    second: Hierbas_2_Oscuras_2
+  - first:
+      213: 4836192126317443240
+    second: Hierbas_2_Oscuras_3
+  - first:
+      213: -1442443958187579770
+    second: Hierbas_2_Oscuras_4
+  - first:
+      213: -3841254367401347228
+    second: Hierbas_2_Oscuras_5
+  - first:
+      213: -1300093804320853647
+    second: Hierbas_2_Oscuras_6
+  - first:
+      213: -3632565604905773708
+    second: Hierbas_2_Oscuras_7
+  - first:
+      213: 5947680360085453017
+    second: Hierbas_2_Oscuras_8
+  - first:
+      213: -6230922789765187400
+    second: Hierbas_2_Oscuras_9
+  - first:
+      213: 4439004939358612048
+    second: Hierbas_2_Oscuras_10
+  - first:
+      213: -5247413961317316482
+    second: Hierbas_2_Oscuras_11
+  - first:
+      213: 4039576021410551165
+    second: Hierbas_2_Oscuras_12
+  - first:
+      213: 3849868767353991599
+    second: Hierbas_2_Oscuras_13
+  - first:
+      213: -6868642415382411760
+    second: Hierbas_2_Oscuras_14
+  - first:
+      213: -6054943009388414230
+    second: Hierbas_2_Oscuras_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 108
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 365e82a5076c43970800000000000000
+      internalID: 8733823763229500771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 107
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64534824b96fad680800000000000000
+      internalID: -8729393781007960762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 107
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afde99613a77381f0800000000000000
+      internalID: -1043859146277261830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 106
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a831ba9d1b9d1340800000000000000
+      internalID: 4836192126317443240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 75
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68622d7ccd86bfbe0800000000000000
+      internalID: -1442443958187579770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_5
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 75
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 467ff13318f11bac0800000000000000
+      internalID: -3841254367401347228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_6
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 75
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171f4cab29325fde0800000000000000
+      internalID: -1300093804320853647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 76
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4751a4814d8869dc0800000000000000
+      internalID: -3632565604905773708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 44
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d8f57c76c76a8250800000000000000
+      internalID: 5947680360085453017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_9
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 43
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b8f82d4cb05789a0800000000000000
+      internalID: -6230922789765187400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_10
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 42
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05aaca639738a9d30800000000000000
+      internalID: 4439004939358612048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_11
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 43
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e78814eddc07d27b0800000000000000
+      internalID: -5247413961317316482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 10
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d759c572df47f0830800000000000000
+      internalID: 4039576021410551165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_13
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 9
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa171061f3b7d6530800000000000000
+      internalID: 3849868767353991599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_14
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 10
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01643f56d1eada0a0800000000000000
+      internalID: -6868642415382411760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbas_2_Oscuras_15
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 11
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aea3b26d96588fba0800000000000000
+      internalID: -6054943009388414230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hierbas_2_Oscuras_0: 8733823763229500771
+      Hierbas_2_Oscuras_1: -8729393781007960762
+      Hierbas_2_Oscuras_10: 4439004939358612048
+      Hierbas_2_Oscuras_11: -5247413961317316482
+      Hierbas_2_Oscuras_12: 4039576021410551165
+      Hierbas_2_Oscuras_13: 3849868767353991599
+      Hierbas_2_Oscuras_14: -6868642415382411760
+      Hierbas_2_Oscuras_15: -6054943009388414230
+      Hierbas_2_Oscuras_2: -1043859146277261830
+      Hierbas_2_Oscuras_3: 4836192126317443240
+      Hierbas_2_Oscuras_4: -1442443958187579770
+      Hierbas_2_Oscuras_5: -3841254367401347228
+      Hierbas_2_Oscuras_6: -1300093804320853647
+      Hierbas_2_Oscuras_7: -3632565604905773708
+      Hierbas_2_Oscuras_8: 5947680360085453017
+      Hierbas_2_Oscuras_9: -6230922789765187400
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
