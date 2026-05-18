@@ -10,30 +10,14 @@ public class Hole : MonoBehaviour
 
     public Vector3 HoleSize;
 
-    [SerializeField] public SpriteRenderer holeSpriteRenderer;
+    public SpriteRenderer holeSpriteRenderer;
 
     private void Start()
     {
+        holeSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
         is_hole_active = true;
         is_hole_occupied = false;
-        HoleSize = holeSpriteRenderer.bounds.size;
-    }
-
-    private void Update()
-    {
-        if (!is_hole_active)
-        {
-            holeSpriteRenderer.color = Color.white;
-        }
-
-        if (is_hole_occupied)
-        {
-            holeSpriteRenderer.color = Color.red;
-        }
-
-        else
-        {
-            holeSpriteRenderer.color = Color.blue;
-        }
+        HoleSize = holeSpriteRenderer.bounds.size * 2;
     }
 }
