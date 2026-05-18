@@ -41,8 +41,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fondo
+    uniqueID: 577758657
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Suelo
+    uniqueID: 149858503
+    locked: 0
+  - name: Entities
+    uniqueID: 2937981125
+    locked: 0
+  - name: Escenario
+    uniqueID: 428566415
     locked: 0
   m_RenderingLayers:
   - Default
