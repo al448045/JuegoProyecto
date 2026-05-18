@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: fdc9da50f854f134f8d1ac4aee3c61b6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2807877652040483344
+    second: Bushes 1_0
+  - first:
+      213: -8770362948520643122
+    second: Bushes 1_1
+  - first:
+      213: 4947296438529495774
+    second: Bushes 1_2
+  - first:
+      213: 1116674737423000570
+    second: Bushes 1_3
+  - first:
+      213: 8294407863904804546
+    second: Bushes 1_4
+  - first:
+      213: -7989447410016606520
+    second: Bushes 1_5
+  - first:
+      213: -3785271807611795045
+    second: Bushes 1_6
+  - first:
+      213: 1613114712362957272
+    second: Bushes 1_7
+  - first:
+      213: 197569290770064098
+    second: Bushes 1_8
+  - first:
+      213: -8288103957285738782
+    second: Bushes 1_9
+  - first:
+      213: -8401058879410834335
+    second: Bushes 1_10
+  - first:
+      213: 2163383080363231156
+    second: Bushes 1_11
+  - first:
+      213: -2193645844991659122
+    second: Bushes 1_12
+  - first:
+      213: -8566531998343794477
+    second: Bushes 1_13
+  - first:
+      213: -2534276678948500393
+    second: Bushes 1_14
+  - first:
+      213: 3618215046024792610
+    second: Bushes 1_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bushes 1_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 80
+        width: 38
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fd7e59f62a6809d0800000000000000
+      internalID: -2807877652040483344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 114
+        width: 31
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5fd2e9d59694680800000000000000
+      internalID: -8770362948520643122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 80
+        width: 38
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed21b1126e358a440800000000000000
+      internalID: 4947296438529495774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_3
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 114
+        width: 31
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af320cdd1c93f7f00800000000000000
+      internalID: 1116674737423000570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 80
+        width: 38
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce904ea108ab1370800000000000000
+      internalID: 8294407863904804546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_5
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 114
+        width: 31
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c6ab4619e7cf1190800000000000000
+      internalID: -7989447410016606520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_6
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 80
+        width: 38
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b998ff0a853087bc0800000000000000
+      internalID: -3785271807611795045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_7
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 114
+        width: 31
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d9b954c84fe26610800000000000000
+      internalID: 1613114712362957272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 47
+        width: 44
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e220e22938edb200800000000000000
+      internalID: 197569290770064098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_9
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 47
+        width: 44
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e66974fc5dbafc80800000000000000
+      internalID: -8288103957285738782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_10
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 47
+        width: 44
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 164739bb571796b80800000000000000
+      internalID: -8401058879410834335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_11
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 47
+        width: 44
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b704221371e50e10800000000000000
+      internalID: 2163383080363231156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 45
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e83b246f9ba9e81e0800000000000000
+      internalID: -2193645844991659122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1
+        width: 45
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d073b1f8809d1980800000000000000
+      internalID: -8566531998343794477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_14
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1
+        width: 45
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75cc7b4a9c074dcd0800000000000000
+      internalID: -2534276678948500393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bushes 1_15
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1
+        width: 45
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a084b0a6b763230800000000000000
+      internalID: 3618215046024792610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fa3a9113da50d9242bf639aaf411fae2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bushes 1_0: -2807877652040483344
+      Bushes 1_1: -8770362948520643122
+      Bushes 1_10: -8401058879410834335
+      Bushes 1_11: 2163383080363231156
+      Bushes 1_12: -2193645844991659122
+      Bushes 1_13: -8566531998343794477
+      Bushes 1_14: -2534276678948500393
+      Bushes 1_15: 3618215046024792610
+      Bushes 1_2: 4947296438529495774
+      Bushes 1_3: 1116674737423000570
+      Bushes 1_4: 8294407863904804546
+      Bushes 1_5: -7989447410016606520
+      Bushes 1_6: -3785271807611795045
+      Bushes 1_7: 1613114712362957272
+      Bushes 1_8: 197569290770064098
+      Bushes 1_9: -8288103957285738782
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
