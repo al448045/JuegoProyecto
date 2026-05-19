@@ -9,6 +9,10 @@ public class UIHandler : MonoBehaviour
 
     private UIDocument uiDocument;
 
+    private VisualElement m_GameUIContainer;
+    private VisualElement m_DownContainer;
+    private VisualElement m_UpContainer;
+
     //Blackbars
     private VisualElement m_UpScreenBar;
     private VisualElement m_DownScreenBar;
@@ -43,6 +47,23 @@ public class UIHandler : MonoBehaviour
     private Label m_BruteCounterText;
     private Label m_ShooterCounterText;
 
+    //Main Menu
+    private VisualElement m_MainMenuContainer;
+    private VisualElement m_MainMenuLeftUp;
+    private VisualElement m_MainMenuRightUp;
+    private VisualElement m_MainMenuLeftDown;
+    private VisualElement m_MainMenuRightDown;
+    private VisualElement m_ButtonsContainer;
+    private VisualElement m_Logo;
+
+    private Button m_PlayButton;
+    private Button m_CreditsButton;
+    private Button m_QuitButton;
+
+    //CreditsContainer
+    private VisualElement m_CreditsContainer;
+    private Button m_ExitCredits;
+
     private void Awake()
     {
         Instance = this;
@@ -51,6 +72,15 @@ public class UIHandler : MonoBehaviour
     {
         //UIDocument
         uiDocument = GetComponent<UIDocument>();
+
+        //GameUIContainer
+        m_GameUIContainer = uiDocument.rootVisualElement.Q<VisualElement>("GameUIContainer");
+        m_DownContainer = uiDocument.rootVisualElement.Q<VisualElement>("DownContainer");
+        m_UpContainer = uiDocument.rootVisualElement.Q<VisualElement>("UpContainer");
+
+        //CreditsContainer
+        m_CreditsContainer = uiDocument.rootVisualElement.Q<VisualElement>("CreditsContainer");
+        m_ExitCredits = uiDocument.rootVisualElement.Q<Button>("ExitCredits");
 
         //Black bars
         m_UpScreenBar = uiDocument.rootVisualElement.Q<VisualElement>("UpScreenBar");
@@ -84,8 +114,31 @@ public class UIHandler : MonoBehaviour
         m_EnemiesRemainingText = uiDocument.rootVisualElement.Q<Label>("EnemiesRemainingText");
         m_BruteCounterText = uiDocument.rootVisualElement.Q<Label>("BruteCounterText");
         m_ShooterCounterText = uiDocument.rootVisualElement.Q<Label>("ShooterCounterText");
-}
 
+        //Main Menu
+
+        m_MainMenuContainer = uiDocument.rootVisualElement.Q<VisualElement>("MainMenuContainer");
+        m_MainMenuLeftDown = uiDocument.rootVisualElement.Q<VisualElement>("MainMenuLeftDown");
+        m_MainMenuLeftUp = uiDocument.rootVisualElement.Q<VisualElement>("MainMenuLeftUp");
+        m_MainMenuRightDown = uiDocument.rootVisualElement.Q<VisualElement>("MainMenuRightDown");
+        m_MainMenuRightUp = uiDocument.rootVisualElement.Q<VisualElement>("MainMenuRightUp");
+        m_Logo = uiDocument.rootVisualElement.Q<VisualElement>("Logo");
+
+        m_ButtonsContainer = uiDocument.rootVisualElement.Q<VisualElement>("ButtonsContainer");
+        m_PlayButton = uiDocument.rootVisualElement.Q<Button>("PlayButton");
+        m_CreditsButton = uiDocument.rootVisualElement.Q<Button>("CreditsButton");
+        m_QuitButton = uiDocument.rootVisualElement.Q<Button>("QuitButton");
+
+        m_PlayButton.RegisterCallback<ClickEvent>(OnPlayButtonClicked);
+        m_CreditsButton.RegisterCallback<ClickEvent>(OnCreditsButtonClicked);
+        m_QuitButton.RegisterCallback<ClickEvent>(OnQuitButtonClicked);
+        m_ExitCredits.RegisterCallback<ClickEvent>(OnExitCreditsClicked);
+
+
+        StartGame();
+
+    }
+    #region ChangeUIFunctions
     public void ChangePlayerHealthbar(int health)
     {
         playerHealthbarFillers[health].style.opacity = 0;
@@ -114,10 +167,56 @@ public class UIHandler : MonoBehaviour
         m_ShooterCounterText.text = newText;
     }
 
-public void ChangeTimer(int minutes, int seconds)
+    public void ChangeTimer(int minutes, int seconds)
     {
         m_TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         m_TimerTextShadow.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
+    }
+    #endregion
+
+    #region ButtonsFunctions
+
+    private void OnPlayButtonClicked(ClickEvent clickEvent)
+    {
+
+        m_GameUIContainer.style.opacity = 100;
+
+        m_MainMenuLeftDown.AddToClassList("MML-play");
+        m_MainMenuLeftUp.AddToClassList("MML-play");
+        m_MainMenuRightDown.AddToClassList("MMR-play");
+        m_MainMenuRightUp.AddToClassList("MMR-play");
+
+        m_Logo.AddToClassList("logo-play");
+        m_ButtonsContainer.AddToClassList("buttonsContainer-play");
+
+        m_DownContainer.RemoveFromClassList("downContainer-base");
+        m_DownContainer.AddToClassList("downContainer-play");
+        m_UpContainer.RemoveFromClassList("upContainer-base");
+        m_UpContainer.AddToClassList("upContainer-play");
+        
+        GameManager.Instance.StartGame();
+
+    }
+    private void OnCreditsButtonClicked(ClickEvent clickEvent)
+    {
+        m_CreditsContainer.AddToClassList("creditsDisplay");
+
+    }
+    private void OnQuitButtonClicked(ClickEvent clickEvent)
+    {
+        Application.Quit();
+    }
+
+    private void OnExitCreditsClicked(ClickEvent clickEvent)
+    {
+        m_CreditsContainer.RemoveFromClassList("creditsDisplay");
+    }
+
+    #endregion
+
+    private void StartGame()
+    {
+        m_GameUIContainer.style.opacity = 0;
     }
 }

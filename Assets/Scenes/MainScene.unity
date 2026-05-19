@@ -13553,15 +13553,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1962786376}
+    m_TransformParent: {fileID: 608889267}
     m_Modifications:
     - target: {fileID: 104170602501543256, guid: 1df5803faae2ed24093da0de64683d83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.03
+      value: 11.16876
       objectReference: {fileID: 0}
     - target: {fileID: 104170602501543256, guid: 1df5803faae2ed24093da0de64683d83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.99
+      value: 8.35448
       objectReference: {fileID: 0}
     - target: {fileID: 104170602501543256, guid: 1df5803faae2ed24093da0de64683d83, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14890,6 +14890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125a9c77cbe46b847bd43844f02ae43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeManager
+  TimeStarted: 0
 --- !u!4 &381395912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442837487787310016, guid: 8deb983fa12a2e14c9177996c7e59991, type: 3}
@@ -17755,15 +17756,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1962786376}
+    m_TransformParent: {fileID: 608889267}
     m_Modifications:
     - target: {fileID: 104170602501543256, guid: d11c00721b96dd848907743fff471efb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.63217
+      value: -8.49341
       objectReference: {fileID: 0}
     - target: {fileID: 104170602501543256, guid: d11c00721b96dd848907743fff471efb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.08463
+      value: 6.2598495
       objectReference: {fileID: 0}
     - target: {fileID: 104170602501543256, guid: d11c00721b96dd848907743fff471efb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18330,6 +18331,41 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8deb983fa12a2e14c9177996c7e59991, type: 3}
+--- !u!1 &608889266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608889267}
+  m_Layer: 0
+  m_Name: Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &608889267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608889266}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.13876, y: -13.34448, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 463725611}
+  - {fileID: 1446781788}
+  - {fileID: 1635239063}
+  - {fileID: 1037749496}
+  m_Father: {fileID: 1962786376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &614159531
 GameObject:
   m_ObjectHideFlags: 0
@@ -25086,15 +25122,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1962786376}
+    m_TransformParent: {fileID: 608889267}
     m_Modifications:
     - target: {fileID: 104170602501543256, guid: d11c00721b96dd848907743fff471efb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.12
+      value: -8.981239
       objectReference: {fileID: 0}
     - target: {fileID: 104170602501543256, guid: d11c00721b96dd848907743fff471efb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.02
+      value: 14.364479
       objectReference: {fileID: 0}
     - target: {fileID: 104170602501543256, guid: d11c00721b96dd848907743fff471efb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28508,7 +28544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38184704ddb06a48810589c03bda159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  damage: 200
+  damage: 20
 --- !u!1001 &1353492527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29160,15 +29196,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1962786376}
+    m_TransformParent: {fileID: 608889267}
     m_Modifications:
     - target: {fileID: 104170602501543256, guid: 1df5803faae2ed24093da0de64683d83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.25
+      value: 11.38876
       objectReference: {fileID: 0}
     - target: {fileID: 104170602501543256, guid: 1df5803faae2ed24093da0de64683d83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.31
+      value: 14.65448
       objectReference: {fileID: 0}
     - target: {fileID: 104170602501543256, guid: 1df5803faae2ed24093da0de64683d83, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36315,9 +36351,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
   waves:
-  - {fileID: 11400000, guid: 277e825ca329fec4aad6b0f3ee271475, type: 2}
   - {fileID: 11400000, guid: 4f9d4b56acd8a504eaddec2bc405cc5c, type: 2}
   - {fileID: 11400000, guid: ae27fe7cb9edf7942bdcc3cc2463f2e4, type: 2}
+  - {fileID: 11400000, guid: 9f5976d8ea1f4fd4d8b7b51825b1bcbc, type: 2}
+  - {fileID: 11400000, guid: 40321854a3b997a428aa7c2ad2dece7f, type: 2}
+  - {fileID: 11400000, guid: e1193a6d4c7509e48b1541d8b6fd6a22, type: 2}
+  - {fileID: 11400000, guid: bad71fc6d10bad64db9239a6928086b7, type: 2}
+  - {fileID: 11400000, guid: 2bbe6a4674f1b6348a8f84a9328d3a5b, type: 2}
+  - {fileID: 11400000, guid: 26bd11954486af74496af3c55baf92d6, type: 2}
+  - {fileID: 11400000, guid: 02fec25c1060ff04a99264580f2f8171, type: 2}
+  - {fileID: 11400000, guid: 3f41a8f0f15db334aa6ddf03e9377328, type: 2}
   bruteCounter: 0
   shooterCounter: 0
   finishedWaves: 0
@@ -37662,14 +37705,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 463725611}
-  - {fileID: 1446781788}
-  - {fileID: 1635239063}
-  - {fileID: 1037749496}
   - {fileID: 842368142}
   - {fileID: 2096414223}
   - {fileID: 1891981939}
   - {fileID: 751484274}
+  - {fileID: 608889267}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1968626264
