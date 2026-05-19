@@ -60,6 +60,10 @@ public class UIHandler : MonoBehaviour
     private Button m_CreditsButton;
     private Button m_QuitButton;
 
+    //CreditsContainer
+    private VisualElement m_CreditsContainer;
+    private Button m_ExitCredits;
+
     private void Awake()
     {
         Instance = this;
@@ -73,6 +77,10 @@ public class UIHandler : MonoBehaviour
         m_GameUIContainer = uiDocument.rootVisualElement.Q<VisualElement>("GameUIContainer");
         m_DownContainer = uiDocument.rootVisualElement.Q<VisualElement>("DownContainer");
         m_UpContainer = uiDocument.rootVisualElement.Q<VisualElement>("UpContainer");
+
+        //CreditsContainer
+        m_CreditsContainer = uiDocument.rootVisualElement.Q<VisualElement>("CreditsContainer");
+        m_ExitCredits = uiDocument.rootVisualElement.Q<Button>("ExitCredits");
 
         //Black bars
         m_UpScreenBar = uiDocument.rootVisualElement.Q<VisualElement>("UpScreenBar");
@@ -124,6 +132,7 @@ public class UIHandler : MonoBehaviour
         m_PlayButton.RegisterCallback<ClickEvent>(OnPlayButtonClicked);
         m_CreditsButton.RegisterCallback<ClickEvent>(OnCreditsButtonClicked);
         m_QuitButton.RegisterCallback<ClickEvent>(OnQuitButtonClicked);
+        m_ExitCredits.RegisterCallback<ClickEvent>(OnExitCreditsClicked);
 
 
         StartGame();
@@ -191,13 +200,17 @@ public class UIHandler : MonoBehaviour
     }
     private void OnCreditsButtonClicked(ClickEvent clickEvent)
     {
-        Debug.Log("Credits");
+        m_CreditsContainer.AddToClassList("creditsDisplay");
 
     }
     private void OnQuitButtonClicked(ClickEvent clickEvent)
     {
-        Debug.Log("Quit");
+        Application.Quit();
+    }
 
+    private void OnExitCreditsClicked(ClickEvent clickEvent)
+    {
+        m_CreditsContainer.RemoveFromClassList("creditsDisplay");
     }
 
     #endregion

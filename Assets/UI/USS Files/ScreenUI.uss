@@ -36,7 +36,7 @@
 }
 
 .timer-text-shadow {
-    font-size: 70px;
+    font-size: 30px;
     top: 0%;
     left: 0%;
     -unity-text-align: middle-center;
@@ -270,4 +270,71 @@
 .downContainer-base {
     top: 300px;
     position: absolute;
+}
+
+.exitcredits {
+    position: absolute;
+    top: 70px;
+    left: 618px;
+    background-image: url("project://database/Assets/Imports/DEVNIK%202D/2D%20UI%20PIXEL%20BUTTONS/UI%20SIMPLE%20PIXEL%20UNSPLIT.png?fileID=701606609&guid=a37e8466236089c45b610370218b5353&type=3#A_LEFT");
+    width: 100px;
+    height: 75px;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+}
+
+.exitcredits:hover {
+    position: absolute;
+    top: 70px;
+    left: 618px;
+    background-image: url("project://database/Assets/Imports/DEVNIK%202D/2D%20UI%20PIXEL%20BUTTONS/UI%20SIMPLE%20PIXEL%20UNSPLIT.png?fileID=701606609&guid=a37e8466236089c45b610370218b5353&type=3#A_LEFT");
+    width: 100px;
+    height: 75px;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+    scale: 1.1 1.1;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgb(145, 145, 145);
+}
+
+.exitcredits:active {
+    position: absolute;
+    top: 70px;
+    left: 618px;
+    background-image: url("project://database/Assets/Imports/DEVNIK%202D/2D%20UI%20PIXEL%20BUTTONS/UI%20SIMPLE%20PIXEL%20UNSPLIT.png?fileID=701606609&guid=a37e8466236089c45b610370218b5353&type=3#A_LEFT");
+    width: 100px;
+    height: 75px;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+    scale: 1.1 1.1;
+}
+
+.creditsBase {
+    flex-grow: 1;
+    position: absolute;
+    width: 1720px;
+    height: 880px;
+    left: 100px;
+    top: -1500px;
+    display: flex;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out-back;
+}
+
+.creditsDisplay {
+    flex-grow: 1;
+    position: absolute;
+    width: 1720px;
+    height: 880px;
+    left: 100px;
+    top: 140px;
+    display: flex;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out-back;
 }

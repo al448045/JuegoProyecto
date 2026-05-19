@@ -76,7 +76,38 @@
         </ui:VisualElement>
         <ui:VisualElement name="Logo" class="logo-base"/>
     </ui:VisualElement>
-    <ui:VisualElement name="CreditsContainer" style="flex-grow: 1; position: absolute; width: 1000px; height: 880px; left: 460px; top: 140px;">
-        <ui:ScrollView/>
+    <ui:VisualElement name="CreditsContainer" class="creditsBase">
+        <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Imports/DEVNIK%202D/2D%20UI%20PIXEL%20BUTTONS/UI%20SIMPLE%20PIXEL%20UNSPLIT.png?fileID=482729247&amp;guid=a37e8466236089c45b610370218b5353&amp;type=3#BAR2&quot;); position: relative;"/>
+        <ui:VisualElement name="CreditsTextContainer" style="flex-grow: 1; position: absolute; align-items: auto; align-self: center; top: 50px;">
+            <ui:Label text="Credits" class="score-text-front" style="color: rgb(0, 0, 0);"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="CreditsLeft" style="flex-grow: 1; position: absolute; width: 40%; height: 65%; top: 18%; left: 5%;">
+            <ui:VisualElement name="LeftTextContainer" style="flex-grow: 1; flex-direction: column; flex-wrap: nowrap; top: 67%; height: 50px;">
+                <ui:Label text="Autor: Cainos&#10;Coste:Gratuito&#10;Descripcion: Tileset y Bancos&#10;Enlace: https://cainos.itch.io/&#10;pixel-art-top-down-basic&#10;Modificaciones: Paleta de colores y tamaño " name="ModificationsLeft" class="timer-text-shadow" style="position: relative; font-size: 35px; -unity-text-align: middle-left; -unity-font-style: normal; height: 100px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="SpritesLeftContainer" style="flex-grow: 1; position: absolute; top: 0; width: 100%; height: 410px;">
+                <ui:VisualElement name="TileSetsLeft" style="flex-grow: 1; width: 50%;">
+                    <ui:Label text="Tileset" name="SpritesLeftLabel" class="timer-text-shadow" style="width: 256px;"/>
+                    <ui:Label text="Props (bancos)" name="BancosLeftLabel" class="timer-text-shadow" style="width: 288px; position: absolute; left: 256px;"/>
+                    <ui:VisualElement name="OldTileSetLeft" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Credits/Cainos/TX%20Tileset%20Grass.png?fileID=70345852487738077&amp;guid=840eb662392770c4db7a2a8f83b6f95e&amp;type=3#TX Tileset Grass_0&quot;); width: 256px; height: 256px; position: absolute; top: 50px; left: 0; align-self: center;"/>
+                    <ui:VisualElement name="BancosLeft" style="flex-grow: 1; position: absolute; top: 50px; width: 256px; height: 256px; background-image: none; left: 270px; flex-direction: row;">
+                        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Credits/Cainos/TX%20Props.png?fileID=5149286634510447697&amp;guid=d8bc0494fbc37bc48b767bd3371f6352&amp;type=3#TX Props_7&quot;);"/>
+                        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Credits/Cainos/TX%20Props.png?fileID=6045510324929769632&amp;guid=d8bc0494fbc37bc48b767bd3371f6352&amp;type=3#TX Props_16&quot;);"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="CreditsRight" style="flex-grow: 1; position: absolute; width: 40%; height: 65%; top: 18%; left: 55%;">
+            <ui:VisualElement name="RightTextContainer" style="flex-grow: 1; flex-direction: column; flex-wrap: nowrap; top: 67%; height: 50px;">
+                <ui:Label text="Autor: Anokolisa&#10;Coste:Gratuito&#10;Descripcion: Arboles&#10;Enlace: https://anokolisa.itch.io/free-pixel-art&#10;-asset-pack-topdown-tileset-rpg-16x16-sprites&#10;Modificaciones: Paleta de colores " name="ModificationsRight" class="timer-text-shadow" style="position: relative; font-size: 35px; -unity-text-align: middle-left; -unity-font-style: normal; height: 100px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="SpritesRightContainer" style="flex-grow: 1; position: absolute; top: 0; width: 100%; height: 410px; flex-direction: row;">
+                <ui:Label text="Trees" name="SpritesRightLabel" class="timer-text-shadow" style="width: 680px; position: absolute;"/>
+                <ui:VisualElement name="TreesSmall" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Credits/Anokolisa/Size_03.png?fileID=5903473390127743887&amp;guid=86d6a8b3ea7b4e840b47ffcef1bf24c4&amp;type=3#Size_03_0&quot;); height: 270px; top: 35px;"/>
+                <ui:VisualElement name="TreesMedium" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Credits/Anokolisa/Size_04.png?fileID=-6489005286283933747&amp;guid=60be33c1eea6a0c4987e916ec1a7ed92&amp;type=3#Size_04_0&quot;); height: 270px; top: 35px;"/>
+                <ui:VisualElement name="TreesBig" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Credits/Anokolisa/Size_05.png?fileID=-1349718751397675806&amp;guid=913c12327a3ae7b449321c9cd7961967&amp;type=3#Size_05_0&quot;); height: 270px; top: 35px;"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button text="" name="ExitCredits" class="button-specs exitcredits"/>
     </ui:VisualElement>
 </ui:UXML>

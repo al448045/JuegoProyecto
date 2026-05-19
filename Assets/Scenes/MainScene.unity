@@ -14890,6 +14890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125a9c77cbe46b847bd43844f02ae43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeManager
+  TimeStarted: 0
 --- !u!4 &381395912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442837487787310016, guid: 8deb983fa12a2e14c9177996c7e59991, type: 3}
