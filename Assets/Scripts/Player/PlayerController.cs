@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController: MonoBehaviour
@@ -15,6 +16,7 @@ public class PlayerController: MonoBehaviour
     [SerializeField] public Animator playerAnimator;
     [SerializeField] public SpriteRenderer playerSpriteRenderer;
     [SerializeField] public GameObject playerAttack;
+    [SerializeField] public CapsuleCollider2D playerCollider;
 
     // BOOLEANOS
 
@@ -23,6 +25,7 @@ public class PlayerController: MonoBehaviour
     public bool player_wants_object { get; set; }
     public bool player_was_hurt;
     public bool player_was_killed;
+    public bool player_stopped_hurting;
 
     private void Awake()
     {
@@ -77,5 +80,28 @@ public class PlayerController: MonoBehaviour
     public void DeceleratePlayer()
     {
         playerRB2D.linearVelocity -= playerInfo.playerFriction * playerRB2D.linearVelocity;
+    }
+
+    public IEnumerator PlayerWasHurt()
+    {
+        player_stopped_hurting = false;
+        float time = 0f;
+        while (time < 1f)
+        {
+            if (playerSpriteRenderer.color == Color.white)
+            {
+                playerSpriteRenderer.color = Color.red; 
+            }
+
+            else
+            {
+                playerSpriteRenderer.color = Color.white;
+            }
+
+            time += 0.2f;
+            yield return new WaitForSeconds(0.2f);
+        }
+        playerSpriteRenderer.color = Color.white;
+        player_stopped_hurting = true;
     }
 }   

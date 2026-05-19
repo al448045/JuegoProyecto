@@ -10,18 +10,23 @@ public class PlayerHurtState: PlayerState
             playerManager.SwitchState(playerManager.DeathState);
         }
 
+        playerManager.playerController.playerCollider.enabled = false;
+        playerManager.playerController.StartCoroutine(playerManager.playerController.PlayerWasHurt());
+
     }
 
     public override void ExitState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
         playerManager.playerController.player_was_hurt = false;
         playerManager.playerController.playerRB2D.linearVelocity = Vector2.zero;
+        playerManager.playerController.playerCollider.enabled = true;
+        playerManager.playerController.StopAllCoroutines();
     }
 
     public override void UpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
         
-        if (!(playerManager.playerController.playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Hurt_Rotate")))
+        if (playerManager.playerController.player_stopped_hurting)
         {
             playerManager.SwitchState(playerManager.IdleState);
         }

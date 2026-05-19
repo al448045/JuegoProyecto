@@ -99,8 +99,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.29824108}
-  m_Size: {x: 1, y: 1.2983552}
+  m_Offset: {x: 0, y: 0.6475881}
+  m_Size: {x: 1, y: 1.2661077}
   m_Direction: 0
 --- !u!114 &8797039433650070838
 MonoBehaviour:
@@ -121,8 +121,10 @@ MonoBehaviour:
   playerAnimator: {fileID: 5577889599456268889}
   playerSpriteRenderer: {fileID: 1391988525328511558}
   playerAttack: {fileID: 0}
+  playerCollider: {fileID: 7674096403474272062}
   player_was_hurt: 0
   player_was_killed: 0
+  player_stopped_hurting: 0
 --- !u!114 &93324897336883031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +190,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   objectAction:
-    m_Name: 
+    m_Name: Object
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 3eb07d10-4095-41d4-a125-39e1626c6676
