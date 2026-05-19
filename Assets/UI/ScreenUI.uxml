@@ -58,4 +58,16 @@
     <ui:VisualElement name="HealthbarTextContainer" class="ui-text-generic" style="height: 80px; width: 160px; top: 25px; left: 490px;">
         <ui:Label text="10 HP" name="HealthbarTextLabel"/>
     </ui:VisualElement>
+    <ui:VisualElement name="MainMenuContainer" style="flex-grow: 1; width: 1920px; height: 1080px; position: absolute; top: 0; left: 0; flex-direction: column; flex-wrap: wrap;">
+        <ui:VisualElement name="MainMenuLeftUp" style="flex-grow: 1; width: 50%; height: 50%; background-image: url(&quot;project://database/Assets/Sprites/UI/Menu/Main%20Menu.png?fileID=5561665765474925660&amp;guid=9f3e6345a59dcd94687163b8f9874506&amp;type=3#Main Menu_0&quot;);"/>
+        <ui:VisualElement name="MainMenuLeftDown" style="flex-grow: 1; width: 50%; height: 50%; background-image: url(&quot;project://database/Assets/Sprites/UI/Menu/Main%20Menu.png?fileID=6936311897552531074&amp;guid=9f3e6345a59dcd94687163b8f9874506&amp;type=3#Main Menu_2&quot;);"/>
+        <ui:VisualElement name="MainMenuRightUp" style="flex-grow: 1; left: 50%; width: 50%; height: 50%; background-image: url(&quot;project://database/Assets/Sprites/UI/Menu/Main%20Menu.png?fileID=2798250516866983683&amp;guid=9f3e6345a59dcd94687163b8f9874506&amp;type=3#Main Menu_1&quot;);"/>
+        <ui:VisualElement name="MainMenuRightDown" style="flex-grow: 1; width: 960px; height: 540px; top: 0%; left: 50%; background-image: url(&quot;project://database/Assets/Sprites/UI/Menu/Main%20Menu.png?fileID=-8138443389130145745&amp;guid=9f3e6345a59dcd94687163b8f9874506&amp;type=3#Main Menu_3&quot;);"/>
+        <ui:VisualElement name="ButtonsContainer" style="flex-grow: 1; position: absolute; top: 55%; height: 440px; width: 540px; left: 690px; flex-direction: column; justify-content: space-evenly; align-items: stretch; align-self: auto; align-content: flex-start;">
+            <ui:Button text="Play" name="PlayButton" class="button-specs" style="height: 100px;"/>
+            <ui:Button text="Credits" name="CreditsButton" class="button-specs" style="height: 100px;"/>
+            <ui:Button text="Quit" name="QuitButton" class="button-specs" style="height: 100px;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Logo" style="flex-grow: 1; position: absolute; width: 1000px; height: 550px; background-image: url(&quot;project://database/Assets/Sprites/UI/Menu/Logo.png?fileID=1404028623067837608&amp;guid=1133ad7c11bb6ef42aec7398e1dd245d&amp;type=3#Logo_0&quot;); top: 60px; left: 460px;"/>
+    </ui:VisualElement>
 </ui:UXML>

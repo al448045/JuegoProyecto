@@ -43,6 +43,19 @@ public class UIHandler : MonoBehaviour
     private Label m_BruteCounterText;
     private Label m_ShooterCounterText;
 
+    //Main Menu
+    private VisualElement m_MainMenuContainer;
+    private VisualElement m_MainMenuLeftUp;
+    private VisualElement m_MainMenuRightUp;
+    private VisualElement m_MainMenuLeftDown;
+    private VisualElement m_MainMenuRightDown;
+    private VisualElement m_ButtonsContainer;
+    private VisualElement m_Logo;
+
+    private Button m_PlayButton;
+    private Button m_CreditsButton;
+    private Button m_QuitButton;
+
     private void Awake()
     {
         Instance = this;
@@ -84,8 +97,30 @@ public class UIHandler : MonoBehaviour
         m_EnemiesRemainingText = uiDocument.rootVisualElement.Q<Label>("EnemiesRemainingText");
         m_BruteCounterText = uiDocument.rootVisualElement.Q<Label>("BruteCounterText");
         m_ShooterCounterText = uiDocument.rootVisualElement.Q<Label>("ShooterCounterText");
-}
 
+        //Main Menu
+
+        m_MainMenuContainer = uiDocument.rootVisualElement.Q<VisualElement>("MainMenuContainer");
+        m_MainMenuLeftDown = uiDocument.rootVisualElement.Q<VisualElement>("MainMenuLeftDown");
+        m_MainMenuLeftUp = uiDocument.rootVisualElement.Q<VisualElement>("MainMenuLeftUp");
+        m_MainMenuRightDown = uiDocument.rootVisualElement.Q<VisualElement>("MainMenuRightDown");
+        m_MainMenuRightUp = uiDocument.rootVisualElement.Q<VisualElement>("MainMenuRightUp");
+        m_Logo = uiDocument.rootVisualElement.Q<VisualElement>("Logo");
+
+        m_ButtonsContainer = uiDocument.rootVisualElement.Q<VisualElement>("ButtonsContainer");
+        m_PlayButton = uiDocument.rootVisualElement.Q<Button>("PlayButton");
+        m_CreditsButton = uiDocument.rootVisualElement.Q<Button>("CreditsButton");
+        m_QuitButton = uiDocument.rootVisualElement.Q<Button>("QuitButton");
+
+        m_PlayButton.RegisterCallback<ClickEvent>(OnPlayButtonClicked);
+        m_CreditsButton.RegisterCallback<ClickEvent>(OnCreditsButtonClicked);
+        m_QuitButton.RegisterCallback<ClickEvent>(OnQuitButtonClicked);
+
+
+        StartGame();
+
+    }
+    #region ChangeUIFunctions
     public void ChangePlayerHealthbar(int health)
     {
         playerHealthbarFillers[health].style.opacity = 0;
@@ -114,10 +149,35 @@ public class UIHandler : MonoBehaviour
         m_ShooterCounterText.text = newText;
     }
 
-public void ChangeTimer(int minutes, int seconds)
+    public void ChangeTimer(int minutes, int seconds)
     {
         m_TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         m_TimerTextShadow.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+    }
+    #endregion
+
+    #region ButtonsFunctions
+
+    private void OnPlayButtonClicked(ClickEvent clickEvent)
+    {
+        Debug.Log("playing");
+    }
+    private void OnCreditsButtonClicked(ClickEvent clickEvent)
+    {
+        Debug.Log("Credits");
+
+    }
+    private void OnQuitButtonClicked(ClickEvent clickEvent)
+    {
+        Debug.Log("Quit");
+
+    }
+
+    #endregion
+
+    private void StartGame()
+    {
 
     }
 }
