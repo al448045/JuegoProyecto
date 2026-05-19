@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeathState : PlayerState
 {
@@ -17,10 +17,7 @@ public class PlayerDeathState : PlayerState
 
     public override void UpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)
     {
-        if (!(playerManager.playerController.playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Dead")))
-        {
-            playerManager.SwitchState(playerManager.IdleState);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public override void FixedUpdateState(PlayerStateManager playerManager, PlayerInfo playerInfo)

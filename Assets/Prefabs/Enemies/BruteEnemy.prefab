@@ -112,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1356986171
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 1
   m_Sprite: {fileID: 8382967119566247425, guid: 47cebe69f397a0e4798a851257356ef1, type: 3}
@@ -250,8 +250,8 @@ MonoBehaviour:
   hasGoneUpAndDown: 0
   scoreAmount: 100
   showTime: 0.5
-  enemyHealth: 100
-  enemyMaxHealth: 100
+  enemyHealth: 60
+  enemyMaxHealth: 60
   enemyProjectile: {fileID: 0}
   bruteAttack: {fileID: 1791626430943654166}
   projectilePosition: {fileID: 0}

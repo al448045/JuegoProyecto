@@ -4,7 +4,7 @@ using System.Text;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -36,7 +36,7 @@ public class WaveManager : MonoBehaviour
         {
             if (finishedWaves)
             {
-                Debug.Log("End of waves");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
 
             else
