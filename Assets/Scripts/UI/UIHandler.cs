@@ -9,6 +9,10 @@ public class UIHandler : MonoBehaviour
 
     private UIDocument uiDocument;
 
+    private VisualElement m_GameUIContainer;
+    private VisualElement m_DownContainer;
+    private VisualElement m_UpContainer;
+
     //Blackbars
     private VisualElement m_UpScreenBar;
     private VisualElement m_DownScreenBar;
@@ -64,6 +68,11 @@ public class UIHandler : MonoBehaviour
     {
         //UIDocument
         uiDocument = GetComponent<UIDocument>();
+
+        //GameUIContainer
+        m_GameUIContainer = uiDocument.rootVisualElement.Q<VisualElement>("GameUIContainer");
+        m_DownContainer = uiDocument.rootVisualElement.Q<VisualElement>("DownContainer");
+        m_UpContainer = uiDocument.rootVisualElement.Q<VisualElement>("UpContainer");
 
         //Black bars
         m_UpScreenBar = uiDocument.rootVisualElement.Q<VisualElement>("UpScreenBar");
@@ -161,7 +170,24 @@ public class UIHandler : MonoBehaviour
 
     private void OnPlayButtonClicked(ClickEvent clickEvent)
     {
-        Debug.Log("playing");
+
+        m_GameUIContainer.style.opacity = 100;
+
+        m_MainMenuLeftDown.AddToClassList("MML-play");
+        m_MainMenuLeftUp.AddToClassList("MML-play");
+        m_MainMenuRightDown.AddToClassList("MMR-play");
+        m_MainMenuRightUp.AddToClassList("MMR-play");
+
+        m_Logo.AddToClassList("logo-play");
+        m_ButtonsContainer.AddToClassList("buttonsContainer-play");
+
+        m_DownContainer.RemoveFromClassList("downContainer-base");
+        m_DownContainer.AddToClassList("downContainer-play");
+        m_UpContainer.RemoveFromClassList("upContainer-base");
+        m_UpContainer.AddToClassList("upContainer-play");
+        
+        GameManager.Instance.StartGame();
+
     }
     private void OnCreditsButtonClicked(ClickEvent clickEvent)
     {
@@ -178,6 +204,6 @@ public class UIHandler : MonoBehaviour
 
     private void StartGame()
     {
-
+        m_GameUIContainer.style.opacity = 0;
     }
 }

@@ -1,25 +1,28 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/USS%20Files/ScreenUI.uss?fileID=7433441132597879392&amp;guid=b3cf03a402517934d98aa5be205e07dd&amp;type=3#ScreenUI"/>
-    <ui:VisualElement name="UpScreenBar" class="up-screen-bar"/>
-    <ui:VisualElement name="DownScreenBar" class="down-screen-bar"/>
-    <ui:VisualElement name="ScoreContainer" style="flex-grow: 1; background-image: none; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255); background-position-y: center; width: 400px; height: 100px; position: absolute; top: 150px; left: 150px; align-items: flex-start; flex-direction: column; align-self: flex-start; align-content: flex-start; justify-content: flex-start;">
-        <ui:Label text="Score: 0" name="ScoreTextShadow" class="score-text-front score-text-shadow" style="width: 300px; align-items: flex-start; height: 100px; -unity-text-align: middle-left; font-size: 65px;">
-            <ui:Label text="Score: 0" name="ScoreText" class="score-text-front" style="top: -7px; width: 300px; align-items: flex-start; height: 100px; -unity-text-align: middle-left; font-size: 65px;"/>
-        </ui:Label>
-    </ui:VisualElement>
-    <ui:VisualElement name="HealthbarContainer" style="flex-grow: 1; width: 465px; height: 90px; position: absolute; top: 20px; left: 20px; overflow: hidden; flex-wrap: nowrap; flex-direction: column; align-items: stretch; justify-content: flex-start; align-self: auto; align-content: flex-start;">
-        <ui:VisualElement name="HealthbarBackground" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Background.png?fileID=2800000&amp;guid=abca15b9d9a48a7499c6c5f954a9b79f&amp;type=3#Background&quot;); overflow: hidden; width: 465px; height: 100%; -unity-background-image-tint-color: rgb(255, 0, 0);">
-            <ui:VisualElement name="HealthBarMask" style="flex-grow: 1; position: absolute; top: 0; left: 0; width: 445px; height: 100%; overflow: hidden; transform-origin: left top; display: flex;">
-                <ui:VisualElement name="HealthbarFiller_00" class="healthbar-filler-numbered">
-                    <ui:VisualElement name="HealthbarFiller_01" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1;">
-                        <ui:VisualElement name="HealthbarFiller_02" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1;">
-                            <ui:VisualElement name="HealthbarFiller_03" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1;">
-                                <ui:VisualElement name="HealthbarFiller_04" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1;">
-                                    <ui:VisualElement name="HealthbarFiller_05" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 60px; height: 80px; top: 0; left: 40px; scale: 1 1;">
-                                        <ui:VisualElement name="HealthbarFiller_06" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 81px; top: 0; left: 40px; scale: 1 1;">
-                                            <ui:VisualElement name="HealthbarFiller_07" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1;">
-                                                <ui:VisualElement name="HealthbarFiller_08" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1; display: flex;">
-                                                    <ui:VisualElement name="HealthbarFiller_09" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1; display: flex;"/>
+    <ui:VisualElement name="GameUIContainer" style="flex-grow: 1; display: flex;">
+        <ui:VisualElement name="UpContainer" class="upContainer-play upContainer-base">
+            <ui:VisualElement name="UpScreenBar" class="up-screen-bar"/>
+            <ui:VisualElement name="ScoreContainer" style="flex-grow: 1; background-image: none; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255); background-position-y: center; width: 400px; height: 100px; position: absolute; top: 150px; left: 150px; align-items: flex-start; flex-direction: column; align-self: flex-start; align-content: flex-start; justify-content: flex-start;">
+                <ui:Label text="Score: 0" name="ScoreTextShadow" class="score-text-front score-text-shadow" style="width: 300px; align-items: flex-start; height: 100px; -unity-text-align: middle-left; font-size: 65px;">
+                    <ui:Label text="Score: 0" name="ScoreText" class="score-text-front" style="top: -7px; width: 300px; align-items: flex-start; height: 100px; -unity-text-align: middle-left; font-size: 65px;"/>
+                </ui:Label>
+            </ui:VisualElement>
+            <ui:VisualElement name="HealthbarContainer" style="flex-grow: 1; width: 465px; height: 90px; position: absolute; top: 20px; left: 20px; overflow: hidden; flex-wrap: nowrap; flex-direction: column; align-items: stretch; justify-content: flex-start; align-self: auto; align-content: flex-start;">
+                <ui:VisualElement name="HealthbarBackground" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Background.png?fileID=2800000&amp;guid=abca15b9d9a48a7499c6c5f954a9b79f&amp;type=3#Background&quot;); overflow: hidden; width: 465px; height: 100%; -unity-background-image-tint-color: rgb(255, 0, 0);">
+                    <ui:VisualElement name="HealthBarMask" style="flex-grow: 1; position: absolute; top: 0; left: 0; width: 445px; height: 100%; overflow: hidden; transform-origin: left top; display: flex;">
+                        <ui:VisualElement name="HealthbarFiller_00" class="healthbar-filler-numbered">
+                            <ui:VisualElement name="HealthbarFiller_01" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1;">
+                                <ui:VisualElement name="HealthbarFiller_02" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1;">
+                                    <ui:VisualElement name="HealthbarFiller_03" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1;">
+                                        <ui:VisualElement name="HealthbarFiller_04" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1;">
+                                            <ui:VisualElement name="HealthbarFiller_05" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 60px; height: 80px; top: 0; left: 40px; scale: 1 1;">
+                                                <ui:VisualElement name="HealthbarFiller_06" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 81px; top: 0; left: 40px; scale: 1 1;">
+                                                    <ui:VisualElement name="HealthbarFiller_07" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1;">
+                                                        <ui:VisualElement name="HealthbarFiller_08" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1; display: flex;">
+                                                            <ui:VisualElement name="HealthbarFiller_09" class="healthbar-filler-numbered" style="background-image: url(&quot;project://database/Assets/Sprites/UI/IndividualBarSliced.png?fileID=2800000&amp;guid=96d2ae60455175444965a9f780f1aeff&amp;type=3#IndividualBarSliced&quot;); width: 59px; height: 80px; top: 0; left: 40px; scale: 1 1; display: flex;"/>
+                                                        </ui:VisualElement>
+                                                    </ui:VisualElement>
                                                 </ui:VisualElement>
                                             </ui:VisualElement>
                                         </ui:VisualElement>
@@ -30,44 +33,50 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
+            <ui:VisualElement name="HealthbarBorderAndInlines" style="flex-grow: 1; width: 465px; height: 90px; position: absolute; top: 20px; left: 20px; display: flex;">
+                <ui:VisualElement name="HealthbarBorder" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Border.png?fileID=2800000&amp;guid=bf899b9b885eccc4bb76d754bc634559&amp;type=3#Border&quot;); width: 465px; height: 9px;">
+                    <ui:VisualElement name="HealthbarInlines" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Inlines.png?fileID=2800000&amp;guid=ea59ca4458c5265478e505c85aede503&amp;type=3#Inlines&quot;); overflow: hidden; width: 465px; height: 90px;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="TimerContainer" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/TimerFrame/TimerFrame.png?fileID=-4041904047743625455&amp;guid=fef635bf4ce737342a1d40b6e1d8a3df&amp;type=3#TimerFrame_0&quot;); width: 400px; height: 100px; position: absolute; left: 760px; top: 65px; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255);">
+                <ui:Label text="Time" name="TimerTextShadow" class="score-text-front timer-text-shadow" style="font-size: 65px;">
+                    <ui:Label text="Time" name="TimerText" class="score-text-front timer-text-front" style="font-size: 65px;"/>
+                </ui:Label>
+            </ui:VisualElement>
+            <ui:VisualElement name="PlayerPortrait" class="character-portrait" style="width: 120px; height: 120px;"/>
+            <ui:VisualElement name="WaveTextContainer" style="flex-grow: 1; left: 1480px; top: 25px; position: absolute; width: 200px; height: 80px;">
+                <ui:Label text="Wave 1" name="WaveTextLabel" style="position: relative; font-size: 65px; -unity-font-definition: url(&quot;project://database/Assets/Imports/BoldPixels/Assets/font/BoldPixels.ttf?fileID=12800000&amp;guid=71a55b0538d48354b87afab937af74d2&amp;type=3#BoldPixels&quot;); color: rgb(255, 255, 255); top: 0; left: 0;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="HealthbarTextContainer" class="ui-text-generic" style="height: 80px; width: 160px; top: 25px; left: 490px;">
+                <ui:Label text="10 HP" name="HealthbarTextLabel"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="DownContainer" class="downContainer-play downContainer-base">
+            <ui:VisualElement name="DownScreenBar" class="down-screen-bar"/>
+            <ui:VisualElement name="EnemyCounterContainer" style="flex-grow: 1; flex-direction: row; position: absolute; top: 953px; left: 1023px; width: 700px; height: 120px; flex-wrap: nowrap; align-self: center; justify-content: space-between; align-items: center; align-content: flex-start; opacity: 1;">
+                <ui:VisualElement name="BruteCounterPortrait" class="enemy-portrait" style="width: 130px; height: 130px; top: 0; left: 25px; flex-direction: column; align-items: stretch; justify-content: flex-start; align-self: center; position: absolute; opacity: 1;"/>
+                <ui:Label text="x0" name="BruteCounterText" class="enemy-counter-text" style="font-size: 55px; position: absolute; left: 190px; color: rgb(255, 255, 255);"/>
+                <ui:VisualElement name="ShooterCounterPortrait" class="enemy-portrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Enemies/Shooter/Shooter_Idle.png?fileID=-1919121431002057286&amp;guid=99597718f879a5e4f8b1b4b5fd91bb53&amp;type=3#Shooter_Idle_0&quot;); height: 130px; width: 130px; align-self: center; position: absolute; left: 400px; top: -5px; opacity: 1;"/>
+                <ui:Label text="x0" name="ShooterCounterText" class="enemy-counter-text" style="font-size: 55px; position: absolute; left: 590px; color: rgb(255, 255, 255);"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="EnemiesRemainingContainer" style="flex-grow: 1; position: absolute; width: 550px; height: 80px; top: 980px; left: 265px;">
+                <ui:Label text="Enemies Remaining" name="EnemiesRemainingText" style="-unity-font-definition: url(&quot;project://database/Assets/Imports/BoldPixels/Assets/font/BoldPixels.ttf?fileID=12800000&amp;guid=71a55b0538d48354b87afab937af74d2&amp;type=3#BoldPixels&quot;); font-size: 60px; color: rgb(255, 255, 255); -unity-text-align: middle-center; opacity: 1; display: flex;"/>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="HealthbarBorderAndInlines" style="flex-grow: 1; width: 465px; height: 90px; position: absolute; top: 20px; left: 20px; display: flex;">
-        <ui:VisualElement name="HealthbarBorder" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Border.png?fileID=2800000&amp;guid=bf899b9b885eccc4bb76d754bc634559&amp;type=3#Border&quot;); width: 465px; height: 9px;">
-            <ui:VisualElement name="HealthbarInlines" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Inlines.png?fileID=2800000&amp;guid=ea59ca4458c5265478e505c85aede503&amp;type=3#Inlines&quot;); overflow: hidden; width: 465px; height: 90px;"/>
-        </ui:VisualElement>
-    </ui:VisualElement>
-    <ui:VisualElement name="TimerContainer" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/TimerFrame/TimerFrame.png?fileID=-4041904047743625455&amp;guid=fef635bf4ce737342a1d40b6e1d8a3df&amp;type=3#TimerFrame_0&quot;); width: 400px; height: 100px; position: absolute; left: 760px; top: 65px; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255);">
-        <ui:Label text="Time" name="TimerTextShadow" class="score-text-front timer-text-shadow" style="font-size: 65px;">
-            <ui:Label text="Time" name="TimerText" class="score-text-front timer-text-front" style="font-size: 65px;"/>
-        </ui:Label>
-    </ui:VisualElement>
-    <ui:VisualElement name="PlayerPortrait" class="character-portrait" style="width: 120px; height: 120px;"/>
-    <ui:VisualElement name="WaveTextContainer" style="flex-grow: 1; left: 1480px; top: 25px; position: absolute; width: 200px; height: 80px;">
-        <ui:Label text="Wave 1" name="WaveTextLabel" style="position: relative; font-size: 65px; -unity-font-definition: url(&quot;project://database/Assets/Imports/BoldPixels/Assets/font/BoldPixels.ttf?fileID=12800000&amp;guid=71a55b0538d48354b87afab937af74d2&amp;type=3#BoldPixels&quot;); color: rgb(255, 255, 255); top: 0; left: 0;"/>
-    </ui:VisualElement>
-    <ui:VisualElement name="EnemyCounterContainer" style="flex-grow: 1; flex-direction: row; position: absolute; top: 953px; left: 1023px; width: 700px; height: 120px; flex-wrap: nowrap; align-self: center; justify-content: space-between; align-items: center; align-content: flex-start; opacity: 1;">
-        <ui:VisualElement name="BruteCounterPortrait" class="enemy-portrait" style="width: 130px; height: 130px; top: 0; left: 25px; flex-direction: column; align-items: stretch; justify-content: flex-start; align-self: center; position: absolute; opacity: 1;"/>
-        <ui:Label text="x0" name="BruteCounterText" class="enemy-counter-text" style="font-size: 55px; position: absolute; left: 190px; color: rgb(255, 255, 255);"/>
-        <ui:VisualElement name="ShooterCounterPortrait" class="enemy-portrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Enemies/Shooter/Shooter_Idle.png?fileID=-1919121431002057286&amp;guid=99597718f879a5e4f8b1b4b5fd91bb53&amp;type=3#Shooter_Idle_0&quot;); height: 130px; width: 130px; align-self: center; position: absolute; left: 400px; top: -5px; opacity: 1;"/>
-        <ui:Label text="x0" name="ShooterCounterText" class="enemy-counter-text" style="font-size: 55px; position: absolute; left: 590px; color: rgb(255, 255, 255);"/>
-    </ui:VisualElement>
-    <ui:VisualElement name="EnemiesRemainingContainer" style="flex-grow: 1; position: absolute; width: 550px; height: 80px; top: 980px; left: 265px;">
-        <ui:Label text="Enemies Remaining" name="EnemiesRemainingText" style="-unity-font-definition: url(&quot;project://database/Assets/Imports/BoldPixels/Assets/font/BoldPixels.ttf?fileID=12800000&amp;guid=71a55b0538d48354b87afab937af74d2&amp;type=3#BoldPixels&quot;); font-size: 60px; color: rgb(255, 255, 255); -unity-text-align: middle-center; opacity: 1; display: flex;"/>
-    </ui:VisualElement>
-    <ui:VisualElement name="HealthbarTextContainer" class="ui-text-generic" style="height: 80px; width: 160px; top: 25px; left: 490px;">
-        <ui:Label text="10 HP" name="HealthbarTextLabel"/>
-    </ui:VisualElement>
-    <ui:VisualElement name="MainMenuContainer" style="flex-grow: 1; width: 1920px; height: 1080px; position: absolute; top: 0; left: 0; flex-direction: column; flex-wrap: wrap;">
-        <ui:VisualElement name="MainMenuLeftUp" style="flex-grow: 1; width: 50%; height: 50%; background-image: url(&quot;project://database/Assets/Sprites/UI/Menu/Main%20Menu.png?fileID=5561665765474925660&amp;guid=9f3e6345a59dcd94687163b8f9874506&amp;type=3#Main Menu_0&quot;);"/>
-        <ui:VisualElement name="MainMenuLeftDown" style="flex-grow: 1; width: 50%; height: 50%; background-image: url(&quot;project://database/Assets/Sprites/UI/Menu/Main%20Menu.png?fileID=6936311897552531074&amp;guid=9f3e6345a59dcd94687163b8f9874506&amp;type=3#Main Menu_2&quot;);"/>
-        <ui:VisualElement name="MainMenuRightUp" style="flex-grow: 1; left: 50%; width: 50%; height: 50%; background-image: url(&quot;project://database/Assets/Sprites/UI/Menu/Main%20Menu.png?fileID=2798250516866983683&amp;guid=9f3e6345a59dcd94687163b8f9874506&amp;type=3#Main Menu_1&quot;);"/>
-        <ui:VisualElement name="MainMenuRightDown" style="flex-grow: 1; width: 960px; height: 540px; top: 0%; left: 50%; background-image: url(&quot;project://database/Assets/Sprites/UI/Menu/Main%20Menu.png?fileID=-8138443389130145745&amp;guid=9f3e6345a59dcd94687163b8f9874506&amp;type=3#Main Menu_3&quot;);"/>
-        <ui:VisualElement name="ButtonsContainer" style="flex-grow: 1; position: absolute; top: 55%; height: 440px; width: 540px; left: 690px; flex-direction: column; justify-content: space-evenly; align-items: stretch; align-self: auto; align-content: flex-start;">
+    <ui:VisualElement name="MainMenuContainer" style="flex-grow: 1; width: 1920px; height: 1080px; position: absolute; top: 0; left: 0; flex-direction: column; flex-wrap: wrap; display: flex;">
+        <ui:VisualElement name="MainMenuLeftUp" class="MMLU-base"/>
+        <ui:VisualElement name="MainMenuLeftDown" class="MMLD-base"/>
+        <ui:VisualElement name="MainMenuRightUp" class="MMRU-base"/>
+        <ui:VisualElement name="MainMenuRightDown" class="MMRD-base"/>
+        <ui:VisualElement name="ButtonsContainer" class="buttonsContainer-base">
             <ui:Button text="Play" name="PlayButton" class="button-specs" style="height: 100px;"/>
             <ui:Button text="Credits" name="CreditsButton" class="button-specs" style="height: 100px;"/>
             <ui:Button text="Quit" name="QuitButton" class="button-specs" style="height: 100px;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="Logo" style="flex-grow: 1; position: absolute; width: 1000px; height: 550px; background-image: url(&quot;project://database/Assets/Sprites/UI/Menu/Logo.png?fileID=1404028623067837608&amp;guid=1133ad7c11bb6ef42aec7398e1dd245d&amp;type=3#Logo_0&quot;); top: 60px; left: 460px;"/>
+        <ui:VisualElement name="Logo" class="logo-base"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="CreditsContainer" style="flex-grow: 1; position: absolute; width: 1000px; height: 880px; left: 460px; top: 140px;">
+        <ui:ScrollView/>
     </ui:VisualElement>
 </ui:UXML>

@@ -3,13 +3,17 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
     public float remainingTime { get; private set; }
-
-    private void Start()
-    {
-
-    }
+    public bool TimeStarted = false;
 
     private void Update()
+    {
+        if (TimeStarted)
+        {
+            UpdateTimer();
+        }
+    }
+
+    private void UpdateTimer()
     {
         if (remainingTime > 0)
         {

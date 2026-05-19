@@ -22,8 +22,9 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-    public void Start()
+    public void StartGame()
     {
         waveManager.StartWaveManager();
+        timeManager.TimeStarted = true;
     }
 }
