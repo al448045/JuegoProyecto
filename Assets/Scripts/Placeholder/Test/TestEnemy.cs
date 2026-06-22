@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class TestEnemy : MonoBehaviour
 {
+
+    //This line is written to test the inputactions bug
+    //This line is written to test the inputactions bug
+    //This line is written to test the inputactions bug
+
+
     private SpriteRenderer spriteRenderer;
 
     public Vector2 startPos;
